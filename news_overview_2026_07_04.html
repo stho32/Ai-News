@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Übersicht - Letzte 7 Tage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        h2 {
+            color: #555;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+        .article {
+            margin-bottom: 25px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+        }
+        .article-title {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        .article-date {
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+        .article-summary {
+            margin-bottom: 10px;
+        }
+        .article-link {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        .article-link:hover {
+            text-decoration: underline;
+        }
+        /* R00011: Section-Summary-Block, leicht abgesetzt von Einzel-Artikeln */
+        .section-summary {
+            margin: 10px 0 20px 0;
+            padding: 12px 16px;
+            background-color: #eef4fb;
+            border-left: 4px solid #0066cc;
+            font-style: italic;
+            color: #234;
+        }
+        /* R00012: Changelog-Digest-Block — visuell distinkt vom Section-Summary */
+        .changelog-digest {
+            margin: 10px 0 15px 0;
+            padding: 12px 16px;
+            background-color: #fff7e6;
+            border-left: 4px solid #d97706;
+            color: #3a2a00;
+        }
+        .changelog-links {
+            list-style: disc inside;
+            padding-left: 0;
+            margin: 0 0 25px 0;
+        }
+        .changelog-links li {
+            margin: 4px 0;
+        }
+        .changelog-date {
+            color: #666;
+            font-size: 0.9em;
+            margin-left: 6px;
+        }
+        /* R00013: Wochen-Tenor — visuell die staerkste der drei
+           Verdichtungsklassen (overall > section-summary > changelog-digest).
+           Linker Rand kraeftiger, Schrift groesser, klar abgesetzte
+           Hintergrundfarbe — vom Leser auf den ersten Blick als
+           Zusammenfassung der Wochenausgabe erkennbar. */
+        .overall-summary {
+            margin: 10px 0 25px 0;
+            padding: 18px 22px;
+            background-color: #f0fbf3;
+            border-left: 6px solid #15803d;
+            font-size: 1.1em;
+            color: #14271d;
+        }
+        /* R00011: Rueckspruglink zur index.html (oben und unten) */
+        .back-link {
+            display: inline-block;
+            margin: 10px 0 20px 0;
+            color: #0066cc;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>News Übersicht der letzten 7 Tage</h1>
+    <a href="index.html" class="back-link">&larr; Zur&uuml;ck zur &Uuml;bersicht</a>
+    <div class="overall-summary">Erweiterte Sicherheits- und Modell-Updates dominieren die Woche, wobei neue Klassifikatoren und Maßnahmen bei KI-Modellen wie Claude Fable 5 und Claude Sonnet 5 zur Cyberabwehr sowie zur Bewertung und Blockierung von Jailbreak-Versuchen eingeführt wurden. Mehrere Beiträge betonen den Einsatz integrierter Workbenches, APIs und cloudbasierter Agentenlösungen, die wissenschaftliche Arbeitsabläufe und Entwicklungsprozesse effizient unterstützen. Parallel werden Verbesserungen in DevOps und CI-Pipelines vorgestellt, etwa über den Binlog MCP Server und Depot CI, die die Fehlersuche und Codeprüfungen deutlich beschleunigen. Das .NET-Ökosystem erfährt signifikante Umstrukturierungen und Releases, während Google mit Gemini-Modellen und multimodalen Funktionen stärker in Desktop- und Mobilanwendungen investiert. Zudem setzen Optimierungen auf GPUs und agentengestützte MapReduce-Ansätze neue Maßstäbe für Systemperformance und skalierbare Sicherheitsanalysen.</div>
+    <p>Generiert am: 04.07.2026 07:00 Uhr</p>
+    <p>Anzahl Artikel: 30 (zus&auml;tzlich 17 Changelog-Eintr&auml;ge aus 1 Quelle)</p>
+
+    <h2>Anthropic News (4 Artikel)</h2>
+    <div class="section-summary">Anthropic erweitert seine KI-Produkte mit verstärkten Sicherheitsmechanismen, wie bei Claude Fable 5, das nun über verbesserte Cybersecurity-Klassifikatoren und ein Cyber Jailbreak Severity-System verfügt, und macht den globalen Zugang nach zeitweiligen Exportbeschränkungen wieder möglich. Gleichzeitig bringt das Unternehmen mit Claude Science eine umfassende AI-Workbench für wissenschaftliche Workflows und mit Claude Sonnet 5 ein modellübergreifendes, kosteneffizienteres System für logisches Denken, Toolnutzung und Codierung auf den Markt, wobei die Zusammenarbeit mit Behörden und Industriepartnern den Schutz vor KI-Missbrauch weiter optimiert.</div>
+    <div class="article">
+        <div class="article-title">More details on Fable 5’s cyber safeguards and our jailbreak framework</div>
+        <div class="article-date">02.07.2026</div>
+        <div class="article-summary">Claude Fable 5 wurde global wieder eingeführt und umfasst nun erweiterte Cybersecurity-Schutzmaßnahmen, wobei speziell trainierte Sicherheitsklassifikatoren zwischen vier Kategorien von Cyber-Aktivitäten unterscheiden: &quot;prohibited use&quot;, &quot;high-risk dual use&quot;, &quot;low-risk dual use&quot; und &quot;benign use&quot;. Die Klassifikatoren basieren auf einem vergrößerten „Safety Margin“, der vorsorglich auch einige an sich harmlose Anfragen blockiert, um gefährliche Cyber-Aktivitäten zuverlässig zu unterbinden. Parallel dazu stellt Anthropic einen Entwurf vor, der den Schweregrad von AI-Jailbreaks anhand eines Cyber Jailbreak Severity (CJS)-Systems bewertet, das vier Achsen – Capability Gain, Breadth of Capability Gain, Ease of Weaponization und Discoverability – kombiniert und dabei fünf Level (CJS-0 bis CJS-4) definiert. Über ein HackerOne-Programm lädt Anthropic Sicherheitsexperten ein, potenzielle Cyber-Jailbreaks zu melden, um in Kooperation mit Branchenpartnern und Regierungsvertretern misstrauensbasierte Standards für den sicheren Einsatz von KI zu etablieren.</div>
+        <a href="https://www.anthropic.com/news/fable-safeguards-jailbreak-framework" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">Claude Science, an AI workbench for scientists, is now available</div>
+        <div class="article-date">30.06.2026</div>
+        <div class="article-summary">Anthropic stellt mit Claude Science, einer AI-Workbench für Wissenschaftler, eine zentrale Plattform vor, die Forschungstätigkeiten von der Literaturrecherche über Datenanalyse bis hin zur Erstellung reproduzierbarer Artefakte in einem gemeinsamen Workflow zusammenführt. Die Anwendung integriert über 60 vordefinierte Skills und Konnektoren, unter anderem für Genomik, Proteomik und strukturelle Biologie, und baut dabei auf etablierten Datenquellen wie UniProt, PDB sowie den BioNeMo-Modellen Evo 2, Boltz‑2 und OpenFold3 auf. Claude Science verwaltet Compute-Jobs, die je nach Analyse von einer einzelnen GPU auf hunderte skaliert werden können, und gewährleistet durch ausführliche Code-Historien die Nachvollziehbarkeit jeder Berechnung. Die Plattform, die lokal auf macOS oder Linux oder über SSH/HPC eingesetzt werden kann, wird in Beta für Nutzer der Pläne Claude Pro, Max, Team und Enterprise bereitgestellt. Erste Anwendungen in Bereichen wie CRISPR-Design, Proteinstrukturprognose und genomischer Analyse verdeutlichen, dass die Workbench signifikante Effizienzgewinne in der wissenschaftlichen Forschung ermöglicht.</div>
+        <a href="https://www.anthropic.com/news/claude-science-ai-workbench" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">Introducing Claude Sonnet 5</div>
+        <div class="article-date">30.06.2026</div>
+        <div class="article-summary">Claude Sonnet 5 ermöglicht autonomes Planen, Tool-Nutzung und Codierung auf einem Niveau, das bisher größeren und teureren Modellen vorbehalten war. Das Modell übertrifft Sonnet 4.6 in den Bereichen logisches Denken, Tool-Einsatz und Wissensarbeit und erreicht in manchen Aufgaben eine Leistung, die nahezu der von Opus 4.8 entspricht, jedoch zu einem attraktiveren Kosten-Nutzen-Verhältnis. Es ist ab dem 30. Juni 2026 in allen Plänen verfügbar und wird über den Claude API mit einem Einführungspreis von 2 USD pro Million Input-Token und 10 USD pro Million Output-Token bis zum 31. August 2026 angeboten – danach gelten 3 USD bzw. 15 USD. Sicherheitsbewertungen zeigen, dass Claude Sonnet 5 weniger unerwünschte Verhaltensweisen aufweist als sein Vorgänger, während Cyber-Aufgaben absichtlich mit strikteren Schutzmechanismen versehen sind. Ein aktualisierter Tokenizer verbessert zudem die Textverarbeitung, was zu einer insgesamt höheren Effizienz führt.</div>
+        <a href="https://www.anthropic.com/news/claude-sonnet-5" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">Redeploying Fable 5</div>
+        <div class="article-date">30.06.2026</div>
+        <div class="article-summary">Die US-Regierung hatte ab dem 12. Juni den Export von Claude Fable 5 und Claude Mythos 5 beschränkt, sodass der Zugriff für alle Nutzer vorübergehend eingestellt wurde. Mit Aufhebung der Beschränkungen am 30. Juni wird Fable 5 ab dem 1. Juli global über die Claude Platform angeboten, wobei auf Pro-, Max-, Team- und bestimmten Enterprise-Plänen bis zu 50 % der wöchentlichen Nutzungslimits bis zum 7. Juli gewährt werden und anschließend über Nutzungskredite verfügbar ist. Interne Tests bestätigten, dass auch Modelle wie Claude Opus 4.8, GPT‑5.5 und Kimi K2.7 die gleichen Software-Schwachstellen identifizieren können, wie sie im Bericht von Amazon aufgezeigt wurden, weshalb ein verbesserter Sicherheitsklassifikator implementiert wurde, der den fraglichen Umgehungsversuch in über 99 % der Fälle blockiert. Der Sicherheitsansatz von Fable 5 kombiniert mehrere Schichten („defense in depth“) und einen erweiterten Sicherheitsabstand, was zwar zu einer höheren Rate falsch-positiver Blockierungen führt, aber den Zugang zu gefährlichen Funktionen effektiv einschränkt. Parallel dazu arbeitet Anthropic mit US-Behörden und Industriepartnern wie Amazon, Microsoft und Google zusammen, um einen konsensbasierten Rahmen zur Bewertung und zeitnahen Reaktion auf AI-Jailbreaks zu entwickeln.</div>
+        <a href="https://www.anthropic.com/news/redeploying-fable-5" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+
+    <h2>GitHub Copilot Changelog (17 Eintr&auml;ge)</h2>
+    <div class="changelog-digest">Modell-Updates prägen das Update, indem Gemini 2.5 Pro und Gemini 3 Flash zugunsten von Gemini 3.1 Pro und Gemini 3.5 Flash abgeschaltet wurden, während das Open-Weight-Modell Kimi K2.7 Code eingeführt und Alternativen wie Claude Sonnet 5 sowie Claude Opus 4.8 Fast Mode integriert wurden. Gleichzeitig optimiert Copilot die Modellauswahl über den CLI-Auto-Modus und erweitert mit Copilot Vision die Unterstützung visueller Eingaben in GitHub Copilot Chat und in Entwicklungsumgebungen wie VS Code. Änderungen an Endpoints und APIs erlauben nun den Zugriff auf Sitzungsevents in Echtzeit über Streaming und REST, automatisierte AI-Credit-Limits für Kostenstellen und Nutzer sowie detailliertere Nutzungsmessungen in der Copilot CLI. Neue zentrale Konfigurationsmöglichkeiten ermöglichen es Enterprise-Administratoren, AI-Einstellungen über eine managed-settings.json zu verwalten, die bei jeder Authentifizierung aktualisiert wird und benutzerspezifische Vorgaben überschreibt. Verbesserte Funktionen rund um Sicherheitsmechanismen und Integrationsmöglichkeiten finden sich in der Copilot CLI, die nun das integrierte GITHUB_TOKEN in GitHub Actions nutzt, in den Browser-Tools in VS Code, die echte Browseraktionen durchführen, sowie in der nativen Integration von Copilot im JetBrains AI Assistant. Das Angebot wird durch zusätzliche Erweiterungen wie das C++ Language Server Plugin im Copilot Plugins Marketplace und durch die Option, AI-Credit-Sitzungslimits über CLI und SDK zu setzen, abrundet.</div>
+    <ul class="changelog-links">
+        <li><a href="https://github.blog/changelog/2026-07-02-copilot-cli-no-longer-needs-a-personal-access-token-in-github-actions" class="article-link" target="_blank">Copilot CLI no longer needs a personal access token in GitHub Actions</a> <span class="changelog-date">02.07.2026</span></li>
+        <li><a href="https://github.blog/changelog/2026-07-02-copilot-agent-session-streaming-is-now-in-public-preview" class="article-link" target="_blank">Copilot agent session streaming is now in public preview</a> <span class="changelog-date">02.07.2026</span></li>
+        <li><a href="https://github.blog/changelog/2026-07-02-cost-centers-now-support-included-usage-caps" class="article-link" target="_blank">Cost centers now support AI credit pools</a> <span class="changelog-date">02.07.2026</span></li>
+        <li><a href="https://github.blog/changelog/2026-07-02-improved-accuracy-and-coverage-in-copilot-usage-metrics-reports" class="article-link" target="_blank">Improved accuracy and coverage in Copilot usage metrics reports</a> <span class="changelog-date">02.07.2026</span></li>
+        <li><a href="https://github.blog/changelog/2026-07-02-upcoming-deprecation-of-gemini-2-5-pro-and-gemini-3-flash" class="article-link" target="_blank">Upcoming deprecation of Gemini 2.5 Pro and Gemini 3 Flash</a> <span class="changelog-date">02.07.2026</span></li>
+        <li><a href="https://github.blog/changelog/2026-07-01-browser-tools-for-github-copilot-in-vs-code-are-generally-available" class="article-link" target="_blank">Browser tools for GitHub Copilot in VS Code are generally available</a> <span class="changelog-date">01.07.2026</span></li>
+        <li><a href="https://github.blog/changelog/2026-07-01-copilot-cli-auto-model-selection-routes-based-on-task" class="article-link" target="_blank">Copilot CLI auto model selection routes based on task</a> <span class="changelog-date">01.07.2026</span></li>
+        <li><a href="https://github.blog/changelog/2026-07-01-copilot-vision-is-generally-available" class="article-link" target="_blank">Copilot vision is generally available</a> <span class="changelog-date">01.07.2026</span></li>
+        <li><a href="https://github.blog/changelog/2026-07-01-enterprise-managed-settings-json-is-generally-available" class="article-link" target="_blank">Enterprise managed-settings.json is generally available</a> <span class="changelog-date">01.07.2026</span></li>
+        <li><a href="https://github.blog/changelog/2026-07-01-enterprises-can-default-to-auto-model-selection" class="article-link" target="_blank">Enterprises can default to auto model selection</a> <span class="changelog-date">01.07.2026</span></li>
+        <li><a href="https://github.blog/changelog/2026-07-01-kimi-k2-7-is-now-available-in-github-copilot" class="article-link" target="_blank">Kimi K2.7 Code is generally available in GitHub Copilot</a> <span class="changelog-date">01.07.2026</span></li>
+        <li><a href="https://github.blog/changelog/2026-07-01-new-c-language-server-config-skill-for-copilot-cli" class="article-link" target="_blank">New C++ language server config skill for Copilot CLI</a> <span class="changelog-date">01.07.2026</span></li>
+        <li><a href="https://github.blog/changelog/2026-07-01-set-ai-credit-session-limits-in-copilot-cli-and-sdk" class="article-link" target="_blank">Set AI credit session limits in Copilot CLI and SDK</a> <span class="changelog-date">01.07.2026</span></li>
+        <li><a href="https://github.blog/changelog/2026-06-30-claude-sonnet-5-is-generally-available-for-github-copilot" class="article-link" target="_blank">Claude Sonnet 5 is generally available for GitHub Copilot</a> <span class="changelog-date">30.06.2026</span></li>
+        <li><a href="https://github.blog/changelog/2026-06-30-copilot-agent-is-now-available-in-jetbrains-ai-assistant" class="article-link" target="_blank">Copilot Agent is now available in JetBrains AI Assistant</a> <span class="changelog-date">30.06.2026</span></li>
+        <li><a href="https://github.blog/changelog/2026-06-30-per-user-ai-credit-budgets-available-for-cost-centers" class="article-link" target="_blank">Per-user AI credit budgets available for cost centers</a> <span class="changelog-date">30.06.2026</span></li>
+        <li><a href="https://github.blog/changelog/2026-06-29-claude-opus-4-8-fast-mode-is-now-in-preview-for-github-copilot" class="article-link" target="_blank">Claude Opus 4.8 (fast mode) is now in preview for GitHub Copilot</a> <span class="changelog-date">29.06.2026</span></li>
+    </ul>
+
+    <h2>Google AI Blog - Gemini (4 Artikel)</h2>
+    <div class="section-summary">Google erweitert die Gemini-Plattform mit mehreren neuen Modellen und Updates, die den lokalen Einsatz in Laptops, Desktops und Consumer-Produkten stärken. Modelle wie Gemini 3.5 Flash, Gemini Spark Beta, Nano Banana 2 Lite und Gemini Omni Flash verbessern Funktionen wie Bild‑, Sprach‑ und Videoverarbeitung in Echtzeit und ermöglichen durch nahtlose Integration mit externen Anwendungen und Google-Diensten komplexe Multimedia-Workflows. Zusätzlich integriert die Gemini App Personal Intelligence aus Google-Diensten, um kontextbezogene Bildgenerierung zu realisieren, während Android 17 und der neue Google Home Speaker zusätzliche Plattform-Features bieten.</div>
+    <div class="article">
+        <div class="article-title">The latest AI news we announced in June 2026</div>
+        <div class="article-date">01.07.2026</div>
+        <div class="article-summary">Google stellt im Juni 2026 mehrere KI-Updates vor, die den Einsatz moderner Modelle in Geräten und Anwendungen vorantreiben. Mit Gemma 4 12B, das lokal auf Laptops mit nur 16 GB RAM läuft, können Entwickler KI-Agenten mit integrierter Bild- und Spracherkennung einsetzen. Gemini 3.5 Flash integriert nun Computer-Use-Funktionalitäten für langanhaltende Automatisierungsaufgaben und verbessert mittels Gemini 3.5 Live Translate die bidirektionale, nahezu Echtzeit-Übersetzung in über 70 Sprachen. Zudem bietet Android 17 neue Multitasking-Features und Sicherheitsupgrades, während der neue Google Home Speaker, gebaut auf Gemini-Technologie, komplexe Mehrfachanfragen verarbeitet.</div>
+        <a href="https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-june-2026/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">Gemini Spark updates: macOS launch, connected apps and more</div>
+        <div class="article-date">30.06.2026</div>
+        <div class="article-summary">Gemini Spark erscheint nun als Beta-Version für macOS, wodurch sich langwierige Desktopaufgaben – wie das automatische Sortieren von PDFs oder das Erstellen von Budgettabellen aus Google Workspace-Daten – deutlich vereinfachen lassen. Die Anwendung kann nun auch über das Smartphone ferngetriggert werden, um mehrstufige Aufgaben auf dem Mac auszuführen, ohne dass der Nutzer direkt am Gerät sein muss. Die Integration mit Google Tasks, Google Keep sowie externen Anwendungen wie Canva, Dropbox, Instacart, OpenTable und Zillow Rentals erweitert den Funktionsumfang erheblich und soll in den nächsten Wochen auch für macOS vollständig ausgerollt werden. Zudem reagiert Gemini Spark nun in Echtzeit auf Ereignisse aus Bereichen wie Sport, Finanzen und Nachrichten, sodass relevante Updates sofort verfügbar sind.</div>
+        <a href="https://blog.google/innovation-and-ai/products/gemini-app/gemini-spark-updates-june-2026/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">Start building with Nano Banana 2 Lite and Gemini Omni Flash</div>
+        <div class="article-date">30.06.2026</div>
+        <div class="article-summary">Nano Banana 2 Lite (gemini-3.1-flash-lite-image) liefert Text-zu-Bild-Ergebnisse in nur vier Sekunden und kostet dabei $0.034 pro 1K-Auflösung, was es besonders für schnelle, high-volume Workflows prädestiniert. Gleichzeitig steht Gemini Omni Flash (gemini-omni-flash-preview) jetzt bereit, um mittels multimodaler Eingaben hochwertige Videoerzeugung und -bearbeitung in Echtzeit zu ermöglichen – zu einem Preis von $0.10 pro Videosekunde. Beide Modelle sind über Plattformen wie Google AI Studio, Gemini API und die Gemini Enterprise Agent Platform verfügbar und liefern in Google-Konsumentenprodukten wie AI Mode in Search und Gemini App bereits ihre Vorteile. Entwickler können so durch eine Kombination aus schnellen Bildgenerierungen und anschließender Videoanimation zusammenhängende Multimedia-Erlebnisse realisieren.</div>
+        <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni-flash-nano-banana-2-lite/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">The Gemini app is bringing personalized image creation to more users.</div>
+        <div class="article-date">29.06.2026</div>
+        <div class="article-summary">Gemini App integriert Personal Intelligence mit Daten aus Google-Diensten wie Gmail, Google Fotos, YouTube und Search, um kontextbezogene, personalisierte Bildgenerierung zu ermöglichen. Ab sofort können alle berechtigten Nutzer in den USA kostenfrei maßgeschneiderte Bilder erzeugen, indem die App relevante Informationen aus verbundenen Google-Apps nutzt. Die Integration von Personal Intelligence mit Nano Banana und Google Fotos eliminiert den Aufwand, Fotos manuell hochladen zu müssen, da Gemini den nötigen Kontext automatisch abruft. Nutzer behalten dabei die Kontrolle, indem sie die Verknüpfung ihrer Google-Dienste im Einstellungsmenü opt-in steuern können.</div>
+        <a href="https://blog.google/innovation-and-ai/products/gemini-app/personal-intelligence-nano-banana-us-expansion/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+
+    <h2>Kent Beck - Tidy First (1 Artikel)</h2>
+    <div class="article">
+        <div class="article-title">How Kent Beck shapes the software engineering industry</div>
+        <div class="article-date">01.07.2026</div>
+        <div class="article-summary">Kent Beck prägt den Software-Engineering-Bereich durch die Pionierarbeit an Extreme Programming, Test-Driven Development (TDD) und dem Agile Manifesto. Er demonstriert anhand seines „explore, expand, extract“-Modells, wie sich Innovationsphasen von günstigen Experimenten bis hin zu skalierbaren, wiederholbaren Prozessen entwickeln. Beck schildert markante Erlebnisse, wie seinen frühen Einsatz von Smalltalk bei Apple 1987, seine Zusammenarbeit mit Ward Cunningham bei Tektronix und den spürbaren Kulturwandel, als er im Alter von 50 Jahren zu Facebook wechselte, wo TDD praktisch ignoriert wurde. Er argumentiert, dass technisches Können nur einen Teil der Arbeit ausmacht und dass der Aufbau von Vertrauen und der Umgang mit menschlichen Beziehungen langfristig entscheidend für den Erfolg in der Softwareentwicklung sind.</div>
+        <a href="https://newsletter.pragmaticengineer.com/cp/204687762" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+
+    <h2>Microsoft .NET Blog (5 Artikel)</h2>
+    <div class="section-summary">Containerisierte Diagnosetools wie der Binlog MCP Server automatisieren in GitHub Actions die Analyse von Build-Fehlern, und zusätzliche Mechanismen wie AI-gestützte MSBuild-Analysen sowie WinApp CLI rüsten .NET-Anwendungen für Windows-spezifische Anforderungen aus. Die Supportzyklen werden durch den End-of-Support von .NET 8 und .NET 9 zum 10. November 2026 und den empfohlenen Umstieg auf .NET 10 neu definiert, während SkiaSharp 4.148.0 eine stabile Rendering-Engine mit verbesserter Performance und geänderter API-Benutzung liefert.</div>
+    <div class="article">
+        <div class="article-title">Load more posts</div>
+        <div class="article-date">30.06.2026</div>
+        <div class="article-summary">Die Seite zeigt eine Übersicht neuester Beiträge des .NET Blogs, in denen konkrete Themen wie das MCP Build Diagnostics-Toolset in CI, das End of Support von .NET 8 und .NET 9 am 10. November 2026 sowie die stabile Veröffentlichung von SkiaSharp 4.148.0 im Fokus stehen. Weitere Beiträge behandeln unter anderem AI-gestützte MSBuild-Analysen, den Einsatz von WinApp CLI für .NET-Anwendungen und Updates zu .NET MAUI. Aktualisierungen zu .NET 11, darunter Previews (Preview 5 und Preview 4) sowie Servicing-Releases für .NET und das .NET Framework, runden das Angebot ab. Die Seite liefert ferner präzise Angaben zu Veröffentlichungsdaten, Versionen, Kommentaren und Likes, was einen kompakten Überblick über den aktuellen Entwicklungsstand im .NET-Ökosystem ermöglicht.</div>
+        <a href="https://devblogs.microsoft.com/dotnet/page/2/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">MCP Beyond the Chat Window: Build Diagnostics in CI</div>
+        <div class="article-date">30.06.2026</div>
+        <div class="article-summary">Microsoft integriert den Binlog MCP Server als containerisierten Dienst in GitHub Actions Workflows, sodass bei einem fehlgeschlagenen Build in Repositories wie microsoft/testfx automatisch Ursachenanalyse und Inline-Vorschläge generiert werden, ohne manuelle Logauswertung. Die Lösung nutzt den Model Context Protocol (MCP), um über 38 Diagnosewerkzeuge – darunter binlog_overview, binlog_errors und binlog_diagnose – strukturierte Daten aus MSBuild-Binlogs live abzufragen und darzustellen. Ein realer Fehler (etwa ein CS0103 oder IDE0055) mit 46 gebauten Projekten, 5 Fehlern und 4 fehlgeschlagenen Projekten wird so transparent analysiert, inklusive exakter Angabe von Datei, Zeile und Spalte. Vergleichswerte aus einer Evaluation belegen, dass der Baseline-Durchlauf (3.25 Punkte, 350 s, 1.27 Mio. Tokens) durch den Einsatz des Binlog MCP Servers auf 3.68 Punkte und 196 s reduziert wird, während eine Kombination mit zusätzlichen Fähigkeiten die Analyse sogar um 52 % beschleunigt und 30 % weniger Tokens verbraucht. Die automatisierte Build-Diagnostik optimiert somit den Code Review-Prozess und entlastet erfahrene Build-Experten, während auch weniger erfahrene Entwickler schneller selbstständig Fehler beheben können.</div>
+        <a href="https://devblogs.microsoft.com/dotnet/mcp-build-diagnostics-workflows/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">.NET 8 and .NET 9 will reach End of Support on November 10, 2026</div>
+        <div class="article-date">29.06.2026</div>
+        <div class="article-summary">.NET 8 und .NET 9 enden am 10. November 2026, danach werden keine Sicherheitsupdates, Servicing-Fixes oder technischer Support mehr bereitgestellt. .NET 8, das als LTS-Release seit November 2023 unterstützt wird, erhält 36 Monate Support, während das Standard-Term-Support-Release .NET 9 aufgrund der neuen 24-Monats-Supportregel bis zum gleichen Datum versorgt wird. Die Empfehlung lautet, auf .NET 10 umzusteigen – ein LTS-Release ab dem 11. November 2025, das bis November 2028 abgesichert ist – um den fortlaufenden Erhalt von Updates sicherzustellen. Zukünftige Visual Studio 2022-Servicing-Updates markieren .NET 8 und .NET 9 als veraltet, sodass ein Retargeting auf .NET 10 nötig wird, um weiterhin unterstützte Komponenten zu nutzen.</div>
+        <a href="https://devblogs.microsoft.com/dotnet/dotnet-8-9-end-of-support/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">Packaging and Package Identity for .NET apps with WinApp CLI on Windows</div>
+        <div class="article-date">29.06.2026</div>
+        <div class="article-summary">WinApp CLI ermöglicht es, .NET-Desktopanwendungen, die standardmäßig ohne Package Identity ausgeliefert werden, schnell mit einem Paket-Manifest und den nötigen Abhängigkeiten auszustatten. Mit dem Kommando „winapp init . --use-defaults“ wird das Projekt für den Zugriff auf Windows-spezifische APIs, wie Hintergrundaufgaben, Toast-Benachrichtigungen oder AI-Funktionalitäten, automatisch vorbereitet, indem beispielsweise die NuGet-Pakete Microsoft.WindowsAppSDK und Microsoft.Windows.SDK.BuildTools.WinApp hinzugefügt werden. Über „dotnet run“ wird die Anwendung dann mit Package Identity gestartet und lässt sich durch properties im .csproj weiter konfigurieren, etwa um Debug-Output zu aktivieren oder das Ausführen über ein Execution Alias zu ermöglichen. Für die Produktion liefert WinApp CLI mit „winapp pack“ einen signierten MSIX-Paket-Output und unterstützt zusätzlich die Generierung und Installation von selbstsignierten Zertifikaten für lokale Tests, während die VS Code Extension eine integrierte F5-Debugging-Erfahrung bietet.</div>
+        <a href="https://devblogs.microsoft.com/dotnet/packaging-dotnet-apps-winapp/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">SkiaSharp 4.0 is here: announcing the first stable release</div>
+        <div class="article-date">29.06.2026</div>
+        <div class="article-summary">SkiaSharp 4.148.0 stellt den ersten stabilen Release der v4-Reihe dar und integriert verbesserte Rendering-Features des zugrunde liegenden Skia-Engines, inklusive voller OpenType-Variablenfont-Achsensteuerung, Farbpalettenunterstützung für Emoji und Icons sowie animiertes WebP-Encoding über SKWebpEncoder. Das Update beseitigt veraltete APIs und revidiert den Objektlebenszyklus, indem native Singletons nun korrekt referenzgezählt werden, wodurch potenzielle Use-After-Free-Probleme eliminiert werden. Erste Benchmarks auf hardwarebeschleunigten GPU-Backends zeigten einen Performancegewinn von ca. 24 % bei Schatten- und Überlagerungsszenarien (z. B. von 65 auf 80 FPS). Der co-entwickelte Release durch das .NET Team und die Uno Platform legt künftig auf einen regelmäßigen, an den Upstream-Skia-Meilensteinen orientierten Veröffentlichungszyklus, wobei die nächste Vorschau (4.150.0 Preview 2) bereits verfügbar ist. Eine halbtägige Live-Veranstaltung am 30. Juni 2026 von 11 bis 15 Uhr ET ermöglicht einen detaillierten Einblick in die Neuerungen und den geplanten Graphite-Backend-Ansatz.</div>
+        <a href="https://devblogs.microsoft.com/dotnet/skiasharp-4-0-stable/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+
+    <h2>Pragmatic Engineer Newsletter (2 Artikel)</h2>
+    <div class="article">
+        <div class="article-title">How Kent Beck shapes the software engineering industry</div>
+        <div class="article-date">01.07.2026</div>
+        <div class="article-summary">Kent Beck prägt die Branche, indem er Extreme Programming, Test-Driven Development (TDD) und zentrale Agile-Prinzipien etablierte, die noch heute den Alltag in der Softwareentwicklung bestimmen. Er entwickelte SUnit und JUnit als praxisnahe Testframeworks und konzipierte mit dem „3X“-Modell – explore, expand, extract – einen Fahrplan, um von experimenteller Phase zu skalierbaren, reproduzierbaren Entwicklungsprozessen zu gelangen. Sein beruflicher Werdegang, von Apple und Tektronix über eine prägende Zeit bei Facebook bis hin zu prägenden Momenten während der Dotcom-Bust-Ära, belegt, dass technischer Fortschritt immer auch den Aufbau von zwischenmenschlichem Vertrauen und Zusammenarbeit erfordert. Beck betont, dass Software Engineering weit mehr umfasst als die reine Codierung, was insbesondere im Kontext der aktuellen Herausforderungen im Zusammenspiel zwischen Mensch und KI relevant ist.</div>
+        <a href="https://newsletter.pragmaticengineer.com/p/how-kent-beck-shapes-the-software" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">Impressions from visiting OpenAI, Anthropic, &amp; Cursor</div>
+        <div class="article-date">30.06.2026</div>
+        <div class="article-summary">OpenAI, Anthropic und Cursor treiben den Wechsel von lokal laufenden zu cloud-basierten Agenten voran, um Infrastrukturkomplexität zu senken und rechenintensive Langläufer-Aufgaben effizienter zu gestalten. Die vorgestellten Entwicklungen wie die Slack-basierte Integration mit Claude Tag und „Claude Managed Agents“ bei Anthropic zeigen, dass Entwickler vermehrt auf vollständig verwaltete Cloud-Umgebungen setzen. OpenAI baut seine Cloud-Agenten-Initiativen mit dem Zukauf von Ona und spezifischen Stellenausschreibungen voran, während mehr als 95 % der nicht-technischen Mitarbeiter bei OpenAI offenbar Codex anstelle von ChatGPT nutzen. Fortschritte bei Coding-Modellen, etwa Opus 4.5 und GPT-5.4, größere Kontextfenster von bis zu einer Million Tokens und optimierte Spend-per-Token-Mechanismen – etwa im Fall Coinbase – schaffen dabei die Voraussetzungen für nachhaltige und skalierbare Lösungen im AI-Bereich.</div>
+        <a href="https://newsletter.pragmaticengineer.com/p/impressions-from-visiting-openai" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+
+    <h2>Simon Willison (11 Artikel)</h2>
+    <div class="section-summary">Open-Source-KI-Ansätze und generative Modelle dominieren, etwa mit der Non-Profit-Initiative zur öffentlichen KI-Infrastruktur, der Systematisierung des kompletten Open-Source-KI-Stacks über die Gap Map, und neuen Versionen wie Claude Sonnet 5 und Ornith-1.0, die auf agentic Coding und verbesserte Kontextfenster setzen. Gleichzeitig erzielen technische Optimierungen Erfolge, etwa Depot CI, das CI-Pipelines signifikant beschleunigt, CUDA-L1, das CUDA-Kernel automatisch optimiert, sowie Reviewer-Agents, die LLM-generierten Code systematisch prüfen und verbessern.</div>
+    <div class="article">
+        <div class="article-title">Current AI</div>
+        <div class="article-date">03.07.2026</div>
+        <div class="article-summary">Current AI etabliert eine öffentliche Alternative zur profitorientierten KI durch eine globale Partnerschaft zwischen Regierungen, Philanthropen und Technologiefirmen. Die Initiative als Non-Profit verzeichnet bereits 400 Millionen US-Dollar an Zusagen und plant, über fünf Jahre hinweg 2,5 Milliarden US-Dollar zu mobilisieren, um die gesamte öffentliche KI-Infrastruktur von Hardware bis Anwendung aufzubauen. Konkrete Maßnahmen umfassen die Veröffentlichung der Gap Map v0.1, die den Open-Source-AI-Stack kartiert, sowie die Vergabe von 3,2 Millionen US-Dollar an vier Pilotprojekte in sub-saharischen Ländern, dem arabischen Raum und dem brasilianischen Amazonas.</div>
+        <a href="https://www.currentai.org" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">Open Source AI Gap Map</div>
+        <div class="article-date">03.07.2026</div>
+        <div class="article-summary">Die Open Source AI Gap Map analysiert systematisch den gesamten Open Source KI-Stack und identifiziert dabei bestehende Lücken. Aufbauend auf Beiträgen von Experten wie Columbia Convening, MOF und Hugging Face bewertet die Plattform über 24.626 Projekte – von Foundation Models bis zu Inference Backends – hinsichtlich ihrer Offenheit, Leistungsfähigkeit und Adoption. In Version 0.1 etabliert die Map eine öffentliche, prüfbare Alternative zu proprietären KI-Lösungen, um Transparenz und Verantwortlichkeit zu fördern. Entwickler und Interessierte werden eingeladen, ihre Expertise einzubringen, die Methodik zu verbessern oder neue Tools zu ergänzen, um gemeinsam die identifizierten Lücken zu schließen.</div>
+        <a href="https://map.currentai.org" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">2017</div>
+        <div class="article-date">02.07.2026</div>
+        <div class="article-summary">Die Übersicht präsentiert Beiträge aus 2017, die eine Bandbreite technischer Fragestellungen abdecken – von Netzwerkarchitekturen wie Mesh-Netzwerken und drahtlosen Zugängen über Deployment-Methoden (etwa Nginx bei Heroku oder asynchroner Python-Code mit Sanic und Zeit Now) bis hin zu spezifischen Softwareentwicklungsprozessen wie der Portierung eines Blogs zu Python 3. Beiträge demonstrieren den Einsatz von Django mit PostgreSQL für facettierte Suchen, Datenimporte mit „import refs“ und die Nutzung von Datasette zur schnellen API-Erstellung für SQLite-Datenbanken. Zahlreiche Einträge dokumentieren technische Experimente und Praxisfragen, etwa Lasttests mit einem Go-basierten Dienst in Docker für Mac, und verbinden so Entwicklungsentscheidungen und Implementierungsstrategien im Jahr 2017.</div>
+        <a href="https://simonwillison.net/2017/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">Try Depot CI</div>
+        <div class="article-date">02.07.2026</div>
+        <div class="article-summary">Depot CI beschleunigt CI-Pipelines signifikant, was anhand von Live-Benchmarks an Open-Source-Projekten wie PostHog, mastodon, grpc und apache/kafka demonstriert wird. Depot reduziert die Gesamtlaufzeiten um dramatische Faktoren: Beispielsweise wird PostHog in 5 Minuten 11 Sekunden statt in 84 Minuten 42 Sekunden ausgeführt, mastodon in 2 Minuten 46 Sekunden statt in 24 Minuten 7 Sekunden. Weitere Messwerte zeigen bei grpc eine Verkürzung von 25 Minuten 5 Sekunden auf 4 Minuten 7 Sekunden und bei apache/kafka von 12 Minuten 32 Sekunden auf 5 Minuten 48 Sekunden. Die Implementierung von Depot CI erfolgt über ein modernes Anmeldeverfahren mit OAuth-Providern wie Google und Microsoft, was den Einstieg für Entwickler und Organisationen erleichtert.</div>
+        <a href="https://10xn.link/simon-depot" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">Using DSPy to evaluate and improve Datasette Agent&#x27;s SQL system prompts</div>
+        <div class="article-date">02.07.2026</div>
+        <div class="article-summary">DSPy evaluiert und optimiert den produktiven Systemprompt von Datasette Agent für SQL-Fragen, indem es reale Tools (z. B. _sql_query, _describe_table) auf einer in-process Datasette-Instanz einsetzt. Mit Datasette 1.0a35, Datasette-Agent 0.3a0 und dspy 3.2.1 wird der statische Prompt über _build_system_prompt extrahiert und zusammen mit dynamisch generierten Schemainformationen in ein dspy.ReAct-Schema eingespeist. Der Optimierer GEPA (aus dspy 3.x, eingesetzt mit gpt-4.1-nano als Task Model und gpt-5-mini als Reflection Model) verwandelt den ca. 2400 Zeichen langen Prompt in ein 8800 Zeichen langes Regelwerk, was beim Training auf 20 Fragen einen +5-Punkte-Gewinn erzielte, jedoch auf dem 10-Fragen-Held-out-Set einen Rückgang um 10 Punkte verursachte. Einsichten ergeben sich auch aus der Kollision von GEPA’s „display=&#x27;user&#x27;“-Anweisungen mit der systemeigenen Logik und aus der Aufdeckung von zwei Metrikfehlern, die zuvor fälschlicherweise Fehlerraten anzeigten.</div>
+        <a href="https://github.com/simonw/research/tree/main/dspy-datasette-agent-prompts#readme" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">LLMs</div>
+        <div class="article-date">30.06.2026</div>
+        <div class="article-summary">Beiträge auf der Seite thematisieren Entwicklungen bei generativen KI-Systemen wie OpenAI’s ChatGPT, Google Gemini und Anthropic’s Claude. Claude Sonnet 5 wird als Modell vorgestellt, das mit einem 1-Millionen-Token-Kontextfenster und neuen Tokenisierungsmechanismen (ca. 30 % teurer als bei Sonnet 4.6) operiert und dabei an die Leistung von Opus 4.7 heranreicht. Es werden zudem technische Details zu Modellen wie Nano Banana 2 Lite (auch Gemini 3.1 Flash Lite Image) und Ornith-1.0-35B von DeepReinforce, inklusive Benchmarks zur Geschwindigkeit und Kapazität, präsentiert. Weitere Beiträge befassen sich mit Sicherheitsaspekten, etwa zu Prompt Injection und Exportkontrollen (z. B. Fable 5 und Mythos 5), sowie mit neuen Tools wie shot-scraper video und datasette-agent 0.3a0, wodurch der praktische Einsatz von LLMs in der Codegenerierung und Systemdemonstration veranschaulicht wird.</div>
+        <a href="https://simonwillison.net/tags/llms/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">The AI Compass</div>
+        <div class="article-date">30.06.2026</div>
+        <div class="article-summary">Die Seite enthält ausschließlich eine Ladeanzeige („Loading the compass...“) und liefert damit keinerlei technische Details, Versionsnummern oder Benchmarks. Es fehlt an Informationen zu konkreten Produktversionen, Modellen oder Architekturentscheidungen, die für eine vertiefte Analyse herangezogen werden könnten. Aufgrund des minimalistischen Aufbaus ist keine fundierte technische Bewertung oder Implementierungsempfehlung möglich.</div>
+        <a href="https://bambamramfan.github.io/ai-compass/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">What’s new in Claude Sonnet 5</div>
+        <div class="article-date">30.06.2026</div>
+        <div class="article-summary">Claude Sonnet 5 ersetzt die Vorgängerversion 4.6 als Drop-In Upgrade und aktiviert adaptive Denkprozesse standardmäßig, während manuelles Extended Thinking und das Setzen nicht-standardmäßiger Sampling-Parameter (temperature, top_p, top_k) nun zu einem 400-Fehler führen. Der neue Tokenizer produziert ca. 30% mehr Tokens pro Text, was eine Neubewertung von Token-Budgets, Kontextfensterkapazitäten (1M Token) und Output-Limits (128k Token) erfordert. Preislich bleiben die Raten bei $3 pro Million Eingangstokens und $15 pro Million Ausgangstokens – bis zum 31. August 2026 gilt ein Einführungstarif von $2/$10. Das Modell verbessert insbesondere Leistungen in coding- und agentenbezogenen Aufgaben und ist über Claude API, AWS, Google Cloud sowie in Microsoft Foundry (Vorschau) erhältlich.</div>
+        <a href="https://platform.claude.com/docs/en/about-claude/models/whats-new-sonnet-5" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">CUDA-L1: Improving CUDA Optimization via Contrastive Reinforcement Learning</div>
+        <div class="article-date">29.06.2026</div>
+        <div class="article-summary">CUDA-L1 setzt einen kontrastiven Verstärkungslern-Algorithmus ein, um CUDA-Kernel automatisch zu optimieren. Das System, trainiert auf NVIDIA A100 GPUs, erzielt im Benchmark von 250 Kernel im KernelBench durchschnittliche Geschwindigkeitssteigerungen um das 3,12-fache, einen Median von 1,42-fach und Spitzenwerte bis zu 120-fach. Es verbessert performante Resultate gegenüber Torch Compile (2,77×), Torch Compile mit reduziertem Overhead (2,88×), CUDA Graph Implementierungen (2,81×) und cuDNN Bibliotheken (7,72×). CUDA-L1 identifiziert und kombiniert diverse Optimierungstechniken, eliminiert ineffiziente Ansätze und gewährleistet dabei eine Portabilität über unterschiedliche GPU-Architekturen hinweg.</div>
+        <a href="https://arxiv.org/abs/2507.14111" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">Ornith-1.0: Self-Scaffolding LLMs for Agentic Coding</div>
+        <div class="article-date">29.06.2026</div>
+        <div class="article-summary">Ornith-1.0 bietet eine Familie von Open-Source-Modellen für agentic coding Aufgaben, die von kompakten 9B Dense Modellen für Edge-Deployments bis zu leistungsstarken 397B MoE Modellen reichen und auf Gemma 4 sowie Qwen 3.5 basieren. Das 397B-Modell erzielt 77,5 Punkte auf Terminal-Bench 2.1 und 82,4 auf SWE-Bench Verified und übertrifft damit Claude Opus 4.7 sowie andere Modelle ähnlicher Größe. Der Trainingsansatz optimiert in einem dualen RL-Prozess gleichzeitig die Lösungsausführung und die dafür entwickelten Scaffolds, wodurch bessere Suchstrategien automatisch entstehen. Mehrschichtige Sicherheitsmechanismen, wie eine unveränderliche Umgebung, ein deterministischer Monitor und ein gefrorener LLM-Judge, verhindern Reward-Hacking, während eine asynchrone Pipeline-RL-Strategie den Einfluss veralteter Token mittels Staleness-Gewichtung kontrolliert.</div>
+        <a href="https://deep-reinforce.com/ornith_1_0.html" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">Jon Udell</div>
+        <div class="article-date">28.06.2026</div>
+        <div class="article-summary">Agenten, die PRs mit tausenden LLM-generierten Zeilen Code erstellen, führen zu Änderungen, die kaum menschlich nachvollziehbar sind. Um diesem Problem zu begegnen, setzt Jon Udell auf Reviewer-Agents, die den von Coding-Agents erzeugten Code automatisch scannen, Probleme identifizieren und priorisieren. Im Projekt Bram, einem Tauri-Desktop-App, dominiert Rust mit 24.630 Zeilen in einem Gesamtcode von 42.805 Zeilen, wodurch ein Workflow etabliert wird, der Aufgaben in kleine, testbare Einheiten unterteilt. Die Herangehensweise integriert klassische agile Praktiken in den agentengestützten Entwicklungsprozess, indem sie den gemeinsam genutzten Kontext im lokalen Worklist-System und im GitHub-Repository nutzt.</div>
+        <a href="https://blog.jonudell.net/2026/06/28/doctor-it-hurts-when-agents-create-unreviewable-prs-dont-do-that/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+
+    <h2>Warp AI Terminal Blog (1 Artikel)</h2>
+    <div class="article">
+        <div class="article-title">How to build a cloud software factory - add spec-driven development skills</div>
+        <div class="article-date">29.06.2026</div>
+        <div class="article-summary">Der Cloud-Softwarefabrik-Workflow wird um einen Spec Agent erweitert, der in Ambiguitäts- oder Komplexitätsfällen statt eines One-Shot-Ansatzes detaillierte Spezifikationen erstellt. Der Triage-Prozess wurde angepasst, sodass Issues, die zur Roadmap passen und entweder zu komplex oder mehrdeutig sind, mit einem „ready-to-spec“-Label versehen werden, wodurch anschließend über eine GitHub Action der Spec Agent aktiviert wird. Der Spec Agent generiert aus jedem Issue zwei Dateien, PRODUCT.md und TECH.md, die das gewünschte Produktverhalten beziehungsweise die technische Architektur festhalten und in einem issuespezifischen Verzeichnis abgelegt werden. Der gesamte Automatisierungszyklus basiert auf Docker-Images, GitHub Actions und der Oz-Plattform von Warp und erlaubt so eine vollumfängliche Automatisierung des SDLC.</div>
+        <a href="https://www.warp.dev/blog/how-to-build-a-cloud-software-factory-add-spec-driven-development-skills" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+
+    <h2>Windsurf Announcements (2 Artikel)</h2>
+    <div class="article">
+        <div class="article-title">Product Agentic MapReduce</div>
+        <div class="article-date">01.07.2026</div>
+        <div class="article-summary">Agentic MapReduce kombiniert klassische MapReduce-Konzepte mit agentengesteuerter Codeanalyse, um Aufgaben wie Sicherheitsprüfungen über große Codebasen effizient zu bearbeiten, indem deterministische Selektoren zur Vorselektion relevanter Dateien genutzt werden. Die Methode unterteilt gefundene Kandidaten in begrenzte Batches, die parallel von dedizierten Agenten (z. B. in Devin-Sessions) analysiert und anschließend in einer Reduktionsphase zusammengeführt werden, sodass die Analysekosten gezielt an der Menge relevanten Codes und nicht an der Gesamtgröße der Repositorys orientiert werden. Benchmarks aus LOCA-bench zeigen, dass bei steigendem Kontext Claude Opus 4.5 von 96,0% auf 34,0% Erfolgsrate fällt, GPT-5.2 Medium von 72,0% auf 38,7% und Gemini 3 Flash von 64,0% auf 21,3%, während bei Suchagenten selbst die besten Systeme (DR-Tulu) in 90,2% der Fälle unterverifizierte Antworten liefern. Devin Security Swarm, das auf diesem Prinzip fußt, erreicht eine 72%-ige Erkennungsrate bei der Identifikation realer CVEs und demonstriert so, dass der Ansatz eine skalierbare und kosteneffiziente Lösung für ganzheitliche Sicherheitsanalysen darstellt.</div>
+        <a href="https://codeium.com/blog/agentic-map-reduce" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">Product Evaluating Security Swarm</div>
+        <div class="article-date">01.07.2026</div>
+        <div class="article-summary">Security Swarm orchestriert mehrere Agenten, die einen Code-Repository wie ein Sicherheitsteam analysieren, indem sie über deterministische Selektoren potenzielle Angriffsflächen identifizieren, parallel auswerten und Ergebnisse per Reducer konsolidieren. Das System verwendet die Architektur Agentic MapReduce, bei der ein Planer Regeln für Aspekte wie Routen, Authentifizierungsgrenzen und Deserialisierungssinks erstellt, die in jedem Dateisystem ohne Modelleinsatz abgearbeitet werden. Das Tool ermittelt in 72% der 50 getesteten Fälle aus einem Datensatz real veröffentlichter Schwachstellen – der über 14 Sprachen und Repos von 60 KB bis 92 MB reicht – die konkret definierte Zielschwachstelle und erreicht dabei rund zwei Drittel der Kosten des nächsten vergleichbaren Anbieters. Dabei setzt Security Swarm auf Evaluierungen an aktuellen, modellunbekannten CVEs, um sicherzustellen, dass die Entdeckung auf tatsächlichem Codeverständnis basiert.</div>
+        <a href="https://codeium.com/blog/security-swarm-eval" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+
+    <a href="index.html" class="back-link">&larr; Zur&uuml;ck zur &Uuml;bersicht</a>
+
+</body>
+</html>
