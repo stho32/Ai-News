@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Übersicht - Letzte 7 Tage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        h2 {
+            color: #555;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+        .article {
+            margin-bottom: 25px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+        }
+        .article-title {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        .article-date {
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+        .article-summary {
+            margin-bottom: 10px;
+        }
+        .article-link {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        .article-link:hover {
+            text-decoration: underline;
+        }
+        /* R00011: Section-Summary-Block, leicht abgesetzt von Einzel-Artikeln */
+        .section-summary {
+            margin: 10px 0 20px 0;
+            padding: 12px 16px;
+            background-color: #eef4fb;
+            border-left: 4px solid #0066cc;
+            font-style: italic;
+            color: #234;
+        }
+        /* R00012: Changelog-Digest-Block — visuell distinkt vom Section-Summary */
+        .changelog-digest {
+            margin: 10px 0 15px 0;
+            padding: 12px 16px;
+            background-color: #fff7e6;
+            border-left: 4px solid #d97706;
+            color: #3a2a00;
+        }
+        .changelog-links {
+            list-style: disc inside;
+            padding-left: 0;
+            margin: 0 0 25px 0;
+        }
+        .changelog-links li {
+            margin: 4px 0;
+        }
+        .changelog-date {
+            color: #666;
+            font-size: 0.9em;
+            margin-left: 6px;
+        }
+        /* R00013: Wochen-Tenor — visuell die staerkste der drei
+           Verdichtungsklassen (overall > section-summary > changelog-digest).
+           Linker Rand kraeftiger, Schrift groesser, klar abgesetzte
+           Hintergrundfarbe — vom Leser auf den ersten Blick als
+           Zusammenfassung der Wochenausgabe erkennbar. */
+        .overall-summary {
+            margin: 10px 0 25px 0;
+            padding: 18px 22px;
+            background-color: #f0fbf3;
+            border-left: 6px solid #15803d;
+            font-size: 1.1em;
+            color: #14271d;
+        }
+        /* R00011: Rueckspruglink zur index.html (oben und unten) */
+        .back-link {
+            display: inline-block;
+            margin: 10px 0 20px 0;
+            color: #0066cc;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>News Übersicht der letzten 7 Tage</h1>
+    <a href="index.html" class="back-link">&larr; Zur&uuml;ck zur &Uuml;bersicht</a>
+    <p>Generiert am: 11.07.2026 07:00 Uhr</p>
+    <p>Anzahl Artikel: 51 (zus&auml;tzlich 9 Changelog-Eintr&auml;ge aus 1 Quelle)</p>
+
+    <h2>Allan Kelly Blog (1 Artikel)</h2>
+    <div class="article">
+        <div class="article-title">My #1 lesson from Bavaria</div>
+        <div class="article-date">09.07.2026</div>
+        <div class="article-summary">Die Erfahrung an der EuroPLoP in Bayern verdeutlicht, dass die Interpretation einer Botschaft letztlich immer vom Empfänger bestimmt wird. Während er mehr als 100 Seiten an konference Papers vor einer anstrengenden Reise (acht Stunden, drei Züge, ein Flug und ein Taxi) studierte, wurde klar, dass selbst präzise Formulierungen dank individueller Kontexte unterschiedlich gelesen werden. Er fordert, Botschaften so einfach wie möglich zu halten, aktiv Feedback einzuholen und in Besprechungen systematisch die Ansichten aller Beteiligten einzubeziehen. Diese Erkenntnis ist angesichts des zunehmenden Einsatzes von KI und der generellen Tendenz zu passivem Empfangen von Informationen besonders relevant.</div>
+        <a href="https://www.allankelly.net/archives/10776/my-1-lesson-from-bavaria/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+
+    <h2>Anthropic News (6 Artikel)</h2>
+    <div class="section-summary">Anthropic treibt den breiten Einsatz von Claude Code voran, indem es dessen Integration in hardwarebasierte Validierungsprozesse, automatisierte Code-Scans und interne Entwicklungs-Tools vorantreibt, was zu erheblichen Effizienzsteigerungen und Sicherheitsverbesserungen in industriellen sowie staatlichen IT-Systemen führt. Die Erweiterung um ein Beta-Feature zur Nutzungsanalyse und die aktive Auseinandersetzung mit den ethischen, ökonomischen und gesellschaftlichen Implikationen fortschrittlicher KI werden durch externe Expertise, etwa durch den Einstieg von Dr. Ben Bernanke in den Long-Term Benefit Trust, untermauert.</div>
+    <div class="article">
+        <div class="article-title">Ben Bernanke appointed to Anthropic’s Long-Term Benefit Trust</div>
+        <div class="article-date">09.07.2026</div>
+        <div class="article-summary">Dr. Ben Bernanke, ehemaliger Vorsitzender der US-Notenbank von 2006 bis 2014 sowie Nobelpreisträger (2022), tritt als neues Mitglied in Anthropics Long-Term Benefit Trust (LTBT) ein. Das unabhängige Gremium überwacht als Kontrollorgan der Public Benefit Corporation Anthropic die langfristige Entwicklung fortschrittlicher KI und besitzt das Recht, Mitglieder in den Unternehmensvorstand zu berufen. Bernanke, der maßgeblich die Bewältigung der Finanzkrise 2008 steuerte und über einen umfangreichen akademischen Hintergrund verfügt, wird seine Expertise insbesondere in der Analyse der Auswirkungen von KI auf Wirtschaft und Arbeitsmarkt einbringen. Die Ernennung betont Anthropics Engagement, kritische Entscheidungen im Spannungsfeld zwischen wirtschaftlichem Erfolg und gesellschaftlichem Mehrwert verantwortungsvoll zu treffen.</div>
+        <a href="https://www.anthropic.com/news/ben-bernanke" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">Case Study UST is bringing Claude to physical AI</div>
+        <div class="article-date">09.07.2026</div>
+        <div class="article-summary">UST integriert Claude Code von Anthropic in den Fertigungsprozess, um Hardware-Designs frühzeitig zu verifizieren und Fehler in der Produktionskette zu minimieren. Bei der UST-Plattform iDEC lesen Algorithmen Hardware-Schematics ein, generieren und führen Regressionstests durch, wodurch Validierungszyklen von typischen vier Tagen auf 48 Stunden verkürzt werden – eine Reduktion um 50 bis 70 %. Claude Code vergleicht zudem Echtzeitdaten von Anlagen mit digitalen Zwillingen, um Firmwareregressionen und Signal-Integritätsfehler aufzudecken. Gleichzeitig werden weltweit 20.000 Ingenieure, Architekten und Berater auf den Einsatz von Claude geschult, um branchenübergreifend robuste, AI-gestützte Produktionsumgebungen zu etablieren.</div>
+        <a href="https://www.anthropic.com/news/ust-claude" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">Introducing a way to reflect on how you use Claude</div>
+        <div class="article-date">09.07.2026</div>
+        <div class="article-summary">Anthropic erweitert Claude um ein Beta-Feature, das Nutzern detaillierte Einblicke in ihr Nutzungsverhalten über Zeiträume von 1, 3, 6 und 12 Monaten bietet. Die in den Einstellungen von Claude (Web und Desktop) integrierte Reflexions-Dashboard visualisiert Nutzungsmuster und Hauptthemen, unterstützt durch präzise Berichte, die anhand des 4D AI Fluency Frameworks – Delegation, Beschreibung, Discernment und Diligence – analysiert werden. Entwickler und Architekten können damit individuell Ruhezeiten festlegen und Pausennudges konfigurieren, um den optimalen Einsatz von KI im Arbeitsalltag zu fördern. Datenschutz wird dabei gewährleistet, indem Daten aus Incognito-Chats und sensiblen externen Quellen nicht in die Analyse einfließen.</div>
+        <a href="https://www.anthropic.com/news/reflect-with-claude" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">Inviting hard questions</div>
+        <div class="article-date">09.07.2026</div>
+        <div class="article-summary">Anthropic fordert aktiv die Diskussion über zentrale Fragen zur gesellschaftlichen, ökonomischen und wissenschaftlichen Auswirkung von KI. Das Unternehmen, das als Public Benefit Corporation agiert, investiert in KI-Sicherheitsmaßnahmen und Forschung zur Interpretation der inneren Funktionsweisen und Verhaltensweisen seiner Modelle. Es werden umfangreiche Datenerhebungen durchgeführt, unter anderem mittels der Anthropic Public Record, bei der 52.000 US-Amerikaner und 81.000 Claude-Nutzer aus 159 Ländern zu ihren Hoffnungen und Sorgen bezüglich KI befragt wurden. Gleichzeitig etabliert Anthropic mit dem Anthropic Institute und einem Fellowship-Programm transparente Mechanismen zur Überwachung des Fortschritts bei der Realisierung seiner öffentlichen Nutzenziele.</div>
+        <a href="https://www.anthropic.com/news/hard-questions" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">Case Study Government of Alberta uses Claude to find and fix cybersecurity vulnerabilities across government systems</div>
+        <div class="article-date">06.07.2026</div>
+        <div class="article-summary">Seit 2025 nutzt das Ministerium für Technologie und Innovation in Alberta Claude Code mit den Modellen Claude Opus und Sonnet, um 466 Millionen Zeilen Code in 20 Stunden zu scannen, Sicherheitslücken zu erkennen und automatisierte Behebungen einzuleiten. Rund 50 Agenten arbeiteten parallel an 1.280 Anwendungen und 3.400 Code-Repositories, wobei ein zweistufiger Scan bekannte Schwachstellen per Regelprüfung identifizierte und genau lokalisierte. Claude Code generierte in vielen Fällen direkt Patches, schrieb bei fehlenden Tests zunächst die erforderlichen Prüfungen und modernisierte bei Bedarf ganze Module, sodass Aufgaben, die traditionell 6,5 Jahre in Anspruch genommen hätten, in Stunden erledigt wurden. Zusätzlich setzte Alberta kontinuierliche AI-Agenten zur Überprüfung und Absicherung aller Anwendungen ein, was die Grundlage für eine nachhaltige Modernisierung der gesamten Regierungs-IT bildet.</div>
+        <a href="https://www.anthropic.com/news/alberta-government-claude-cybersecurity" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">The Making of Claude Code Features</div>
+        <div class="article-date">06.07.2026</div>
+        <div class="article-summary">Anthropic entwickelte mit Claude Code ein internes Tool, das durch einen iterativen Entwicklungsprozess und kontinuierliches Nutzerfeedback eine stabile und präzise Codegenerierung ermöglicht. Das Team konzentrierte sich dabei auf die Optimierung der Eingabeanalyse und Ausgabeformatierung, wobei modulare Architekturen und feingranulare Modellanpassungen eine zentrale Rolle spielten. Benchmarks und interne Vergleichstests dienten der Validierung und Anpassung der technischen Maßnahmen, sodass die Lösung modernen Ansprüchen in der Softwareentwicklung gerecht wird. Der Prozess demonstriert, wie interne Werkzeuge durch schrittweise Optimierung und enge Abstimmung zwischen Entwicklern und Produktteams effizient zum Einsatz kommen.</div>
+        <a href="https://www.anthropic.com/features/making-of-claude-code" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+
+    <h2>GitHub Copilot Blog (2 Artikel)</h2>
+    <div class="article">
+        <div class="article-title">Better tools made Copilot code review worse. Here’s how we actually improved it.</div>
+        <div class="article-date">10.07.2026</div>
+        <div class="article-summary">GitHub hat die Code-Review-Funktion von Copilot dahingehend verbessert, dass statt der zuvor eigens entwickelten Code-Erkundungstools nun die standardisierten Werkzeuge grep, glob und view aus dem Copilot CLI-Harness genutzt werden. Erste Benchmark-Messungen zeigten, dass ohne Anpassung der Arbeitsanweisungen die Agenten zu breit suchten und unnötigen Kontext einbezogen, was zu höheren Review-Kosten führte. Durch eine präzisere Formulierung der Tool-Guidance, die den diff-zentrierten Workflow eines Reviews widerspiegelt – also erst über grep und glob potenzielle Kandidaten zu ermitteln und anschließend gezielt mit view den nötigen Kontext zu laden – konnten die durchschnittlichen Kosten um rund 20 % gesenkt werden, ohne dass die Qualität der Reviews verlorenging. Die Optimierung unterstreicht, wie entscheidend die Abstimmung von Toolanweisungen und Workflow-Design bei agentenbasierten Systemen ist.</div>
+        <a href="https://github.blog/ai-and-ml/github-copilot/better-tools-made-copilot-code-review-worse-heres-how-we-actually-improved-it/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">How GitHub Copilot enables zero DNS configuration for GitHub Pages</div>
+        <div class="article-date">08.07.2026</div>
+        <div class="article-summary">GitHub Copilot CLI in Kombination mit einem Namecheap-Skill automatisiert den gesamten Prozess, um in etwa 14 Minuten von einem leeren Repository zu einer live geschalteten GitHub Pages-Webseite mit benutzerdefinierter Domain (z. B. ghpagesblog.click für USD 2,00, ca. CAD 2,46) und HTTPS zu gelangen. Der Prozess umfasst das Erstellen einer Landingpage, die Aktivierung des Namecheap-API-Zugriffs, die Installation des Skills per Befehl „gh skill install github/awesome-copilot namecheap --scope user“ sowie das automatische Ersetzen von DNS-Parking-Einträgen durch die von GitHub Pages erforderlichen A-Records und einen CNAME für den WWW-Subdomain. Abschließend überprüft Copilot CLI die DNS-Auflösung und bestätigt, dass die Webseite einen gesunden HTTP 200-Statuscode zurückliefert, wodurch der ansonsten fehleranfällige DNS-Konfigurationsprozess signifikant vereinfacht wird.</div>
+        <a href="https://github.blog/ai-and-ml/github-copilot/how-github-copilot-enables-zero-dns-configuration-for-github-pages/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+
+    <h2>GitHub Copilot Changelog (9 Eintr&auml;ge)</h2>
+    <div class="changelog-digest">GitHub Copilot erweitert sein Angebot an Modellen, indem es nun die GPT‑5.6-Familie mit den Varianten Sol, Terra und Luna sowie das Open-Weight Modell Kimi K2.7 Code integriert. Neben diesen Modell-Updates führt Copilot zusätzliche Funktionen ein, wie den automatisierten Repository-Überblick bei Erstbesuch, agentengesteuerte Sessions über die neue Copilot App für Desktop sowie verbesserte Agent Customizations in JetBrains IDEs. Zugleich werden Schnittstellen und Endpunkte optimiert, etwa durch die zentrale Steuerung des OpenTelemetry-Datenexports im Rahmen von Copilot Chat und dem Copilot CLI, sowie einer direkten Integration von Modellanbietern im VS Code Marketplace. Administratoren und Enterprise-Nutzer profitieren zudem von erweiterten Reporting- und Abrechnung</div>
+    <ul class="changelog-links">
+        <li><a href="https://github.blog/changelog/2026-07-09-ask-copilot-for-a-repository-overview" class="article-link" target="_blank">Ask Copilot for a repository overview</a> <span class="changelog-date">09.07.2026</span></li>
+        <li><a href="https://github.blog/changelog/2026-07-09-openais-gpt-5-6-sol-terra-and-luna-are-now-available-in-github-copilot" class="article-link" target="_blank">OpenAI’s GPT-5.6 Sol, Terra, and Luna are now available in GitHub Copilot</a> <span class="changelog-date">09.07.2026</span></li>
+        <li><a href="https://github.blog/changelog/2026-07-07-codex-as-agent-provider-and-agentic-enhancements-in-jetbrains-ides" class="article-link" target="_blank">Codex as agent provider and agentic enhancements in JetBrains IDEs</a> <span class="changelog-date">08.07.2026</span></li>
+        <li><a href="https://github.blog/changelog/2026-07-08-enterprise-managed-opentelemetry-export-for-vs-code-and-cli" class="article-link" target="_blank">Enterprise-managed OpenTelemetry export for VS Code and CLI</a> <span class="changelog-date">08.07.2026</span></li>
+        <li><a href="https://github.blog/changelog/2026-07-08-github-copilot-in-visual-studio-code-june-2026-releases" class="article-link" target="_blank">GitHub Copilot in Visual Studio Code, June 2026 releases</a> <span class="changelog-date">08.07.2026</span></li>
+        <li><a href="https://github.blog/changelog/2026-07-07-kimi-k2-7-now-available-for-copilot-business-and-enterprise" class="article-link" target="_blank">Kimi K2.7 now available for Copilot Business and Enterprise</a> <span class="changelog-date">08.07.2026</span></li>
+        <li><a href="https://github.blog/changelog/2026-07-07-copilot-billing-preview-app-will-be-retired-on-august-3" class="article-link" target="_blank">Copilot Billing Preview app will be retired on August 3</a> <span class="changelog-date">07.07.2026</span></li>
+        <li><a href="https://github.blog/changelog/2026-07-07-github-copilot-app-available-to-all" class="article-link" target="_blank">GitHub Copilot app available to all</a> <span class="changelog-date">07.07.2026</span></li>
+        <li><a href="https://github.blog/changelog/2026-07-07-per-user-budgets-for-cost-centers-in-the-billing-ui" class="article-link" target="_blank">Per-user budgets for cost centers in the billing UI</a> <span class="changelog-date">07.07.2026</span></li>
+    </ul>
+
+    <h2>Google AI Blog (3 Artikel)</h2>
+    <div class="section-summary">Die neuen Gemini API Managed Agents ermöglichen asynchrone Hintergrundprozesse mit direkter Anbindung an remote MCP-Server, lokaler Geschäftslogik via Custom Functions und einem nahtlosen Credential-Refresh innerhalb isolierter Cloud-Sandboxes. Drei neue FireSat-Satelliten und eine Kooperation mit der UN sowie weiteren Partnern führen KI-gestützte Frühwarnsysteme wie WeatherNext und Flood Hub ein, die durch präzise Sensordaten und offene Vorhersagemodelle Feuer- und Naturkatastrophen frühzeitig detektieren und bewerten.</div>
+    <div class="article">
+        <div class="article-title">Expanding Managed Agents in the Gemini API</div>
+        <div class="article-date">07.07.2026</div>
+        <div class="article-summary">Die neuen Gemini API Managed Agents unterstützen asynchrone Hintergrundausführung, indem durch Setzen von &quot;background: true&quot; ein sofortiges ID-Feedback ermöglicht wird, sodass langlaufende Tasks serverseitig abgewickelt und über Polling verfolgt werden können. Die Erweiterungen umfassen zudem die direkte Anbindung an remote MCP-Server, wodurch aufwändige eigene Proxy-Implementierungen entfallen, sowie die Integration von Custom Functions, die über einen Wechsel in den &quot;requires_action&quot;-Status die Ausführung lokaler Geschäftslogik ermöglichen. Zudem lässt sich durch die Übergabe der bestehenden &quot;environment_id&quot; ein Credential-Refresh durchführen, ohne dass der Zustand des isolierten Cloud-Sandboxesystems beeinträchtigt wird. Die praktischen Beispiele mit dem JavaScript SDK &quot;@google/genai&quot; (und entsprechenden Dokumentationen für Python sowie cURL) orientieren sich an aktuellen Entwickleranforderungen und Produktbedürfnissen.</div>
+        <a href="https://blog.google/innovation-and-ai/technology/developers-tools/expanding-managed-agents-gemini-api/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">Three new satellites join the fight against wildfires</div>
+        <div class="article-date">07.07.2026</div>
+        <div class="article-summary">Drei neue FireSat-Satelliten, gestartet von der Vandenberg Space Force Base in Kalifornien, erweitern das globale Wildfeuer-Erkennungssystem der Earth Fire Alliance. Google Research kooperiert mit dem Satellitenhersteller Muon Space und setzt auf die Technologien der erfolgreichen Pilotmission, bei der Feuer von nur 5×5 Metern erkannt wurden. Das bewährte Sensorsystem, das bereits kleine, niedrig intensive Brände erfasste, wird in der neuen Konstellation als kontinuierliche Überwachungsinfrastruktur eingesetzt, um Feuer frühzeitig zu detektieren. Google.org unterstützt das Vorhaben mit über 15 Mio. US-Dollar und demonstriert damit den praktischen Einsatz von KI zur Steigerung der Klimaresilienz.</div>
+        <a href="https://blog.google/innovation-and-ai/models-and-research/google-research/firesat-satellites/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">Using Google&#x27;s AI breakthroughs for crisis resilience</div>
+        <div class="article-date">07.07.2026</div>
+        <div class="article-summary">Google kooperiert mit der UN und weiteren Partnern, um durch KI-gestützte Vorhersage- und Frühwarnsysteme Naturkatastrophen wirkungsvoll zu begegnen. So prognostizierte das WeatherNext-Modell beispielsweise Hurricane Melissa in Jamaika fünf Tage im Voraus, während der Flood Hub mehr als 2 Milliarden Menschen in über 150 Ländern abdeckt – unterstützt durch lokale Stromfließdaten, die die Genauigkeit in ungeregelten Regionen deutlich erhöhen. Open-Source-Initiativen wie der Groundsource-Datensatz und ein neu veröffentlichter Hydrologiemodellrahmen, der in Zusammenarbeit mit dem Tschechischen Hydrometeorologischen Institut adaptiert wurde, bieten Forschern die Möglichkeit, maßgeschneiderte Vorhersageansätze zu entwickeln. Zudem ermöglichen unter anderem das Android Earthquake Alert-System und der DISHA Damage Assessment Workflow, der Satellitenbilder mit Open Buildings-Analysen kombiniert, eine schnelle und präzise Bewertung von Infrastrukturschäden im Krisenfall.</div>
+        <a href="https://blog.google/innovation-and-ai/technology/research/technology-global-crisis-resilience/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+
+    <h2>Google AI Blog - Gemini (1 Artikel)</h2>
+    <div class="article">
+        <div class="article-title">Gemini’s new study notebooks help you learn with personalized lessons, practice quizzes and a custom progress dashboard.</div>
+        <div class="article-date">10.07.2026</div>
+        <div class="article-summary">Gemini Study Notebooks in der Gemini App bieten ein personalisiertes Lernsystem, bei dem Nutzer Themen und Lerneinheiten definieren und in kleinen, gezielten Lektionen abgeholt werden. Die Anwendung generiert individuelle Practice Quizzes und zeigt in einem eigens entwickelten Dashboard den Lernfortschritt an, sodass Stärken und Defizite schnell sichtbar werden. Nutzer können so effektiv priorisieren, welche Inhalte als Nächstes vertieft werden sollen, und erhalten damit eine strukturierte, datenbasierte Unterstützung beim Lernen. Unterstützt wird das Angebot von Google, das mit Gemini eine Plattform bereitstellt, die besonders auf effiziente Wissensvermittlung abzielt.</div>
+        <a href="https://blog.google/innovation-and-ai/products/gemini-app/how-to-make-gemini-study-notebooks/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+
+    <h2>Kent Beck - Tidy First (1 Artikel)</h2>
+    <div class="article">
+        <div class="article-title">When Complaints Are Good News</div>
+        <div class="article-date">10.07.2026</div>
+        <div class="article-summary">Kundenbeschwerden signalisieren im 3X-Modell (Explore, Expand, Extract) deutlich, dass ein neues Produkt auf dem Markt Anklang findet und somit Raum für gezielte Verbesserungen besteht. Die bewusste Entscheidung, vorerst nur einen eingeschränkten Nutzerkreis zu bedienen, dient dazu, die Nachfrage zu testen und eine spätere Skalierung zu ermöglichen. Kritisches Feedback wird als wertvoller Indikator für notwendige Optimierungsschritte gewertet, anstatt es als negatives Zeichen zu interpretieren. Diese Herangehensweise transformiert anfängliche Limitierungen in strategische Vorteile für die Weiterentwicklung des Produkts.</div>
+        <a href="https://newsletter.kentbeck.com/p/when-complaints-are-good-news" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+
+    <h2>Martin Fowler (2 Artikel)</h2>
+    <div class="article">
+        <div class="article-title">Viability of local models for coding</div>
+        <div class="article-date">07.07.2026</div>
+        <div class="article-summary">Die Evaluierung lokaler Modelle für das agentische Coding zeigt, dass RAM, Prozessorleistung, Memory Bandwidth und Kontextfenstergröße (mindestens 32K, oft 64K) entscheidend sind, da Modelle zwischen 15 und 25 GB am besten laufen. Auf den getesteten Apple M3 Max (48 GB) und M5 Pro (64 GB) wurden Modelle wie Qwen3.6 35B-A3B MoE Q4 GGUF (22 GB), Qwen3.6 Coder Next 80B MoE GGUF (45 GB) sowie verschiedene Gemma 4 Varianten (von 7,5 bis 29 GB) eingesetzt, wobei MoE-Architekturen durch selektives Laden von Experten signifikant zur besseren RAM-Ausnutzung beitragen. Die Integration in Coding-Harnesses wie OpenCode und Pi gestaltet sich herausfordernd, da unterschiedliche Tool-Schema (z. B. filePath versus file.path) zu fehlerhaften Tool-Calls führen können, die zwar häufig selbstkorrigiert werden, jedoch den Einsatz von komplexeren agentischen Aufgaben erschweren. Durch den Einsatz von LM Studio mit 4BIT-Quantisierung und der Anpassung des Kontextfensters konnte eine erhebliche Verbesserung der Antwortgeschwindigkeit erzielt werden, während Modelle ohne spezielle Optimierungen weiterhin als unzuverlässig für plug-and-play-Anwendungen gelten.</div>
+        <a href="https://martinfowler.com/articles/exploring-gen-ai/local-models-for-coding-factors.html" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">Fragments: July 6</div>
+        <div class="article-date">06.07.2026</div>
+        <div class="article-summary">Thoughtworks organisierte in Europa den zweiten Future of Software Development Retreat, bei dem parallele Sessions die fortschreitende Praxis des agentischen Programmierens und neue Konzepte wie Harness Engineering beleuchteten. Anhand von Token-Kosten werden Architekturentscheidungen neu bewertet – so zeigte ein internes Dashboard eines Unternehmens, dass die Token-Kosten von $5 Mio. im August 2025 auf $15 Mio. im Mai 2026 anstiegen und im laufenden Fiskaljahr $120 Mio. erreichen könnten. Diskussionen über Design und Architektur stellen die Relevanz herkömmlicher Prinzipien in Frage, da intelligente Systeme wie „The Genie“ sowohl von guter Modularität als auch von präziser Namensgebung profitieren, was sich auch in der Praxis widerspiegelt. Erfahrungsberichte, insbesondere von Greg Herlein und Gergely Orosz, unterstreichen, dass der Wandel in der Softwareentwicklung bereits in der Produktion umgesetzt wird und gleichzeitig Herausforderungen wie unrealistische DMCA-Ansprüche und die Notwendigkeit von Mechanistic Sympathy für LLMs adressiert werden.</div>
+        <a href="https://martinfowler.com/fragments/2026-07-06.html" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+
+    <h2>Microsoft .NET Blog (1 Artikel)</h2>
+    <div class="article">
+        <div class="article-title">Modernize .NET applications in the GitHub Copilot app</div>
+        <div class="article-date">09.07.2026</div>
+        <div class="article-summary">GitHub Copilot Upgrade führt den Modernisierungsprozess von .NET-Anwendungen als durchgängigen Workflow durch, der von der Analyse der App über die Identifikation von Versionsproblemen und Abhängigkeiten bis zur Erstellung eines strukturierten Implementierungsplans reicht. Der Upgrade Agent ermittelt, welche NuGet-Pakete und API-Änderungen erforderlich sind, und teilt die Arbeit in Einzelschritte auf, die im interaktiven Upgrade Canvas visuell nachverfolgt werden können. Entwickler können den Fortschritt in Echtzeit beobachten, wobei der Canvas den Zustand der Bewertung, Codeänderungen, Build-Fehler und finalen Ergebnisse widerspiegelt. Die Lösung integriert sich sowohl in Visual Studio als auch in Visual Studio Code und den Copilot CLI, sodass sie nahtlos in den bereits gewohnten Entwicklungsworkflow eingebunden werden kann.</div>
+        <a href="https://devblogs.microsoft.com/dotnet/modernize-dotnet-in-github-copilot-app/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+
+    <h2>Pragmatic Engineer Newsletter (3 Artikel)</h2>
+    <div class="section-summary">Bun migriert von Zig zu Rust in nur 11 Tagen mit Fable, was durch rigorose Tests und ein umfassendes Rewrite-Framework ermöglicht wird und gleichzeitig den Wettkampf im Bereich Coding-LLMs mit Modellen wie GPT‑5.6 Sol, Grok 4.5 und Muse befeuert. Gergely Orosz teilt praxisnahe Einblicke zu AI-Strategien, Interview-Methoden und organisatorischen Herausforderungen, während KI-generierte Lebensläufe, gefälschte Bewerberprofile und überfüllte Inbound-Kanäle die Gewinnung spezialisierter Talente in Bereichen wie AI, ML und FDE verkomplizieren.</div>
+    <div class="article">
+        <div class="article-title">The Pulse: What can we learn from Bun’s rapid Rust rewrite with AI?</div>
+        <div class="article-date">09.07.2026</div>
+        <div class="article-summary">Bun migriert innerhalb von 11 Tagen von Zig zu Rust mithilfe von Fable, was normalerweise einen einjährigen Aufwand für ein kleines Team erfordert hätte und dabei Token-Kosten in Höhe von 165.000 US-Dollar verursacht. Die technische Umstellung demonstriert, wie rigorose Tests und ein gut ausgearbeitetes Rewrite-Framework solch ambitionierte Migrationsprojekte beschleunigen können. Parallel dazu verschärfen sich die Wettbewerbe im Bereich Coding-LLMs, wobei neben Anthropic’s Fable nun auch OpenAI mit GPT‑5.6 Sol, Cursor mit Grok 4.5 und Meta mit Muse auftrumpfen – während Gemini unerwartet hinter den Top-Modellen zurückbleibt. Ferner mehren sich Berichte, wonach nordkoreanische Hacker mittels KI-Filter remote Interviews infiltrieren, was die Vertrauensfrage bei der Rekrutierung im digitalen Zeitalter weiter kompliziert.</div>
+        <a href="https://newsletter.pragmaticengineer.com/p/the-pulse-what-can-we-learn-from" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">The Pragmatic Engineer AMA</div>
+        <div class="article-date">08.07.2026</div>
+        <div class="article-summary">Gergely Orosz beantwortet in diesem AMA-Fragestunde Fragen zu AI-Strategien, modernen Interview-Techniken und organisatorischen Herausforderungen in Software-Engineering-Teams. Er argumentiert, dass LeetCode-basierte Interviews weiterhin bestehen, da sie Kandidaten ansprechen, die bereit sind, auch wenig praxisrelevante Aufgaben zu bewältigen und somit langfristig in großen Unternehmen Erfolg haben. Orosz diskutiert, wie Standards wie MCP – eingeführt im November 2024 – im Kontext von Modellen wie GPT-4o, Claude 3.5 Sonnet und Gemini 1.5 Pro entstanden, und weist darauf hin, dass AI-Anwendungen zwar Effizienz versprechen, jedoch auch zu einem gezielten Verfall der handcodierten Fähigkeiten führen können. Er teilt dazu persönliche Erfahrungen, die von einem Wandel in seiner schriftstellerischen Tätigkeit nach den Umbrüchen bei Uber und Bunq bis hin zu investigativen Einblicken bei Pollen reichen.</div>
+        <a href="https://newsletter.pragmaticengineer.com/p/the-pragmatic-engineer-ama" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">Tech jobs market in 2026, part 3: hiring managers &amp; job seekers</div>
+        <div class="article-date">07.07.2026</div>
+        <div class="article-summary">Hiring Manager und Kandidaten stehen in einem paradoxen Dilemma, in dem qualifizierte Bewerbungen selten den überfüllten, oft durch KI optimierten Inbound-Kanal durchdringen – beispielsweise erhielt ein Unternehmen in Seattle 800 Bewerbungen innerhalb von drei Monaten, während relevante Profile vorwiegend über persönliche Netzwerke gefunden werden. KI-generierte Lebensläufe mit Schlagwörtern wie RAG und Inference irritieren Recruiter, da sie häufig nicht die behauptete fachliche Tiefe widerspiegeln; Fake-Bewerber und externe Interviewagenturen erschweren zusätzlich die Vertrauensbasis im Einstellungsprozess. Während spezialisierte Rollen in AI, ML und FDE in den USA und anderen Märkten explodierende Nachfrage verzeichnen, kämpfen erfahrene Engineering Manager und Staff+-Profile um passende Angebote, obwohl Firmen wie DuckBill Group und namhafte Big Tech Unternehmen weiterhin auf Top-Kandidaten angewiesen sind.</div>
+        <a href="https://newsletter.pragmaticengineer.com/p/tech-jobs-market-in-2026-part-3-hiring" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+
+    <h2>Simon Willison (31 Artikel)</h2>
+    <div class="section-summary">Beitragsinhalte zeigen den Wandel von klassischen Web- und Datenbanktechnologien zu modernen, agenten- und KI-gestützten Systemen. Frühere Diskussionen rund um Tools wie Django, sqlite‑utils und Datasette fokussierten sich auf Performance-Optimierung, Refaktorisierung und robuste Architektur, etwa bei Code-Portierungen wie Bun von Zig nach Rust. Neuere Beiträge beleuchten den Siegeszug von LLMs, wobei detaillierte Releases und Benchmarks von Modellen wie GPT‑5.x, Hy3 und GLM‑5.2 praxisnahe Lösungsansätze und Herausforderungen in agentenzentrierten Workflows demonstrieren.</div>
+    <div class="article">
+        <div class="article-title">2008</div>
+        <div class="article-date">11.07.2026</div>
+        <div class="article-summary">Das Archiv ordnet alle Beiträge aus 2008 chronologisch und listet pro Monat konkrete Statistiken zu Einträgen, Links und Zitaten, etwa drei Beiträge mit 96 Links und 20 Zitaten im Januar oder 55 Links mit neun Zitaten im April. Es gruppiert Posts zu technischen Themen wie OpenID, Identitätsprojektion, OAuth, Debugging im Django-Framework, jQuery-Style Chainings in Django ORM sowie zur Integration von Microformats. Plattformen wie Yahoo!, Flickr und Projekte wie Django People werden konkret benannt und liefern Einblicke in Best Practices und Herausforderungen der Zeit. Beiträge zu branchenspezifischen Veranstaltungen wie DjangoCon und PyCon UK unterstreichen zudem die enge Verzahnung von Community-Events und technischer Entwicklung.</div>
+        <a href="https://simonwillison.net/2008/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">2010</div>
+        <div class="article-date">11.07.2026</div>
+        <div class="article-summary">Das Archiv strukturiert 2010-Beiträge in monatliche Abschnitte mit genauen Zahlen zu Einträgen, Links und Zitaten – etwa Januar mit 1 Eintrag (46 Links, 6 Zitate) und Oktober mit 66 Einträgen (23 Links, 5 Zitate). Die Übersicht verlinkt Beiträge, die spezifische Fragestellungen zu Technologien wie Django, Redis, SQLAlchemy, Solr und NoSQL-Datenbanken behandeln. Mehrere Posts adressieren Konfigurationen von API-Wrappern, serverseitige Einstellungen und architektonische Entscheidungen im Zusammenhang mit Web-Frameworks und Datenbanklösungen. Die lückenlose Einbindung früherer und späterer Jahrgänge (2002 bis 2026) erlaubt einen direkten Zugriff auf technische Diskussionen und historische Entwicklungstrends.</div>
+        <a href="https://simonwillison.net/2010/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">2011</div>
+        <div class="article-date">11.07.2026</div>
+        <div class="article-summary">Die Archivseite für 2011 listet chronologisch über 150 Einträge aus Simon Willisons Blog auf, die eine breite Palette technischer Fragestellungen dokumentieren. Die Beiträge decken Themenbereiche ab, die von der Netzwerkinfrastruktur (z. B. drahtloses Internet bei Konferenzen) über Datenbankmigrationen in Django – inklusive Fragen zu Tools wie South – bis hin zum Einsatz von node.js und Fragen zu Servertechnologien (Apache, IIS, Nginx) reichen. Wiederkehrende Diskussionen betreffen zudem die Organisation und Vermarktung von Tech-Konferenzen, Eventmanagement und Fragen zur Skalierbarkeit von Webanwendungen. Die Sammlung spiegelt zudem das Interesse der Community an praxisnahen Fragestellungen rund um Open-Source-Entwicklung und moderne Webtechnologien im Jahr 2011 wider.</div>
+        <a href="https://simonwillison.net/2011/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">2012</div>
+        <div class="article-date">11.07.2026</div>
+        <div class="article-summary">Die Archivseite für 2012 ordnet Beiträge nach Monaten – so verzeichnet beispielsweise der Januar 63 und der Februar 58 Einträge – und zeigt damit, welche thematischen Schwerpunkte die Entwickler-Community in diesem Jahr beschäftigten. Beiträge thematisieren technische Detailfragen, von ersten PHP-Anwendungen, über den Einsatz von Apache Solr, Django oder Node.js, bis hin zu Skalierbarkeitsproblemen in NoSQL-Systemen. Anfragen zu UI/UX, Event- und Konferenzorganisation sowie zu optimierten Workflows reflektieren zudem strategische und praxisnahe Herausforderungen im Software-Development. Die klare monatliche Gliederung erleichtert es, Trends und Diskussionsschwerpunkte retrospektiv nachzuvollziehen.</div>
+        <a href="https://simonwillison.net/2012/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">2013</div>
+        <div class="article-date">11.07.2026</div>
+        <div class="article-summary">Archiveintrag 2013 fasst 400 Blogbeiträge zusammen, die Simon Willison über das Jahr hinweg publizierte und in chronologischen Monatsübersichten strukturiert sind. Beiträge decken technisch-strategische Fragen zu Themen wie Node.js, Python, Web-Deployment, API-Integration und Datenstrukturen ab sowie Fragen zu DevOps, SEO und Konferenzorganisation. Die Auflistung enthält unter anderem Beiträge zu spezifischen Herausforderungen wie &quot;Do comments really count for SEO link building?&quot; oder &quot;Why is node.js so much faster?&quot; und verweist auch auf Diskussionen zu Startup-Finanzierung, Y Combinator und Softwarelizenzierung. Ein gesponserter Hinweis auf Teleport und dessen white paper zu Agent Trust ergänzt das Bild eines breit gefächerten Technologie- und Entwicklerdiskurses im Jahr 2013.</div>
+        <a href="https://simonwillison.net/2013/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">2014</div>
+        <div class="article-date">11.07.2026</div>
+        <div class="article-summary">Das Archiv für 2014 listet im Januar 17 Beiträge, die Fragen zu Go versus node.js, Twitters Wechsel von Single-Page Applications, LinkedIn Events und Y Combinator Equity (u.a. $20k Seed Capital) adressieren. Im Februar werden in 9 Einträgen Themen wie die Kommunikation zwischen Go-Bibliotheken und Python, der Vergleich von Django-Formularen mit reinem HTML, Präsentationstipps sowie Fragen zur Veranstaltungsorganisation behandelt. Im März verfasst der Autor 5 Beiträge, die von der Auswahl geeigneter JavaScript-Frameworks bis hin zu Leistungsverbesserungen durch den Wechsel der Programmiersprache und Aktualisierungen von Demo-Anwendungen reichen. Das Weblog verweist zudem auf Archivseiten von 2002 bis 2026 und integriert einen Sponsoringhinweis zu Teleport, das Lösungen zur Steuerung von KI-Agenten anbietet.</div>
+        <a href="https://simonwillison.net/2014/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">2015</div>
+        <div class="article-date">11.07.2026</div>
+        <div class="article-summary">Das Archiv 2015 listet Beiträge auf, die technische Themen und branchenspezifische Herausforderungen aus verschiedenen Perspektiven beleuchten. Beiträge diskutieren den Vergleich traditioneller Webframeworks wie Ruby on Rails, Spring Boot und PHP mit modernen, reaktiven JavaScript-Frameworks, unter anderem Angular 2.0, Meteor, Node.js und Firebase, und prüfen, ob sich diese Paradigmen grundlegend ändern. Weitere Einträge adressieren praxisnahe Fragestellungen wie Verhandlungen um kostenlose Konferenzräume in London sowie Strategien, innerhalb von fünf Monaten eine Position bei YC-finanzierten Startups zu erreichen. Ein weiterer Artikel widmet sich Freizeit- und Reisemöglichkeiten innerhalb Europas.</div>
+        <a href="https://simonwillison.net/2015/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">2016</div>
+        <div class="article-date">11.07.2026</div>
+        <div class="article-summary">Das Jahr 2016 umfasst 21 Beiträge, die technische Fragestellungen und persönliche Einblicke verbinden. Beiträge zu Performance-Herausforderungen bei der Django-basierten Seite snapEDA.com, Investmentfragen im Kontext von Y Combinator und Strategien zum kostengünstigen Deployment von Echtzeit-Anwendungen stehen neben Erfahrungsberichten aus Städten wie Mexiko-Stadt und Nashville. Die Archivstruktur gruppiert die Inhalte nach Monaten – von 2 Beiträgen im Mai und Dezember über 4 im August und September bis zu 6 im Oktober und 3 im November – und bietet einen facettenreichen Überblick über operative Softwarethemen und individuelle Karriereentscheidungen.</div>
+        <a href="https://simonwillison.net/2016/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">2018</div>
+        <div class="article-date">11.07.2026</div>
+        <div class="article-summary">Das Archiv aus 2018 ordnet Beiträge thematisch und monatlich, wobei einzelne Monate detailliert Posts mit konkreten Inhalten wie Datasette Publish, Analyse von Twitter-Followern und autarker Datenpublizierung aufführen. Beiträge zu Datasette, Django ORM und fastai dokumentieren technische Ansätze, darunter das Erstellen von Plugins für Cluster-Visualisierungen und Ansätze zur Optimierung von Python Docker Images. Analysen reichen von der Untersuchung von US-Wahl-Troll-Tweets über russische Facebook Ads bis hin zu schnellen Autocomplete-Suchlösungen, die auf konkreten Anwendungsszenarien basieren. Die Auflistung bietet erfahrenen Entwicklern einen kompakten Überblick über diverse technische Projekte und methodische Überlegungen im Jahr 2018.</div>
+        <a href="https://simonwillison.net/2018/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">2019</div>
+        <div class="article-date">11.07.2026</div>
+        <div class="article-summary">2019 präsentieren Beiträge zu SQLite-Algorithmen, Datenbanktools und Deployment-Strategien. Konkrete Releases wie Datasette 0.28, Datasette 0.33 und sqlite‑utils 2.0 belegen den kontinuierlichen Fortschritt im Umgang mit SQL-basierten Interfaces und asynchrone Middleware, etwa ASGI für Single Sign-on mit GitHub oder Logging. Technische Weeknotes fassen iterative Entwicklungen, etwa Portierungen, Versuchsreihen und die Integration von Datenquellen für Anwendungen wie PG&amp;E-Ausfalltracking und Baum-Inventare, detailliert zusammen. Das Archiv umfasst zudem branchenfremde, aber technisch interessante Projekte, die das breite Spektrum der Experimente und Tools im Jahr 2019 reflektieren.</div>
+        <a href="https://simonwillison.net/2019/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">2020</div>
+        <div class="article-date">11.07.2026</div>
+        <div class="article-summary">Simon Willison verknüpft in seinen Einträgen aus 2020 technische Themen mit konkreten Software-Releases, darunter mehrere Versionen von Datasette (0.39, 0.40, 0.41, 0.43, 0.44, 0.45, 0.48, 0.49, 0.50, 0.51 und 0.52) sowie begleitende Projekte wie datasette-graphql, datasette-ripgrep und datasette-indieauth. Er integriert in seinen Beiträgen praktische Einsätze von GitHub Actions und Cloud Run, demonstriert fortgeschrittene SQLite-Operationen wie ALTER TABLE und dokumentiert den Einsatz von Tools wie pytest, Black sowie IndieAuth. Die Posts bedienen sowohl Themen wie kontinuierliche Deployments und Plugin-Entwicklungen als auch datengetriebene Workflows, etwa bei der Umstellung auf Evernote-SQLite-Exporter</div>
+        <a href="https://simonwillison.net/2020/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">2021</div>
+        <div class="article-date">11.07.2026</div>
+        <div class="article-summary">Das Jahr 2021 zeigt eine kontinuierliche Arbeit an Open-Source-Projekten und Tools, die in monatlichen Einträgen sauber dokumentiert werden. Datasette wird mehrfach in unterschiedlichen Versionen vorgestellt – unter anderem mit Releases 0.54, 0.57, 0.58, 0.58.1 und 0.59 – während sqlite‑utils (z. B. Version 3.7) und django‑sql‑dashboard (mit Version 1.0) regelmäßige Updates erhalten. Projekte wie VaccinateCA, VIAL und Initiativen zur Integration von GeoDjango in bestehende Django-Projekte werden vertieft besprochen, wobei auch technische Details wie Cross‑Database Queries in SQLite, die Einrichtung von Unix Domain Sockets und das Streaming großer API‑Antworten thematisiert werden. Ein Eintrag hebt zudem die Meldung eines asyncio‑Bugs in Python 3.10 hervor, was die kritische Auseinandersetzung mit aktuellen Entwicklungen in der Python‑Welt unterstreicht.</div>
+        <a href="https://simonwillison.net/2021/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">2022</div>
+        <div class="article-date">11.07.2026</div>
+        <div class="article-summary">2022 umfasst ein breites Spektrum technischer Themen, das von konkreten Versionsveröffentlichungen wie sqlite‑utils 3.20/3.21, Datasette 0.60, 0.61, 0.63 und 1.0a2 bis hin zu KI-Anwendungen mit GPT‑3, DALL‑E und Stable Diffusion reicht. Beiträge zu Implementierungen wie dem Bundling von Binärtools in Python Wheels, der Nutzung von pip install URL mit GitHub sowie dem Aufbau von Write APIs für Datasette zeugen von praxisnahen Lösungsansätzen. Diverse Weeknotes erläutern technische Entscheidungen rund um Matter wie Parallel-SQL-Queries, Middleware-Optimierungen und den Einsatz von Fly Machines für Datasette Cloud. Themen wie automatisierte Screenshots mit shot‑scraper, die Integration von Google Drive in SQLite und Sicherheitsaspekte bei Prompt Injection runden das facettenreiche Bild der technischen Entwicklungen 2022 ab.</div>
+        <a href="https://simonwillison.net/2022/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">2023</div>
+        <div class="article-date">11.07.2026</div>
+        <div class="article-summary">2023 gliedert Beiträge nach Monatsabschnitten mit detaillierten Einblicken in Entwicklungen rund um Datasette (z. B. Version 0.64), ChatGPT, LLM-CLI-Tools und SQLite-gestützte Datenanalysen. Die Artikel adressieren technische Herausforderungen, etwa bei Prompt Injection (u. a. in der November-Ausgabe) und bei der Integration eigenständiger Sprachmodelle wie Llama 2 und Stanford Alpaca. Woche für Woche dokumentiert der Autor praktische Erfahrungen, die von Tool-Releases wie download-esm und sqlite-utils-Plugins bis zu konkreten Benchmarks und Versionen (z. B. Midjourney 5.1) reichen. Die Struktur des Archivs ermöglicht einen schnellen Überblick über ein breit gefächertes Spektrum an Themen aus den Bereichen KI, Datenmanagement und Entwickler-Tools.</div>
+        <a href="https://simonwillison.net/2023/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">2024</div>
+        <div class="article-date">11.07.2026</div>
+        <div class="article-summary">Das Archiv für 2024 listet monatsweise Beiträge, die sich mit aktuellen Entwicklungen in Bereichen wie LLMs und Open-Source-Tools beschäftigen. Beiträge zu Sprachmodellen erwähnen konkrete Releases wie LLM 0.13, LLM 0.15, Llama 3, Llama 3.2 Vision, Claude 3 Opus, Claude 3.5 und Gemini 1.5 sowie Gemini 2.0 Flash. Technische Diskussionen umfassen u.a. die Anwendung von ChatGPT in Sondermodi, Erweiterungen für SQLite mit Hilfe des Code Interpreters, Python-Paket-Publishing über PyPI, Updates zu Datasette (Versionen 1.0a8 und 1.0a14) und eine neue Plugin-Architektur für Django. Experimente zu Datenvisualisierung, OCR im Browser und API-Interaktionen mit OpenAI, Anthropic und anderen Plattformen dokumentieren praxisnahe Erkenntnisse und Benchmarks.</div>
+        <a href="https://simonwillison.net/2024/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">2025</div>
+        <div class="article-date">11.07.2026</div>
+        <div class="article-summary">Das Archiv für 2025 gruppiert Simon Willisons Beiträge nach Monaten und zeigt detaillierte Einträge aus Themen wie LLM-Entwicklung, KI-Sicherheit, agentenzentrierte Systeme und Softwareentwicklung. Es werden konkrete Versionsnummern und Projekte erwähnt, beispielsweise LLM 0.22, 0.24, 0.25, 0.26, 0.27, GPT-4.5, GPT-4.1, GPT-5 sowie Claude 3.7 Sonnet, Claude Opus 4.5, Gemini 2.5, Gemini 3 Pro und GPT-5.2. Die Monatsübersichten, etwa 9 Einträge im Januar, 7 im Februar oder 13 im November, dokumentieren kontinuierlich neue technische Ansätze, Sicherheitsmuster wie Prompt Injection Design Patterns und Entwicklungen bei Open Source sowie proprietären LLM-Technologien. Die Auflistung liefert einen präzisen Überblick über den Fortschritt und die diversen Perspektiven in der LLM- und KI-Landschaft im Jahr 2025.</div>
+        <a href="https://simonwillison.net/2025/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">2026</div>
+        <div class="article-date">11.07.2026</div>
+        <div class="article-summary">Das Archiv für 2026 gliedert Beiträge zu vielfältigen Themen von agentischem Engineering über LLM-Evaluationen bis hin zu spezifischen Code-Demos. Beiträge dokumentieren Entwicklungen wie ChatGPT Containers mit Bash-Unterstützung, FastRender – einen Browser, der durch tausende parallele Agenten betrieben wird – und das Refactoring von LLM 0.32a0. Es werden konkrete Modelle vorgestellt, etwa GPT-5.4 mini und GPT-5.4 nano, sowie Updates wie Claude Opus 4.7, 4.8 und sqllite-utils 4.0/rc1 bis 4.0rc2, die neue Features wie Migrationsunterstützung bieten. Weitere Einträge beleuchten den Einsatz von WASM für Python-Subsets und die Integration dynamischer Features in statisch gecachte Websites, während Veranstaltungen wie PyCon US 2026 mit neuen AI- und Security-Tracks angekündigt werden.</div>
+        <a href="https://simonwillison.net/2026/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">The new GPT-5.6 family: Luna, Terra, Sol</div>
+        <div class="article-date">10.07.2026</div>
+        <div class="article-summary">OpenAI veröffentlicht die GPT-5.6 Familie in drei Varianten – Luna, Terra und Sol – mit Preisen von $1/$6, $2,50/$15 und $5/$30 pro 1 Million Input/Output Token. Alle Modelle nutzen einen Kontext von 1 Mio Tokens, einen maximalen Output von 128.000 Tokens und haben einen Wissensstand bis 16. Februar 2026. Benchmarks, insbesondere der „Agents’ Last Exam“, zeigen, dass GPT-5.6 Sol mit 53,6 Punkten Claude Fable 5 um 13,1 Punkte übertrifft, während auch Terra und Luna bei wesentlich geringeren Kosten überzeugen. Neue API-Funktionen wie programmatischer Toolaufruf, Multi-Agent und prompt cache breakpoints ermöglichen eine effizientere Integration von Werkzeugen und parallelen, fokussierten Arbeitsprozessen bei der Entwicklung.</div>
+        <a href="https://simonwillison.net/2026/Jul/9/gpt-5-6/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">Rewriting Bun in Rust</div>
+        <div class="article-date">08.07.2026</div>
+        <div class="article-summary">Bun wurde in 11 Tagen durch den Einsatz von dynamischen Workflows und 64 parallelen Instanzen des LLM-Modells Claude Fable 5 mechanisch aus Zig in Rust portiert – ein Prozess, der über 6.500 Commits und 6.778 Gesamtrewrites umfasste. Die Umstellung nutzt Rusts Typensicherheit, Drop-Mechanismus und den Borrow Checker, um häufige Probleme wie Use‐after‐free, doppelte Freigaben und Speicherlecks systematisch zu vermeiden, was zuvor in der Zig-Codebasis wiederholt für Abstürze und erhöhte Speichernutzung sorgte. Der neue Rust-Port führt zu einer Binärgrößenreduktion von etwa 20 % (zum Beispiel von 94 MB auf 76 MB unter Windows) und senkt gleichzeitig die Leckrate signifikant, wobei CPU- und HTTP-Durchsatzbenchmarks um 2–5 % verbessert wurden. Der mechanische Portierungsvorgang stellt sicher, dass der neue Code funktional dem ursprünglichen Bun entspricht, jedoch nachhaltiger, wartbarer und robuster gegenüber typischen Speicherverwaltungsfehlern ist.</div>
+        <a href="https://bun.com/blog/bun-in-rust" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">Things You Should Never Do, Part I</div>
+        <div class="article-date">08.07.2026</div>
+        <div class="article-summary">Netscape verzögerte die Veröffentlichung von Netscape 6.0 um drei Jahre, weil das Unternehmen den gesamten Code neu schrieb und damit eine bewährte, fehlergeprüfte Basis aufgab. Reine Neuentwicklungen vernichten die über Jahre akkumulierten Bugfixes, wie sie Borland bei dBase und Quattro Pro oder Microsoft fast bei Word für Windows durchlief. Die Überzeugung, dass alter Code grundsätzlich „mief“ sei, ignoriert die Tatsache, dass vorhandener Code getestet und optimiert wurde – auch wenn er unübersichtlich oder ineffizient wirkt. Statt das komplette System neu zu schreiben, empfiehlt sich eine schrittweise Refakturierung, bei der architektonische Probleme, Performance-Engpässe und stilistische Uneinheitlichkeiten gezielt behoben werden.</div>
+        <a href="https://www.joelonsoftware.com/2000/04/06/things-you-should-never-do-part-i/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">sqlite-utils 4.0, now with database schema migrations</div>
+        <div class="article-date">07.07.2026</div>
+        <div class="article-summary">sqlite-utils 4.0 führt nach der Version 3.0 (November 2020) wesentliche Neuerungen ein, darunter ein strukturiertes Schema-Migrationssystem, das Änderungen in Python definiert und über uvx-Befehle verwaltet wird. Die neue Version implementiert verschachtelte Transaktionen mittels eines db.atomic()-Kontextmanagers sowie die Unterstützung zusammengesetzter Foreign Keys, wobei letztere nicht nur erzeugt, sondern auch transformiert und introspektiert werden können. Weitere Breaking-Changes betreffen die Umstellung von db.query() auf db.execute() für schreibende Operationen und die Nutzung von SQLite’s INSERT ... ON CONFLICT ... DO UPDATE-Syntax zur automatischen Erkennung von Primärschlüsseln bei Upserts. Unterstützt wurde diese Version durch Beiträge von Claude Fable 5, Claude Opus 4.8 und GPT-5.5, was zu einer signifikanten Verbesserung der API-Qualität und Transaktionssicherheit führte.</div>
+        <a href="https://simonwillison.net/2026/Jul/7/sqlite-utils-4/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">ai-in-china</div>
+        <div class="article-date">06.07.2026</div>
+        <div class="article-summary">Die Einträge zeigen, wie chinesische KI-Labore bei Open-Weights-Modellen zunehmend Branchenmaßstäbe setzen. Tencent präsentiert beispielsweise Hy3 – ein 295‑B Parameter Mixture-of-Experts Modell mit 21‑B aktiven Parametern und einem 256K Token Kontext –, das gegen vergleichbare Modelle konkurrenzfähig ist. Z.ai erweitert mit GLM‑5.2 den Long-Context‑Ansatz: Das 753‑B Parameter starke Modell verfügt über einen 1‑Million Token langen Kontext und wird unter einer MIT‑Lizenz vertrieben. Benchmark-Ergebnisse wie auf SWE‑bench und praktische Experimente mit Plug‑Ins (z. B. llm‑openrouter, llm‑minimax) bestätigen, dass chinesische Modelle in Bereichen wie Agentik, Tool‑Use und Codegenerierung teils Flagship‑Niveaus erreichen oder sogar übertreffen.</div>
+        <a href="https://simonwillison.net/tags/ai-in-china/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">generative-ai</div>
+        <div class="article-date">06.07.2026</div>
+        <div class="article-summary">Tencent präsentiert mit Hy3 einen Mixture-of-Experts-Ansatz, der 295 B Parameter (davon 21 B aktiv und 3,8 B MTP Layer) umfasst und einen 256K-Token-Kontext bietet – das Modell ist unter Apache 2.0 lizenziert und auf Hugging Face, freier Nutzung über OpenRouter bis zum 21. Juli, verfügbar. Neuere Beiträge beleuchten Probleme bei Anthropic-Modellen: Claude Opus 4.8 und Sonnet 5 erzeugen teils fehlerhafte, erfundene Felder in Tool-Calls, wobei der neue Tokenizer von Sonnet 5 zu einer 30 % höheren Tokenanzahl und entsprechenden Kosten führt, trotz vergleichbarer Leistung zu Opus 4.7. Weitere Ideen umfassen den Einsatz von Agenten, die eigenständig niedrigere Modelle wie Haiku für triviale Codierungsaufgaben auswählen, um den Fable-Tokenverbrauch zu reduzieren und kosteneffizient zu arbeiten. Ergänzend werden Open-Source-Initiativen wie die Gap Map, die 421 Produkte dokumentiert, sowie neue Releases, z. B. Nano Banana 2 Lite (alias Gemini 3.1 Flash Lite Image) und GLM‑5.2 mit 753 B Parametern und einem 1M-Token-Kontext, thematisiert.</div>
+        <a href="https://simonwillison.net/tags/generative-ai/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">is 300GB</div>
+        <div class="article-date">06.07.2026</div>
+        <div class="article-summary">Tencent stellt unter dem Namen Hy3-FP8 ein Modellpaket mit einer Gesamtgröße von 300 GB über Hugging Face bereit. Das Modell wird als in mehrere Safetensors-Dateien aufgeteilte Ressource angeboten, wobei einzelne Dateien typischerweise 3,62 GB groß sind, einige jedoch auch deutlich geringere Größen wie 537 MB aufweisen. Die Bereitstellungsseite enthält konkrete Anleitungen zur Integration mit Transformers, vLLM, SGLang und Docker, inklusive präziser Codebeispiele für Textgenerierung und Chat-Anwendungen. Die Nutzung unter der Apache‑2.0‑Lizenz ermöglicht eine breite Einsetzbarkeit in unterschiedlichen technischen Umgebungen.</div>
+        <a href="https://huggingface.co/tencent/Hy3-FP8/tree/main" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">on OpenRouter until July 21st</div>
+        <div class="article-date">06.07.2026</div>
+        <div class="article-summary">Tencent präsentiert mit Hy3 einen 295B-Parameter Mixture-of-Experts-Ansatz, bei dem 21B Parameter aktiv sind und 192 Experten mittels Top-8-Routing eingesetzt werden. Das Modell bietet konfigurierbare Reasoning-Modi, die von einem direkten No-Think-Modus bis zu niedrigen und hohen Chain-of-Thought-Varianten für komplexe Mathe-, Codierungs- und Multi-Step-Probleme reichen. Mit einer Kontextlänge von 256K Tokens eignet sich Hy3 für langanhaltende Aufgaben wie verbesserte Kernreferenzauflösung und stabile Tool-Ansteuerung in agentischen Workflows. Die Lösung wird kostenfrei angeboten, erschien am 6. Juli 2026 und ist bis zum 21. Juli 2026 verfügbar.</div>
+        <a href="https://openrouter.ai/tencent/hy3:free" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">sqlite-utils 4.0rc3</div>
+        <div class="article-date">06.07.2026</div>
+        <div class="article-summary">sqlite‑utils 4.0rc3 ändert das Handling von Foreign Keys: Die Methode table.foreign_keys liefert nun ForeignKey‑Dataclasses statt früherer namedtuples. Compound Foreign Keys werden als ein einzelnes Objekt mit is_compound=True und separaten tuples für columns/other_columns zusammengefasst, was das bisher irreführende Verhalten mehrerer unabhängiger Foreign Keys ersetzt. Die Unterstützung von sqlean.py als Drop‑in‑Ersatz für das Standardmodul sqlite3 entfällt zugunsten der Nutzung von pysqlite3, sofern installiert, andernfalls wird das Modul sqlite3 verwendet. Der Kontextmanager wurde von db.ensure_autocommit_off zu db.ensure_autocommit_on umbenannt, da sein Verhalten im Gegensatz zur alten Bezeichnung tatsächlich das Aktivieren des Autocommit‑Modus bewirkt. Des Weiteren wurden API‑Methoden, etwa bei table.insert, table.upsert und table.transform, auf eine fallunabhängige Spaltenvergleichslogik umgestellt, sodass unterschiedliche Groß-/Kleinschreibung in Spaltennamen nun konsistent behandelt wird.</div>
+        <a href="https://github.com/simonw/sqlite-utils/releases/tag/4.0rc3" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">tencent/Hy3</div>
+        <div class="article-date">06.07.2026</div>
+        <div class="article-summary">Hy3 von Tencent ist ein Mixture-of-Experts-Modell mit insgesamt 295 B Parametern, wovon 21 B aktiv und 3,8 B in einem speziellen MTP-Layer genutzt werden, und aktiviert pro Vorhersage 8 von insgesamt 192 Experten. Die Architektur umfasst 80 Standard- und einen MTP-Layer, 64 Attention Heads (mit 8 KV-Heads à 128 Dimensionen) sowie eine Kontextlänge von bis zu 256K Tokens. Durch umfangreiche Post-Training-Optimierungen und den Einsatz von Reinforcement Learning reduziert Hy3 interne Halluzinationsraten von 12,5% auf 5,4% und senkt Fehler bei komplexen, mehrgängigen Dialogen von 17,4% auf 7,9%. Blind durchgeführte Expertentests ergaben in real-weltlichen Aufgaben eine Punktzahl von 2,67/4 gegenüber 2,51/4 für GLM‑5.1, wobei insbesondere Frontend-Entwicklung, Daten- und CI/CD-Aufgaben profitieren. Für den produktionsreifen Einsatz empfiehlt Tencent den Betrieb mit vLLM oder SGLang, wofür detaillierte Deployment-Anleitungen bereitgestellt werden.</div>
+        <a href="https://huggingface.co/tencent/Hy3" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">coding-agents 219</div>
+        <div class="article-date">05.07.2026</div>
+        <div class="article-summary">219 Beiträge verknüpfen den Begriff „coding-agents“ mit Systemen, in denen LLMs Code generieren, der anschließend kompiliert, ausgeführt und getestet wird. Beiträge erläutern praktische Ansätze, wie etwa bei sqlite‑utils 4.0rc2, in dem Claude Fable eingesetzt wird, sowie Probleme bei neuen Anthropic-Modellen wie Opus 4.8, die vermehrt fehlerhafte Felder in Toolaufrufen erzeugen. Es wird beschrieben, wie delegierte Subagenten – beispielsweise bei Claude Code – Aufgaben an Modelle mit geringerer Leistungsstufe übergeben, um Kosten zu senken und die Effizienz zu steigern. Weiterhin diskutieren Autoren technische Maßnahmen und Benchmarks, unter anderem bei GitHub Copilot und Uber, die ihre Token-Ausgaben limitiert haben, um wachsende Compute-Kosten zu kontrollieren. Verschiedene Beiträge zeigen, wie agentische Systeme in der Praxis implementiert und deren Herausforderungen, etwa hinsichtlich Wartbarkeit und interner Schnittstellen, adressiert werden.</div>
+        <a href="https://simonwillison.net/tags/coding-agents/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">Better Models: Worse Tools</div>
+        <div class="article-date">04.07.2026</div>
+        <div class="article-summary">Opus 4.8 und Sonnet 5 von Anthropic liefern bei Pi’s Edit-Werkzeug JSON-Payloads, in denen neben korrekten &quot;oldText&quot;/&quot;newText&quot;-Paaren zusätzliche, erfundene Schlüssel wie &quot;requireUnique&quot; oder &quot;oldText2&quot; auftauchen. Dies führt dazu, dass die vom Modell erzeugten Tool-Aufrufe vom strikten Schema abweichen und vom Pi-Harness abgelehnt werden, was vor allem in einem agentischen, mehrstufigen Konversationskontext häufiger beobachtet wird. Die Ursache liegt in der post-training Phase, in der Modelle verstärkt an den flachen, toleranten Edit-Call-Schemata von Claude Code angepasst wurden, sodass alternative, verschachtelte Strukturen weniger zuverlässig abgebildet werden. Es zeigt sich, dass das Reinforcement Learning innerhalb geschlossener Umgebungen zu einer Überanpassung an eine spezifische Toolökologie führt, die mit anderen, strikt validierten Schemata unverträglich ist.</div>
+        <a href="https://lucumr.pocoo.org/2026/7/4/better-models-worse-tools/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">Building a World Map with only 500 bytes</div>
+        <div class="article-date">04.07.2026</div>
+        <div class="article-summary">Die Lösung reduziert die Darstellung der Weltkarte auf Landmassen, die ausschließlich mit &#x27;*&#x27; in einem engen ASCII-Rahmen definiert werden, um Wiederholungsmuster für das deflate-raw-Verfahren auszunutzen. Dabei wird bewusst auf Wasserpunkte und unnötigen Leerraum verzichtet, sodass aus ursprünglich 8.523 Byte unkomprimierter Daten ein komprimiertes Ergebnis von 445 Byte entsteht. Alternative Ansätze, wie SVG-basierte Darstellungen, scheiterten an der Komplexität, die durch zahlreiche Koordinaten in realistischen Küstenlinien entsteht. Der finale Ansatz wurde dabei mithilfe von Codex evaluiert, wobei weitere Optimierungsvorschläge manuell ergänzt wurden.</div>
+        <a href="https://www.experimentlog.com/blog/building-a-world-map-with-only-500-bytes" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">javascript 760</div>
+        <div class="article-date">04.07.2026</div>
+        <div class="article-summary">760 Beiträge unter dem Tag „javascript“ dokumentieren den breiten Einsatz von kleinsten Code-Innovationen bis zu tiefgehenden Sicherheitsanalysen. Ein Beispiel demonstriert, wie mittels Deflate-Kompression und einem eleganten Einsatz von fetch() eine ASCII-Weltkarte in nur 445 Bytes erzeugt wird. Beiträge zu Datenbank-Tools wie Datasette Apps und Sicherheitsvorfällen – beispielsweise der Supply-Chain-Angriff auf axios in den Versionen 1.14.1 und 0.30.4 – unterstreichen gleichzeitig die Herausforderungen moderner Webanwendungen. Weiterhin rücken experimentelle Ansätze mit WebAssembly, Sandbox-Techniken und optimierten Compiler-Pipelines in Projekten wie Bun, Zig und MicroQuickJS stark in den Fokus der Diskussion.</div>
+        <a href="https://simonwillison.net/tags/javascript/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+
+    <a href="index.html" class="back-link">&larr; Zur&uuml;ck zur &Uuml;bersicht</a>
+
+</body>
+</html>
