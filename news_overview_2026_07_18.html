@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Übersicht - Letzte 7 Tage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        h2 {
+            color: #555;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+        .article {
+            margin-bottom: 25px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+        }
+        .article-title {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        .article-date {
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+        .article-summary {
+            margin-bottom: 10px;
+        }
+        .article-link {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        .article-link:hover {
+            text-decoration: underline;
+        }
+        /* R00011: Section-Summary-Block, leicht abgesetzt von Einzel-Artikeln */
+        .section-summary {
+            margin: 10px 0 20px 0;
+            padding: 12px 16px;
+            background-color: #eef4fb;
+            border-left: 4px solid #0066cc;
+            font-style: italic;
+            color: #234;
+        }
+        /* R00012: Changelog-Digest-Block — visuell distinkt vom Section-Summary */
+        .changelog-digest {
+            margin: 10px 0 15px 0;
+            padding: 12px 16px;
+            background-color: #fff7e6;
+            border-left: 4px solid #d97706;
+            color: #3a2a00;
+        }
+        .changelog-links {
+            list-style: disc inside;
+            padding-left: 0;
+            margin: 0 0 25px 0;
+        }
+        .changelog-links li {
+            margin: 4px 0;
+        }
+        .changelog-date {
+            color: #666;
+            font-size: 0.9em;
+            margin-left: 6px;
+        }
+        /* R00013: Wochen-Tenor — visuell die staerkste der drei
+           Verdichtungsklassen (overall > section-summary > changelog-digest).
+           Linker Rand kraeftiger, Schrift groesser, klar abgesetzte
+           Hintergrundfarbe — vom Leser auf den ersten Blick als
+           Zusammenfassung der Wochenausgabe erkennbar. */
+        .overall-summary {
+            margin: 10px 0 25px 0;
+            padding: 18px 22px;
+            background-color: #f0fbf3;
+            border-left: 6px solid #15803d;
+            font-size: 1.1em;
+            color: #14271d;
+        }
+        /* R00011: Rueckspruglink zur index.html (oben und unten) */
+        .back-link {
+            display: inline-block;
+            margin: 10px 0 20px 0;
+            color: #0066cc;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>News Übersicht der letzten 7 Tage</h1>
+    <a href="index.html" class="back-link">&larr; Zur&uuml;ck zur &Uuml;bersicht</a>
+    <div class="overall-summary">KI und LLMs stehen im Mittelpunkt der Woche, wobei mehrere Beiträge sowohl den verantwortungsvollen Einsatz – etwa in Bildungskontexten und in der Forschung – als auch die Herausforderungen durch automatisierte Codegenerierung und Sicherheitslücken beleuchten. Modernisierungen von Legacy-Systemen und Plattformen werden durch gezielte Toolchain-Optimierungen vorangetrieben, wie beispielsweise bei Java- und .NET-Anwendungen, wobei neue Compiler-Feedback-Schleifen und Modernisierungsansätze zur Anwendung kommen. Die Integration von KI in den Entwicklungsprozess wird durch verbesserte Code-Review-Funktionalitäten, Loop Engineering und DSL-basierte Ansätze weiter optimiert, um Effizienz und Fehlerresistenz zu steigern. Gleichzeitig rücken Sicherheitsaspekte in den Fokus, da unvorgegebene Datenübertragungen in CLI-Tools sowie anfällige Memory-Systeme in KI-Assistenten neue Risiken und Anpassungsbedarfe offenbaren. Die Bandbreite der Themen – von AI-generierten Code-Beiträgen und Loop-basierten Automatisierungen bis zu Deep-Tech-Modernisierungen und responsiven Sicherheitsupdates – zeigt einen rasant wachsenden Bedarf an präzisen, integrierten und sicheren Softwareentwicklungsprozessen.</div>
+    <p>Generiert am: 18.07.2026 07:00 Uhr</p>
+    <p>Anzahl Artikel: 22 (zus&auml;tzlich 6 Changelog-Eintr&auml;ge aus 1 Quelle)</p>
+
+    <h2>Allan Kelly Blog (1 Artikel)</h2>
+    <div class="article">
+        <div class="article-title">AI is creating problems of surplus</div>
+        <div class="article-date">16.07.2026</div>
+        <div class="article-summary">Ein Open-Source-Gaming-Framework verhängt aufgrund der Flut von AI-generierten Code-Beiträgen, die das Review-Management überfordern, ein generelles Verbot von KI-Beiträgen. Die Problematik wird durch einen Artikel der Financial Times belegt, der thematisiert, wie bei der massenhaften Erstellung von Softwareprodukten – exemplarisch durch einen Freund mit einem Dutzend AI-generierten Mini-Produkten, von denen etwa acht Prototypen sind – die Angebotsseite exponentiell wächst, ohne dass die Nachfrage entsprechend ansteigt. Dieses Phänomen entspricht dem Jevons-Paradoxon: Effizienzsteigerungen führen zu einem Überschuss, der auch den hart umkämpften App-Markt betrifft, wo Downloadzahlen trotz vermehrter App-Veröffentlichungen stagnieren. Entwickler und IT-Manager müssen angesichts sinkender Produktionskosten und wachsender Komplexität mehr Ressourcen in Bereiche wie Marketing und Support investieren, was eine grundlegende Neubewertung bestehender Geschäftsmodelle erfordert.</div>
+        <a href="https://www.allankelly.net/archives/10784/ai-is-creating-problems-of-surplus/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+
+    <h2>Anthropic News (2 Artikel)</h2>
+    <div class="article">
+        <div class="article-title">Anthropic commits $10 million to Canadian AI research</div>
+        <div class="article-date">14.07.2026</div>
+        <div class="article-summary">Anthropic investiert 10 Millionen CAD in kanadische Forschung, um mit Claude verantwortungsvolle KI-Anwendungen voranzutreiben. Das Engagement umfasst Partnerschaften mit führenden Instituten wie Amii (Edmonton), Mila (Montréal), dem Vector Institute (Toronto) sowie mit CHEO, CAMH, Université Laval, der University of Toronto und der University of Saskatchewan. Daten aus dem Anthropic Economic Index (März 2026) zeigen, dass Kanada weltweit den achten Platz bei der Nutzung von Claude einnimmt und die Pro-Kopf-Nutzung viermal so hoch ist wie erwartet. Zudem erhalten hunderte kanadische Startups mindestens 5.000 USD in API-Credits, während beispielsweise Claude Code kürzlich 466 Millionen Codezeilen in etwa 20 Stunden analysierte.</div>
+        <a href="https://www.anthropic.com/news/canadian-ai-research" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">Introducing Claude for Teachers</div>
+        <div class="article-date">14.07.2026</div>
+        <div class="article-summary">Anthropic stellt Claude for Teachers vor, einen kostenlosen Service für verifizierte K-12-Lehrkräfte in den USA, der direkten Zugang zu einem Ökosystem aus akademischen Standards, Curricula und einer Bibliothek von Lehrfähigkeiten bietet. Der Service integriert das Learning Commons, wodurch Claude auf detaillierte Lernkomponenten und den üblichen Lernfortschritt zu jedem Standard zugreift, und bindet vertrauenswürdige curriculare Ressourcen wie OpenSciEd und Illustrative Mathematics ein. Schnittstellen zu Tools wie ASSISTments, Brisk Teaching, Canva Education und weiteren ermöglichen das Erstellen differenzierter Unterrichtspläne, die Analyse von Klassendaten und die Automatisierung von Routineaufgaben. Die Lösung, die Funktionen wie Claude Code und Claude Cowork umfasst, wurde in enger Zusammenarbeit mit Lehrkräften validiert und entspricht strengen K-12-Datenschutzstandards, wobei Anmeldungen bis zum 30. Juni 2027 kostenfrei möglich sind.</div>
+        <a href="https://www.anthropic.com/news/claude-for-teachers" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+
+    <h2>GitHub Copilot Changelog (6 Eintr&auml;ge)</h2>
+    <div class="changelog-digest">GitHub Copilot verbessert die Code Review Funktion, indem benutzerdefinierte Anweisungen nun direkt aus dem Head-Branch ausgelesen werden können und neue Workflow-Konfigurationsdateien für Setup-Schritte bereitgestellt wurden. Administratoren erkennen bei den API-Änderungen, dass neben der klassischen IDE-, Chat- und Code-Review-Aktivität nun auch die App-Nutzung erfasst wird und neue REST Endpunkte detaillierte repository-spezifische Pull-Request-Metriken liefern. Entwickler profitieren von erweiterten IDE-Integrationen, etwa in Visual Studio 2026, wo Echtzeit-Nutzungsüberwachung, ein Modernization Agent für C++ und zusätzliche In-IDE-Review-Features den Workflow unterstützen, während Copilot for JetBrains individuelle API-Endpunkte, verbessertes Plugin-Management sowie Debugging-Optionen für die CLI bietet. Darüber hinaus integriert GitHub einen KI-basierten Sicherheitsreview, der laufende Codeänderungen analysiert und priorisierte Hinweise zu kritischen Schwachstellen liefert, um Sicherheitslücken frühzeitig zu beheben.</div>
+    <ul class="changelog-links">
+        <li><a href="https://github.blog/changelog/2026-07-17-copilot-code-review-customization-and-configurability-improvements" class="article-link" target="_blank">Copilot code review: Customization and configurability improvements</a> <span class="changelog-date">17.07.2026</span></li>
+        <li><a href="https://github.blog/changelog/2026-07-17-github-copilot-app-now-available-in-the-usage-metrics-api" class="article-link" target="_blank">GitHub Copilot app now available in the usage metrics API</a> <span class="changelog-date">17.07.2026</span></li>
+        <li><a href="https://github.blog/changelog/2026-07-17-repository-level-github-copilot-usage-metrics-generally-available" class="article-link" target="_blank">Repository-level GitHub Copilot usage metrics generally available</a> <span class="changelog-date">17.07.2026</span></li>
+        <li><a href="https://github.blog/changelog/2026-07-14-github-copilot-in-visual-studio-june-update" class="article-link" target="_blank">GitHub Copilot in Visual Studio — June update</a> <span class="changelog-date">15.07.2026</span></li>
+        <li><a href="https://github.blog/changelog/2026-07-14-github-copilot-for-jetbrains-expands-byok-capabilities" class="article-link" target="_blank">GitHub Copilot for JetBrains expands BYOK capabilities</a> <span class="changelog-date">14.07.2026</span></li>
+        <li><a href="https://github.blog/changelog/2026-07-14-security-reviews-now-available-in-the-github-copilot-app" class="article-link" target="_blank">Security reviews now available in the GitHub Copilot app</a> <span class="changelog-date">14.07.2026</span></li>
+    </ul>
+
+    <h2>Google AI Blog - Gemini (1 Artikel)</h2>
+    <div class="article">
+        <div class="article-title">How Gemini is speaking the language of Southeast Asia</div>
+        <div class="article-date">14.07.2026</div>
+        <div class="article-summary">Gemini erreicht in Südostasien durch lokale Sprachunterstützung eine doppelte Zunahme aktiver Nutzer innerhalb eines Jahres, wobei rund 70 % der Anfragen in den Muttersprachen eingehen – in Vietnam 89 %, in Thailand 87 % und in Indonesien 84 %. Junge digitale Nutzer, von denen fast 40 % unter 25 Jahre alt sind, treiben die intensive Nutzung mit längeren Interaktionen und detaillierteren Prompts voran. Nahezu drei Viertel der Anfragen erfolgen über mobile Geräte, wobei mehr als 40 % der Eingaben auf visuellen oder kombinierten Sprach-/Bildbefehlen basieren, während reine Sprachaufnahmen 10 % ausmachen. Modelle wie Nano Banana zur Bildgenerierung (5 Milliarden erstellte Bilder) und Lyria 3, das fast 1 Million Songs generierte, untermauern Gemini’s technologische Basis im kreativen Bereich. Mit der nächsten Erweiterung über Gemini Spark, das als proaktiver KI-Agent in Google Workspace-Tools wie Gmail, Docs und Slides integriert wird, sollen Aufgaben im Hintergrund automatisch verwaltet werden.</div>
+        <a href="https://blog.google/innovation-and-ai/products/gemini-app/gemini-southeast-asia-report-2026/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+
+    <h2>Kent Beck - Tidy First (2 Artikel)</h2>
+    <div class="article">
+        <div class="article-title">Long Volatility Development</div>
+        <div class="article-date">15.07.2026</div>
+        <div class="article-summary">Kent Beck verknüpft in seinen Überlegungen das Prinzip des Long-Volatility-Investings mit Erfahrungen aus der Softwareentwicklung und deutet an, dass extreme langfristige Risiken in beiden Bereichen eine Rolle spielen. Er bezieht sich auf persönliche Erlebnisse aus seiner Kindheit, als er mit 7 Jahren erstmals in den Aktienmarkt einstieg und dabei einen Wert von 50 US-Dollar als Startkapital nutzte (entspricht inflationsbereinigt ca. 500 US-Dollar). Die Analogie zu Ansätzen aus der agilen Softwareentwicklung, insbesondere XP, unterstreicht den Versuch, Unsicherheiten und langfristige Risiken als integralen Bestandteil von Entwicklungsprozessen zu betrachten. Beck signalisiert zugleich, dass sich aus dieser Denkweise noch unklare, aber potenziell tiefgreifende Implikationen ergeben könnten, die er weiter zu klären gedenkt.</div>
+        <a href="https://newsletter.kentbeck.com/p/long-volatility-development" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">The Beginnings of an Idea: XP is Long Volatility</div>
+        <div class="article-date">14.07.2026</div>
+        <div class="article-summary">XP und Tidy First erfordern das langfristige Reifen von Ideen, ähnlich wie eine Investmentstrategie mit langanhaltender Volatilität. Kent Beck verbindet hier seine frühe Erfahrung im Aktienhandel mit dem Konzept, dass Entwicklungen wie 3X: Explore/Expand/Extract, der „Genie“-Metapher für LLMs und „Thinkies“ erst über Jahre hinweg reifen müssen, bevor sie wirklichen Mehrwert liefern. Er betont, dass das wiederholte, auch fehlerhafte Erklären ein notwendiger Bestandteil zur Verfeinerung und zum besseren Verständnis dieser Konzepte darstellt. Der Vergleich zur Anpassungsfähigkeit von Organisationen in unsteten Zeiten unterstreicht, wie wichtig es ist, kontinuierlich zu experimentieren und Maßnahmen zu überdenken, um langfristig erfolgreich zu bleiben.</div>
+        <a href="https://newsletter.kentbeck.com/p/the-beginnings-of-an-idea-xp-is-long" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+
+    <h2>Martin Fowler (3 Artikel)</h2>
+    <div class="section-summary">Legacy-Java-Systeme werden durch forensische Codeanalysen, iterative AI-Feedback-Schleifen und schrittweise Aktualisierungen (von Java 6 zu Java 8, von Ant zu Gradle 7.6) stabilisiert und zukunftssicher gemacht. DSLs strukturieren die Interaktion mit LLMs zur deterministischen Codegenerierung und Systemmodellierung, während optimiertes Kontextmanagement, der Trend zum Selbsthosting von LLMs sowie der Einsatz robuster Sprachen wie Rust den Umgang mit Tokenkosten und Softwarevalidierung verbessern.</div>
+    <div class="article">
+        <div class="article-title">The Archaeologist’s Copilot</div>
+        <div class="article-date">16.07.2026</div>
+        <div class="article-summary">Die Modernisierung eines zwanzig Jahre alten Java-1.5-Systems mit einer „Big Ball of Mud“-Architektur erfolgt in mehreren klar abgegrenzten Phasen, bei denen zunächst eine forensische Codeanalyse zur Identifikation von strukturellen Schwächen, veralteter Ant-Build-Dateien und falsch vermuteter Abhängigkeiten (z. B. Apache Commons Pool 1.x statt 2.x) vorgenommen wird. Der Wechsel von einem optimistisch-naiven „Tourist Prompt“ zu einem streng evidenzbasierten Ansatz ermöglichte durch den Einsatz spezialisierter AI-Prompts, die Datei- und Verzeichnisstrukturen sowie den tatsächlichen Codezustand präzise zu bewerten. Anschließend wird der Legacy-Code in einem isolierten Docker-Container stabilisiert, wobei ein „Time Capsule“-Ansatz verfolgt wird – zunächst mit Java 6 und Ant auf einem x86-System (später auf native Intel-Hardware für Apple Silicon), um dann schrittweise auf Java 8 und Gradle 7.6 umzustellen, da Gradle 8.x und Java 17 für diesen Prozess ungeeignet waren. Eine iterative AI-Compiler-Feedback-Schleife beseitigte schließlich technische Schulden wie unsichere Raw Types, führte Generics ein und bestätigte durch Lasttests (100 Iterationen über 10 parallele Threads) die erreichte Thread-Sicherheit sowie den endgültigen Transformationsgewinn in eine standardkonforme und wartbare Codebasis.</div>
+        <a href="https://martinfowler.com/articles/archaeologist-copilot.html" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">DSLs Enable Reliable Use of LLMs</div>
+        <div class="article-date">14.07.2026</div>
+        <div class="article-summary">DSLs grenzen den Spielraum von LLMs ein und führen durch vordefinierte, domänenspezifische Sprachen wie PlantUML, Mermaid, SQL oder Kubernetes YAML zu deterministisch validierbarem Code, was den iterativen Entwicklungsprozess erleichtert. Tickloom, ein Framework zur Modellierung verteilter Systeme, demonstriert, wie eine DSL als primäre Quelle der Wahrheit für Systemverhalten dient – von der Implementierung quorum-basierter Schlüsselwertspeicher bis zur automatisierten Generierung von Testfällen. LLMs übernehmen dabei zwei Rollen: Sie unterstützen als Partner beim schrittweisen Entwurf und der Verfeinerung der DSL sowie anschließend als natürlichsprachliche Schnittstelle zur präzisen Spezifikation von Codebausteinen. Dieser Ansatz, der unter anderem am 14. Juli 2026 publiziert wurde, reduziert die Variabilität in der Codegenerierung und ermöglicht eine klare Abbildung komplexer Systemintentionen.</div>
+        <a href="https://martinfowler.com/articles/llm-and-dsls.html" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">Fragments: July 13</div>
+        <div class="article-date">13.07.2026</div>
+        <div class="article-summary">Harness Engineering optimiert durch ein geschicktes Kontextmanagement die Token-Nutzung, indem Modelle gezielt in ihrer Aufmerksamkeitsfokussierung unterstützt werden – ein Teilnehmer begrenzt beispielsweise seine agents.md-Datei auf unter 200 Zeilen. Diskussionen fordern den Wechsel zu Sprachen mit robusteren Kontrollmechanismen wie Rust und mehr property-basierte Testverfahren, um die Validierung und Sicherheit von Software zu verbessern. Der Trend zum Selbsthosting von LLMs wird vor dem Hintergrund steigender Token-Kosten sowie Bedenken bezüglich Datenhoheit und Informationssicherheit zunehmend als praktikable Alternative gesehen, obwohl Herausforderungen bei der GPU-Verwaltung und den Betriebskosten bestehen. Erfahrungen mit lokalen Modellen, etwa dem Qwen 3.6 als Favorit für agentisches Programmieren, und Einblicke in Strategien wie den Einsatz von Anthropic Fable, verdeutlichen, dass die Wahl des passenden Modells und die effektive Aufgabenabgrenzung zentrale Faktoren für erfolgreiche Architekturen darstellen.</div>
+        <a href="https://martinfowler.com/fragments/2026-07-13.html" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+
+    <h2>Microsoft .NET Blog (5 Artikel)</h2>
+    <div class="section-summary">Microsoft .NET Blog präsentiert praxisnahe Modernisierungsansätze unter Einsatz des GitHub Copilot Modernisierungsagents für Legacy ASP.NET-Anwendungen und stellt mit .NET 11 Preview 6 umfangreiche Performance-Optimierungen sowie MAUI-Verbesserungen vor, wobei Mono für Android, iOS und Mac Catalyst durch CoreCLR ersetzt wird. Zudem werden mit Service Releases für .NET 10.0, 9.0 und 8.0 sicherheitsrelevante und weitere Updates bereitgestellt, während ein weiterer Beitrag den Einsatz von Cookies zur Gewährleistung des Betriebs, der Überwachung und Personalisierung von Diensten differenziert behandelt.</div>
+    <div class="article">
+        <div class="article-title">Announcing .NET Modernization for Beginners</div>
+        <div class="article-date">16.07.2026</div>
+        <div class="article-summary">Der Kurs modernisiert Legacy ASP.NET-Anwendungen schrittweise auf .NET 10 mithilfe des GitHub Copilot Modernisierungsagents, der Assessment-, Planungs- und Task-Artefakte (assessment.md, plan.md, tasks.md) erzeugt. Mit dem Kurs erhalten Entwickler praktische Anleitungen, von der Analyse des bestehenden Codes über die Erstellung eines individuellen Modernisierungsplans bis hin zur Umsetzung und Veröffentlichung auf Azure App Service. Voraussetzung hierfür ist Visual Studio 2022 (Version 17.10 oder höher) oder Visual Studio 2026 sowie ein aktives GitHub Copilot-Abonnement. Der Open-Source-Kurs bietet somit einen konkreten, nachvollziehbaren Weg, um den oft komplexen Modernisierungsprozess eigenständig zu bewältigen.</div>
+        <a href="https://devblogs.microsoft.com/dotnet/announcing-dotnet-modernization-for-beginners/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">Watch now</div>
+        <div class="article-date">16.07.2026</div>
+        <div class="article-summary">YouTube informiert in diesem Dialog darüber, dass Cookies verwendet werden, um Dienste zu betreiben, Ausfälle zu überwachen sowie Spam, Betrug und Missbrauch zu verhindern. Nutzer können wählen, ob neben den für den Betrieb essenziellen Cookies weitere Daten zur Verbesserung von Diensten, zur Anzeige von zielgerichteten Inhalten und personalisierter Werbung eingesetzt werden sollen. Akzeptieren führt zur Nutzung zusätzlicher Funktionen wie individuell angepasster Videoempfehlungen und einer personalisierten Homepage, während die Ablehnung diese Optionen deaktiviert. Über den Menüpunkt &quot;More options&quot; können Nutzer detaillierte Einstellungen vornehmen und ihre Privatsphäre gezielt konfigurieren.</div>
+        <a href="https://aka.ms/dotnetday/playlist" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">.NET 11 Preview 6 is now available!</div>
+        <div class="article-date">14.07.2026</div>
+        <div class="article-summary">.NET 11 Preview 6 verbessert die Performance und Funktionalität über alle Bereiche – von der .NET Runtime und dem SDK über Libraries, C# und ASP.NET Core bis hin zu .NET MAUI, EF Core, F# und Container Images. Der Release beinhaltet u.a. asynchrone Performance-Optimierungen, JIT-Verbesserungen, neue CLI-Funktionalitäten für NativeAOT und erweiterte Test-Templates, die xUnit v3 und NUnit unterstützen. Zudem wurden Funktionen wie Stream-Adapter für Memory, asynchrone Datenannotation-Validierungen sowie Cross-Lane Operationen für Vektoren implementiert. Entwickler können .NET 11 Preview 6 über den offiziellen Downloadlink beziehen und unter Windows wird die Nutzung von Visual Studio 2026 Insiders empfohlen.</div>
+        <a href="https://devblogs.microsoft.com/dotnet/dotnet-11-preview-6/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">.NET and .NET Framework July 2026 servicing releases updates</div>
+        <div class="article-date">14.07.2026</div>
+        <div class="article-summary">.NET erhielt für die Versionen 10.0, 9.0 und 8.0 im Juli 2026 umfangreiche Sicherheits- und Nicht-Sicherheitsupdates mit den neuen Service Releases 10.0.10, 9.0.18 und 8.0.29. Die Aktualisierungen beheben mehrere identifizierte Sicherheitslücken (unter anderem CVE-2026-47300, CVE-2026-50651) und betreffen unter anderem ASP.NET Core, Entity Framework Core sowie das Runtime. Zusätzlich stehen aktualisierte Installer, Binär-Dateien, Container Images und Linux-Pakete bereit und ergänzen damit die fortlaufenden Servicing-Maßnahmen, die auch für das .NET Framework mittels zusätzlicher Release Notes erfolgen.</div>
+        <a href="https://devblogs.microsoft.com/dotnet/dotnet-and-dotnet-framework-july-2026-servicing-updates/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">CoreCLR Progress and the Mono Timeline for .NET MAUI</div>
+        <div class="article-date">14.07.2026</div>
+        <div class="article-summary">.NET MAUI setzt in .NET 11 Preview 6 vollständig auf CoreCLR als einzige Runtime für Android, iOS und Mac Catalyst – Mono wird in diesen Fällen nicht mehr unterstützt. CoreCLR, der auch ASP.NET Core und Desktop .NET antreibt, liefert auf iOS und Mac Catalyst eine schnellere Ausführung als Mono, während auf Android die Leistung innerhalb von 10 Prozent an Mono anknüpft. Verbesserungen betreffen vor allem das Debugging, Hot Reload und den Einsatz von Tools wie dotnet-trace und dotnet-counters für umfassende Diagnosen auf mobilen Geräten. Entwickler werden aufgerufen, ihre bestehenden MAUI-Anwendungen mit dem .NET 11 Preview 6 SDK zu validieren, Performance und Paketgrößen zu messen und über Umfragen oder GitHub-Issues Feedback zu liefern, um die offene Optimierungsarbeit vor dem GA-Release im November zu unterstützen.</div>
+        <a href="https://devblogs.microsoft.com/dotnet/coreclr-progress-and-mono-timeline-dotnet-maui/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+
+    <h2>Pragmatic Engineer Newsletter (3 Artikel)</h2>
+    <div class="section-summary">Grok’s CLI (Grok 4.5) und ein Experiment mit Opus 4.1 veranschaulichen, wie unzureichende Datenfilterung und fehlende Sicherheitsprüfungen zu unerwarteten Uploads sensibler Inhalte sowie zu kritischen Produktionsproblemen führen können. Dex Horthy und der Ansatz des Loop engineering – etwa implementiert mit dem /goal-Befehl in Codex 0.128.0, Hermes und Claude Code – demonstrieren, dass heuristische Kontextbegrenzungen und automatisierte Schleifen die Effizienz steigern und wiederkehrende Prozesse fast autonom steuern.</div>
+    <div class="article">
+        <div class="article-title">The Pulse: Grok’s CLI caught uploading all your local files to the cloud</div>
+        <div class="article-date">16.07.2026</div>
+        <div class="article-summary">Grok’s CLI, basierend auf dem Grok 4.5 Kodierungsmodell, lud unerwartet alle lokalen Dateien in die Cloud hoch, ohne dass dies beabsichtigt war. Der Vorfall offenbarte eine mangelnde Selektion der zu übermittelnden Daten und unzureichende Sicherheitsprüfungen, wodurch sensible Inhalte in falsche Hände geraten könnten. Die frühzeitige Entdeckung dieses Fehlers unterstreicht, wie kritisch robuste Authentifizierungs- und Zugriffsmechanismen in CLI-Tools sind. Unternehmen sollten daher bei der Integration von Cloud-APIs und der Standardkonfiguration von Entwicklertools besondere Sorgfalt walten lassen.</div>
+        <a href="https://newsletter.pragmaticengineer.com/p/the-pulse-groks-cli-caught-uploading" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">Context engineering with Dex Horthy</div>
+        <div class="article-date">15.07.2026</div>
+        <div class="article-summary">Dex Horthy von HumanLayer demonstriert, wie entscheidend das gezielte Begrenzen des Kontextfensters in LLM-Anwendungen ist, um Rechenaufwand und Qualitätsverluste zu minimieren. Er berichtet von einem Experiment im Juli 2025, bei dem das uneingeschränkte Ausliefern von von Opus 4.1 generiertem, ungesehenen Code innerhalb von vier Monaten zu kritischen Produktionsproblemen führte – etwa durch falsch gehandhabte Primary Keys –, was die Notwendigkeit manueller Eingriffe verdeutlicht. Dex setzt auf heuristische Grenzen, indem er beispielsweise bei Modellen mit 1M-Token-Kapazität das Fenster auf 300–400K Token limitiert und bei kleineren Modellen bei rund 100K Token stoppt. Basierend auf Erkenntnissen aus rund 100 Gesprächen mit AI-Ingenieuren und den Prinzipien der 12-Factor Agents kombiniert er gezielt menschliche Reviews mit Loop Engineering, was zu einer 2- bis 3-fachen Produktivitätssteigerung gegenüber herkömmlichem, komplett manuellem Code schreiben führen kann.</div>
+        <a href="https://newsletter.pragmaticengineer.com/p/context-engineering-with-dex-horthy" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">What is “loop engineering?”</div>
+        <div class="article-date">14.07.2026</div>
+        <div class="article-summary">Loop engineering ersetzt das manuelle Prompten durch automatisierte Schleifen, die AI-Agenten kontinuierlich Aufgaben abarbeiten, bis definierte Ziele erreicht sind. Die Methode begann mit dem „Ralph Wiggum“ Loop, einem Bash-Skript, das mittels wiederholter Agentenaufrufe eine dynamische Aktualisierung eines Masterplans ermöglicht und damit Kontextfenster-Limitationen (ca. 200.000 Token) umgeht. Der /goal-Befehl – erstmals in Codex (CLI 0.128.0) und kurz darauf auch in Hermes und Claude Code implementiert – kapselt diesen Ansatz, indem er eine persistente Zielvorgabe an den Agenten übergibt, der dann eigenständig weitere Schritte generiert, bis das Endkriterium erfüllt ist. Praktische Anwendungsfälle umfassen Trigger-basierte Automatisierungen, Cron-Job-ähnliche Abläufe für PR-Erstellungen, Teststabilisierung und migrationsbezogene Aufgaben, wobei auch Herausforderungen wie Agenten-Drift und steigende Token-Kosten thematisiert werden. Entwickler nutzen Loop engineering somit, um regelmäßig wiederkehrende Prozesse effizient in bestehende Workflows zu integrieren und strategische Abläufe fast autonom zu steuern.</div>
+        <a href="https://newsletter.pragmaticengineer.com/p/what-is-loop-engineering" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+
+    <h2>SQL Server Blog (1 Artikel)</h2>
+    <div class="article">
+        <div class="article-title">SQL Server 2016 end of support is here: Plan your next steps</div>
+        <div class="article-date">14.07.2026</div>
+        <div class="article-summary">SQL Server 2016 endet am 14. Juli 2026 den Support, wodurch keine regulären Sicherheitsupdates und technischen Support mehr bereitgestellt werden, was insbesondere bei unternehmenskritischen Anwendungen die Risiken in puncto Sicherheit und Compliance erhöht. Unternehmen wird geraten, ihre Datenplattform zu modernisieren, indem sie entweder auf Azure SQL – etwa über Azure SQL Database, Azure SQL Managed Instance oder SQL Server on Azure Virtual Machines – umsteigen oder ein Upgrade auf SQL Server 2025 durchführen, das erweiterte Leistungs-, Sicherheits- und AI-Funktionen bietet. Als kurzfristige Maßnahme steht zudem der Einsatz von Extended Security Updates (ESU) zur Verfügung, um kritische Sicherheitsupdates weiterhin zu erhalten, während der Migrationsprozess vorangetrieben wird. Besonders exemplarisch modernisiert die Mediterranean Shipping Company ihren Betrieb bereits, indem sie SQL Server 2025 einsetzt, um operative Daten in Microsoft Fabric für schnellere Analysen einzuspeisen.</div>
+        <a href="https://www.microsoft.com/en-us/sql-server/blog/2026/07/14/sql-server-2016-end-of-support-is-here-plan-your-next-steps/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+
+    <h2>Simon Willison (3 Artikel)</h2>
+    <div class="section-summary">Moonshot AI bringt mit Kimi K3 ein Sprach- und Bildverarbeitungsmodell mit 2,8 Billionen Parametern auf den Markt, das in Benchmarks signifikante Leistungsverbesserungen erzielt und dabei Kosten sowie Tokenverbrauch reduziert. Sicherheitslücken ermöglichen es, über Claude‘s unzureichend geschützte Memory- und Webbrowser-Funktionalitäten gezielt persönliche Daten abzurufen – eine Schwäche, die bereits per Patch behoben wurde. sqlite‑utils wird von Version 4.0 bis 4.1.1 weiterentwickelt und bietet nun u.a. ein neues Migrationssystem, atomare Transaktionen, erweiterte CLI-Befehle sowie optimierte JSON‑ und CSV‑Importe.</div>
+    <div class="article">
+        <div class="article-title">Kimi K3, and what we can still learn from the pelican benchmark</div>
+        <div class="article-date">17.07.2026</div>
+        <div class="article-summary">Moonshot AI präsentiert mit Kimi K3 einen neuen Sprach- und Bildverarbeitungsmodell mit 2,8 Billionen Parametern (gerundet als erster „offener 3T-Class“-Modell klassifiziert) und verspricht einen Open-Weight-Release ab dem 27. Juli 2026. Selbstberichtete Benchmarks zeigen, dass Kimi K3 im Vergleich zu Kimi K2.6 um 732 Elo-Punkte auf 1547 zulegt und in den meisten Fällen Claude Opus 4.8 und GPT-5.5 übertrifft, jedoch hinter Claude Fable 5 und GPT-5.6 Sol liegt. Die Kosten liegen bei 3 USD pro Million Input-Token und 15 USD pro Million Output-Token, während K3 zudem 21 % weniger Output-Tokens verbraucht als sein Vorgänger. Die Anwendung des &quot;Pelican riding a bicycle&quot;-Benchmarks hebt hervor, wie Kimi K3 eine SVG-Grafik nachfragt, umfangreich in Reasoning investiert (über 13.000 Tokens) und dabei auch Bildinputs effizient in detaillierte Alt-Texte umsetzt.</div>
+        <a href="https://simonwillison.net/2026/Jul/16/kimi-k3/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">How I tricked Claude into leaking your deepest, darkest secrets</div>
+        <div class="article-date">15.07.2026</div>
+        <div class="article-summary">Claude speichert täglich eine Zusammenfassung aller Konversationen und ermöglicht über einen Retrieval-Mechanismus (&lt;code&gt;conversation_search&lt;/code&gt;) den Abruf der vollständigen Historie. Der Autor zeigt, wie sich mit einem selbst gehosteten Server (evil.com) und gezielter Buchstaben-basierter Navigation Daten wie Name (&quot;Ayush Paul&quot;), Arbeitgeber (Beem) und Heimatstadt (Charlotte, NC) aus Claude&#x27;s Sandbox exfiltrieren lassen. Dabei nutzt er die Webbrowser-Funktionalität von Claude, insbesondere das &lt;code&gt;web_fetch&lt;/code&gt;-Tool, das jedoch Bedingungen für das Folgen von Links besitzt – eine Schwäche, die Anthropic schließlich per Patch über HackerOne behoben hat. Das Experiment demonstriert, wie naiv implementierte Memory-Systeme in AI-Assistenten bei Verbindung zu externen Web-Features erhebliche Sicherheitslücken aufweisen.</div>
+        <a href="https://www.ayush.digital/blog/the-memory-heist" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">sqlite-utils 4.0, now with database schema migrations</div>
+        <div class="article-date">12.07.2026</div>
+        <div class="article-summary">Das Changelog zu sqlite‑utils dokumentiert Neuerungen von Version 4.0 bis zu den aktuellsten Releases 4.1 (2026‑07‑11) und 4.1.1 (2026‑07‑12). Version 4.0 führte ein neues Migrationssystem, Verbesserungen bei Transaktionen (unter anderem durch einen atomic‑Context Manager) und Unterstützung für zusammengesetzte Fremdschlüssel sowie eine case‑insensitive Spaltenzuordnung ein. Darüber hinaus wurden in den nachfolgenden Versionen weiterreichende Funktionalitäten ergänzt, wie etwa erweiterte CLI‑Befehle für Insert‑ und Upsert‑Operationen (inklusive automatischer Spalten‑anpassungen), optimierte JSON‑ und CSV‑Importe, FTS‑Verbesserungen und ein Plugin‑System, das es erlaubt, sqlite‑utils weiter anzupassen. Zahlreiche Bugfixes und API‑Verbesserungen, etwa in Bezug auf Trigger, Foreign-Key‑Verwaltung und den Umgang mit In‑Memory‑Datenbanken, runden die kontinuierliche Weiterentwicklung des Tools ab.</div>
+        <a href="https://sqlite-utils.datasette.io/en/stable/changelog.html#v4-0" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+
+    <h2>Warp AI Terminal Blog (1 Artikel)</h2>
+    <div class="article">
+        <div class="article-title">How to build a cloud software factory - self-improving code review</div>
+        <div class="article-date">15.07.2026</div>
+        <div class="article-summary">Der Beitrag demonstriert, wie sich in einer Cloud Software Factory ein Code-Review-Agent entwickeln lässt, der sich mit einem Outer-Loop-Mechanismus automatisch verbessert. Der Code-Review-Skill, basierend auf einem Template, das auch im populären OSS-Repository von Warp verwendet wird, nimmt als Eingaben den PR-Beschreibungstext, den Code-Diff und gegebenenfalls Spezifikationen eines Spec-Agents entgegen und liefert ein strukturiertes JSON (review.json) als Ergebnis. Durch die Integration von GitHub Actions und Cloud Agents wie Claude Code, Codex und Warp Agent wird der Skill bei PR-Änderungen ausgelöst, wobei der Agent mit Lesezugriff agiert, um Sicherheitsrisiken wie Prompt Injection zu vermeiden. Ein separater Outer-Loop-Agent wertet täglich das menschliche Feedback zu den Reviews aus und erstellt automatisiert Pull Requests, um den Code-Review-Skill an team- und repositoryspezifische Konventionen anzupassen.</div>
+        <a href="https://www.warp.dev/blog/how-to-build-a-cloud-software-factory-self-improving-code-review" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+
+    <a href="index.html" class="back-link">&larr; Zur&uuml;ck zur &Uuml;bersicht</a>
+
+</body>
+</html>
