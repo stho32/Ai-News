@@ -91,6 +91,57 @@
             font-size: 1.1em;
             color: #14271d;
         }
+        /* R00014: Video-Kacheln — Nebenspur, deutlich schmaler als die
+           Artikel-Spalte, mehrere Kacheln pro Zeile. */
+        .video-tiles-heading {
+            font-size: 1.1em;
+            color: #555;
+            margin-top: 30px;
+        }
+        .video-tiles {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 16px;
+            margin-bottom: 30px;
+        }
+        .video-tile {
+            display: block;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            overflow: hidden;
+            padding-bottom: 10px;
+            text-decoration: none;
+            color: inherit;
+            background: #fff;
+        }
+        .video-tile:hover {
+            border-color: #0066cc;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+        }
+        .video-thumb {
+            width: 100%;
+            display: block;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            background: #eee;
+        }
+        .video-title {
+            font-weight: bold;
+            font-size: 0.95em;
+            margin: 10px 10px 4px 10px;
+        }
+        .video-meta {
+            font-size: 0.8em;
+            color: #888;
+            margin: 0 10px 6px 10px;
+        }
+        .video-summary {
+            font-size: 0.85em;
+            color: #444;
+            margin: 0 10px;
+            line-height: 1.4;
+        }
+
         /* R00011: Rueckspruglink zur index.html (oben und unten) */
         .back-link {
             display: inline-block;
@@ -107,9 +158,25 @@
 <body>
     <h1>News Übersicht der letzten 7 Tage</h1>
     <a href="index.html" class="back-link">&larr; Zur&uuml;ck zur &Uuml;bersicht</a>
-    <div class="overall-summary">Die Beiträge thematisieren die zunehmende Integration von KI in die Entwicklungs- und Betriebsprozesse, beispielsweise durch erweiterte Workflows in GitHub Copilot, persistente, agentenbasierte Ansätze und interaktive Anwendungen in Tools wie der Gemini App. Die Entwicklungen reichen von automatisierten Codeerzeugungen und der Demokratisierung von Softwareentwicklung bis hin zu spezialisierten Open-Source-Angeboten wie dem Mojo-Compiler und hochskalierbaren KI-Modellen wie Qwen3.8‑27B, was den Fokus auf produktionsreife und sichere Implementierungen unterstreicht. Gleichzeitig optimieren KI-gestützte Systeme kritische Infrastruktur in sicherheitsrelevanten Bereichen, etwa mithilfe globaler Flutprognosen, präziser Flugroutenanpassungen zur Reduzierung klimaschädlicher Kondensstreifen und autonomer Fahrzeugassistenz. Führungskräfte und Entwickler sehen sich dabei mit neuen Herausforderungen im Bereich Systemdesign, Governance und Qualitätssicherung konfrontiert, während moderne Infrastrukturangebote wie Warp Factories den gesamten Software-Lifecycle automatisieren. Änderungen in Suchverhalten und Repository-Strukturen verdeutlichen zudem den dynamischen und evolutionären Charakter der aktuellen Softwarelandschaft.</div>
-    <p>Generiert am: 22.08.2026 07:00 Uhr</p>
-    <p>Anzahl Artikel: 29 (zus&auml;tzlich 3 Changelog-Eintr&auml;ge aus 1 Quelle)</p>
+    <div class="overall-summary">KI-gestützte Entwicklungsprozesse und agentenbasierte Codegenerierung prägen den technologischen Fortschritt, indem sie den Übergang von bloßer Codeproduktion zu durchdachtem Systemdesign und Governance vorantreiben. Entwickler profitieren von verbesserten Workflows und kollaborativen Tools, die persistenten Kontext, flexible Anpassung und interaktive Automatismen bieten. Google intensiviert den Einsatz des Gemini-Portfolios in vielfältigen Bereichen wie Bildungsangeboten, autonomen Fahrzeugen, diagnostischen Anwendungen und interaktiven Nutzererlebnissen, was die enge Verzahnung von KI und realweltlichen Anwendungen verdeutlicht. Gleichzeitig setzen Open-Weights-Modelle wie Qwen3.8 sowie Open-Source-Projekte wie der Mojo-Compiler neue Maßstäbe in puncto Skalierbarkeit, Leistungsfähigkeit und Transparenz. Führungskräfte und Entwickler stehen in diesem Kontext vor der Herausforderung, technologische Innovationen mit robusten, produktionsreifen Lösungen und effizienter organisatorischer Führung zu verbinden.</div>
+    <p>Generiert am: 22.08.2026 09:06 Uhr</p>
+    <p>Anzahl Artikel: 29 (zus&auml;tzlich 3 Changelog-Eintr&auml;ge aus 1 Quelle) (zus&auml;tzlich 2 Videos)</p>
+
+    <h2 class="video-tiles-heading">Videos der Woche</h2>
+    <div class="video-tiles">
+        <a class="video-tile" href="https://www.youtube.com/watch?v=6AgndHSkHFI" target="_blank" rel="noopener noreferrer">
+            <img class="video-thumb" src="https://i.ytimg.com/vi/6AgndHSkHFI/hqdefault.jpg" alt="" loading="lazy">
+            <div class="video-title">How to Stop AI from Ruining Your Codebase</div>
+            <div class="video-meta">Modern Software Engineering (Dave Farley) &middot; 19.08.2026</div>
+            <div class="video-summary">Stop the technical debt apocalypse! Learn how to use Habit Hooks to give your AI coding agents better habits for clean code and refactoring. Discover how to achieve an 80%+ fix rate by pairing sensor prompts with refactoring guidance, shifting AI programming away from gaming metrics to true…</div>
+        </a>
+        <a class="video-tile" href="https://www.youtube.com/watch?v=FLjId_fkIOs" target="_blank" rel="noopener noreferrer">
+            <img class="video-thumb" src="https://i.ytimg.com/vi/FLjId_fkIOs/hqdefault.jpg" alt="" loading="lazy">
+            <div class="video-title">The Secrets of AGILE Success</div>
+            <div class="video-meta">Modern Software Engineering (Dave Farley) &middot; 17.08.2026</div>
+            <div class="video-summary">Understand the Agile Manifesto and how to apply its core principles to your daily engineering practices. Learn to prioritise effective communication over rigid processes. Many teams struggle to implement the Agile Manifesto correctly because they focus too heavily on tools rather than people. This…</div>
+        </a>
+    </div>
 
     <h2>GitHub Copilot Blog (2 Artikel)</h2>
     <div class="article">
@@ -126,7 +193,7 @@
     </div>
 
     <h2>GitHub Copilot Changelog (3 Eintr&auml;ge)</h2>
-    <div class="changelog-digest">Copilot erweitert seine Kommunikationsintegrationen in Microsoft Teams und Slack, wodurch Entwickler direkt in Meetings und Konversationen auf Repository-Daten und Aufgaben zugreifen können. In Microsoft Teams können Agentensitzungen initiiert werden, bei denen Teilnehmer Fragen stellen, Kontext hinzufügen und Änderungen direkt am Code bewirken – unterstützt durch eine klare Abrechnung über Cloud-Agent-Sessions und Sandboxes. Auch in Slack ermöglicht die Integration per @GitHub-Befehl den Zugriff auf Code, Issues und Pull Requests sowie die Kollaboration über dedizierte Kanäle, wodurch Teams interaktiv Fehlerbehebung und Codeänderungen synchronisieren können. Zusätzlich wurden für die JetBrains-Umgebung umfassende Steuerungsmechanismen eingeführt, die eine unternehmensweite Plugin-Governance sowie die Beschränkung der Verbindung auf firmeneigene MCP-Server erlauben. Administratoren kontrollieren darüber hinaus über zentrale OpenTelemetry-Einstellungen wesentliche Parameter und können den Einsatz von bestimmten Agentenmodi wie dem Bypass Approvals verhindern.</div>
+    <div class="changelog-digest">Bei den neuen Kollaborationsfunktionen ermöglichen die Integrationen in Microsoft Teams und Slack eine direkte Interaktion mit GitHub-Repositories, Issues und Pull Requests über Chat-Befehle. In Teams können Teilnehmer während Besprechungen über Cloud-Agent-Sessions Codeänderungen initiieren, während in Slack die Copilot CLI und App für Bug-Triage sowie Issue-Management in öffentlichen Agentensitzungen genutzt werden. Die Erweiterung in JetBrains fokussiert sich auf eine unternehmensweite Plugin-Governance, über die Administratoren den Zugriff auf externe Marktplätze und MCP-Server sowie zentrale Telemetrie-Parameter steuern können. Gleichzeitig wird der Einsatz des Agenten in bestimmten Modi, wie dem Bypass Approvals oder Autopilot, durch gezielte Konfigurationen unterbunden.</div>
     <ul class="changelog-links">
         <li><a href="https://github.blog/changelog/2026-08-21-shared-agentic-work-with-github-copilot-in-microsoft-teams" class="article-link" target="_blank">Shared agentic work with GitHub Copilot in Microsoft Teams</a> <span class="changelog-date">21.08.2026</span></li>
         <li><a href="https://github.blog/changelog/2026-08-21-the-new-github-copilot-experience-in-slack" class="article-link" target="_blank">The new GitHub Copilot experience in Slack</a> <span class="changelog-date">21.08.2026</span></li>
@@ -134,7 +201,7 @@
     </ul>
 
     <h2>Google AI Blog (4 Artikel)</h2>
-    <div class="section-summary">Gemma, das offene Modellportfolio von Google DeepMind, etabliert sich mit über einer Milliarde Downloads als flexibles Framework, das in vielfältigen Bereichen von der medizinischen Datenverarbeitung bis zur Umwelt- und Verhaltensforschung eingesetzt wird. Gleichzeitig ermöglichen erweiterte Google AI-Pläne über den Student Hub und präzise KI-gestützte Vorhersagen—etwa bei globalen Flutereignissen und der Optimierung von Flugrouten zur Reduktion von Kondensstreifen—konkrete Anwendungen in Bildung, Krisenvorsorge und Klimaschutz.</div>
+    <div class="section-summary">Google etabliert das Gemma-Ökosystem als flexibles Portfolio, das in Anwendungen wie medizinischer Datenverarbeitung, Krebstherapie-Forschung und akustischer Tieranalyse vielseitig eingesetzt wird, und erweitert gleichzeitig mit dem Student Hub den Zugang zu kostenfreien Google AI-Plänen für College-Studenten. KI-Modelle ermöglichen zudem präzise Vorhersagen für Flutereignisse und unterstützen in der Operation Blue Skies die Anpassung von Flugrouten zur Reduktion klimatisch relevanter Kondensstreifen.</div>
     <div class="article">
         <div class="article-title">Inside the Gemmaverse: Celebrating one billion Gemma downloads</div>
         <div class="article-date">20.08.2026</div>
@@ -161,7 +228,7 @@
     </div>
 
     <h2>Google AI Blog - Gemini (4 Artikel)</h2>
-    <div class="section-summary">Google optimiert ihre Gemini Models mittels eines Full-Stack-Ansatzes, bei dem Infrastruktur, Sicherheit, Forschung, Modelle sowie Tools und Produkte synergetisch zusammenwirken. Waymo integriert Gemini in Ojai-Fahrzeugen für sprachbasierte Assistenzfunktionen, während die Gemini App um on‑demand SAT-Praxistests und interaktive BTS-Erlebnisse erweitert wird, um praxisnahe Vorbereitung und kulturelle Interaktion zu ermöglichen.</div>
+    <div class="section-summary">Google optimiert seine KI-Lösungen durch einen ganzheitlichen Full‑Stack-Ansatz, der von Infrastruktur über Sicherheit und Forschung bis hin zu Modellen und Tools reicht, was in der Entwicklung der Gemini Modelle deutlich wird. Gemini wird sowohl in Waymo-Ojai-Fahrzeugen zur sicheren, sprachgesteuerten Assistenz als auch in der Gemini App durch SAT-Praxistests und interaktive BTS-Erlebnisse praktisch eingesetzt, wodurch die Einsatzbereiche von KI in autonomen Fahrzeugen, Bildung und Unterhaltung erweitert werden.</div>
     <div class="article">
         <div class="article-title">What does “full-stack” AI actually mean?</div>
         <div class="article-date">21.08.2026</div>
@@ -188,7 +255,7 @@
     </div>
 
     <h2>Martin Fowler (3 Artikel)</h2>
-    <div class="section-summary">Künstliche Intelligenz verändert die Softwareentwicklung, indem sie technisch weniger versierten Anwendern den Zugang zu funktionsfähigen Anwendungen ermöglicht, während gleichzeitig erfahrene Architekten und Ingenieure gefordert sind, die Produktionsreife, Sicherheit, Skalierbarkeit und Compliance sichern. Die Diskussionen fokussieren sich auf praxisnahe Kommunikation und authentische Selbstverantwortung, wobei Themen wie agentenbasierte Systeme, KI-Sicherheit und der Einsatz von Systemen wie Fable versus GLM 5.2 auch regulatorische und ökonomische Herausforderungen, wie in China und bei Thoughtworks, thematisiert werden.</div>
+    <div class="section-summary">KI-basierte Codeerzeugung und agentenbasierte Prozesse ermöglichen es auch technisch weniger versierten Anwendern, erste Anwendungen zu erstellen, während erfahrene Architekten und Ingenieure vermehrt Produktionsreife, Sicherheit, Skalierbarkeit und Compliance sicherstellen müssen. Diskussionen fokussieren auf authentische, erfahrungsbasierte technische Kommunikation, den Übergang zu fundiertem Systemdesign sowie kritische Aspekte wie KI-Sicherheit, Leistungsoptimierung bei großen Sprachmodellen (etwa GLM 5.2) und den Umgang mit Legacy-Code.</div>
     <div class="article">
         <div class="article-title">Citizens Build, Agents Execute, Experts Govern</div>
         <div class="article-date">19.08.2026</div>
@@ -223,7 +290,7 @@
     </div>
 
     <h2>Simon Willison (13 Artikel)</h2>
-    <div class="section-summary">Bun 1.4 integriert eine effiziente, native Headless-Browser-API, während ChatGPT seinen Query-Fanout und Zitationsauswahl deutlich anpasst, begleitet von systematischen Änderungen in den OpenAI-Produktanweisungen und KI-gestützten Coding-Agents, die eine massive Steigerung der Codeproduktion ermöglichen. smolvm demonstriert robuste hardwarebasierte VM-Isolation, Mojo 1.0 wird nun unter Apache 2.0 Open Source, und Alibaba präsentiert mit Qwen3.8‑27B ein leistungsstarkes Vision‑Language‑Modell, ergänzend durch Entwicklungen in Markdown-Rendering und datengetriebene Tierbeobachtungsplattformen.</div>
+    <div class="section-summary">Bun 1.4 implementiert eine schlanke, nebenläufige Headless-Browser-API, während ChatGPT sein Query-Fanout-Verhalten ändert und dabei signifikante Verschiebungen bei site:-basierten Suchen sowie bei Reddit-Zitationen bewirkt. Repository-Anpassungen für OpenAI-Produkte, KI-gestützte Coding Agents, präzise Benchmarking von smolvm 1.8.3, Open-Source-Veröffentlichungen des Mojo-Compilers und Qwen3.8 27B sowie innovative Ansätze bei der Digitalisierung physischer Literatur und bei Tools zur Markdown-Bearbeitung illustrieren eine breit gefächerte, technische Weiterentwicklung von Performance, Isolation und Datenverarbeitung.</div>
     <div class="article">
         <div class="article-title">A shot-scraper-style JSON API on Bun 1.4&#x27;s new Bun.WebView</div>
         <div class="article-date">20.08.2026</div>
