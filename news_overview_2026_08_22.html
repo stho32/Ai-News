@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Übersicht - Letzte 7 Tage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        h2 {
+            color: #555;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+        .article {
+            margin-bottom: 25px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+        }
+        .article-title {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        .article-date {
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+        .article-summary {
+            margin-bottom: 10px;
+        }
+        .article-link {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        .article-link:hover {
+            text-decoration: underline;
+        }
+        /* R00011: Section-Summary-Block, leicht abgesetzt von Einzel-Artikeln */
+        .section-summary {
+            margin: 10px 0 20px 0;
+            padding: 12px 16px;
+            background-color: #eef4fb;
+            border-left: 4px solid #0066cc;
+            font-style: italic;
+            color: #234;
+        }
+        /* R00012: Changelog-Digest-Block — visuell distinkt vom Section-Summary */
+        .changelog-digest {
+            margin: 10px 0 15px 0;
+            padding: 12px 16px;
+            background-color: #fff7e6;
+            border-left: 4px solid #d97706;
+            color: #3a2a00;
+        }
+        .changelog-links {
+            list-style: disc inside;
+            padding-left: 0;
+            margin: 0 0 25px 0;
+        }
+        .changelog-links li {
+            margin: 4px 0;
+        }
+        .changelog-date {
+            color: #666;
+            font-size: 0.9em;
+            margin-left: 6px;
+        }
+        /* R00013: Wochen-Tenor — visuell die staerkste der drei
+           Verdichtungsklassen (overall > section-summary > changelog-digest).
+           Linker Rand kraeftiger, Schrift groesser, klar abgesetzte
+           Hintergrundfarbe — vom Leser auf den ersten Blick als
+           Zusammenfassung der Wochenausgabe erkennbar. */
+        .overall-summary {
+            margin: 10px 0 25px 0;
+            padding: 18px 22px;
+            background-color: #f0fbf3;
+            border-left: 6px solid #15803d;
+            font-size: 1.1em;
+            color: #14271d;
+        }
+        /* R00011: Rueckspruglink zur index.html (oben und unten) */
+        .back-link {
+            display: inline-block;
+            margin: 10px 0 20px 0;
+            color: #0066cc;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>News Übersicht der letzten 7 Tage</h1>
+    <a href="index.html" class="back-link">&larr; Zur&uuml;ck zur &Uuml;bersicht</a>
+    <div class="overall-summary">Die Beiträge thematisieren die zunehmende Integration von KI in die Entwicklungs- und Betriebsprozesse, beispielsweise durch erweiterte Workflows in GitHub Copilot, persistente, agentenbasierte Ansätze und interaktive Anwendungen in Tools wie der Gemini App. Die Entwicklungen reichen von automatisierten Codeerzeugungen und der Demokratisierung von Softwareentwicklung bis hin zu spezialisierten Open-Source-Angeboten wie dem Mojo-Compiler und hochskalierbaren KI-Modellen wie Qwen3.8‑27B, was den Fokus auf produktionsreife und sichere Implementierungen unterstreicht. Gleichzeitig optimieren KI-gestützte Systeme kritische Infrastruktur in sicherheitsrelevanten Bereichen, etwa mithilfe globaler Flutprognosen, präziser Flugroutenanpassungen zur Reduzierung klimaschädlicher Kondensstreifen und autonomer Fahrzeugassistenz. Führungskräfte und Entwickler sehen sich dabei mit neuen Herausforderungen im Bereich Systemdesign, Governance und Qualitätssicherung konfrontiert, während moderne Infrastrukturangebote wie Warp Factories den gesamten Software-Lifecycle automatisieren. Änderungen in Suchverhalten und Repository-Strukturen verdeutlichen zudem den dynamischen und evolutionären Charakter der aktuellen Softwarelandschaft.</div>
+    <p>Generiert am: 22.08.2026 07:00 Uhr</p>
+    <p>Anzahl Artikel: 29 (zus&auml;tzlich 3 Changelog-Eintr&auml;ge aus 1 Quelle)</p>
+
+    <h2>GitHub Copilot Blog (2 Artikel)</h2>
+    <div class="article">
+        <div class="article-title">GitHub Copilot app for Beginners: Managing your work</div>
+        <div class="article-date">19.08.2026</div>
+        <div class="article-summary">My Work in der GitHub Copilot App zentralisiert alle Pull Requests und Issues, indem es drei Standardansichten – All, Active, Review requests und Done – bereitstellt, die sich automatisch auf die in der App bearbeiteten Repositories beschränken. Individuelle Ansichten lassen sich über eine GitHub-ähnliche Filtersyntax oder per UI anpassen, um beispielsweise alle Issues mit dem Filter &quot;Is: Issue&quot; und &quot;Assignee: Me&quot; darzustellen. Die Nutzer können zwischen einer Listen- und einer Tabellenansicht wählen, um Spalten individuell zu konfigurieren, neu anzuordnen und zu skalieren. Mehrere Elemente lassen sich per Mehrfachauswahl bündeln, sodass parallel getrennte Feature- oder Bug-Sessions gestartet und wenn nötig über Repositories hinweg verwaltet werden können.</div>
+        <a href="https://github.blog/ai-and-ml/github-copilot/github-copilot-app-for-beginners-managing-your-work/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">How canvases make agentic workflows visible, steerable, and cost-efficient</div>
+        <div class="article-date">17.08.2026</div>
+        <div class="article-summary">GitHub Copilot App erweitert die KI-gestützte Entwicklung, indem sie durch Canvases langanhaltende, überprüfbare Workflows ermöglicht. Mit konkreten Beispielen wie dem Java Modernization Studio und Site Studio werden Zustände, Entscheidungsprozesse und Freigabepunkte explizit gemacht, wodurch der sonst in Chats verborgene Kontext dauerhaft erhalten bleibt. Die Workflows eliminieren wiederholtes Prompting und reduzieren Koordinationsaufwände, da Agenten und Entwickler in einem persistenten System zusammenarbeiten. Trotz des initialen Einsatzes von rund 2.000 bis 3.000 AI Credits pro Canvas verspricht diese Architektur langfristig effizientere, vorhersehbare und skalierbare Abläufe.</div>
+        <a href="https://github.blog/ai-and-ml/github-copilot/how-canvases-make-agentic-workflows-visible-steerable-and-cost-efficient/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+
+    <h2>GitHub Copilot Changelog (3 Eintr&auml;ge)</h2>
+    <div class="changelog-digest">Copilot erweitert seine Kommunikationsintegrationen in Microsoft Teams und Slack, wodurch Entwickler direkt in Meetings und Konversationen auf Repository-Daten und Aufgaben zugreifen können. In Microsoft Teams können Agentensitzungen initiiert werden, bei denen Teilnehmer Fragen stellen, Kontext hinzufügen und Änderungen direkt am Code bewirken – unterstützt durch eine klare Abrechnung über Cloud-Agent-Sessions und Sandboxes. Auch in Slack ermöglicht die Integration per @GitHub-Befehl den Zugriff auf Code, Issues und Pull Requests sowie die Kollaboration über dedizierte Kanäle, wodurch Teams interaktiv Fehlerbehebung und Codeänderungen synchronisieren können. Zusätzlich wurden für die JetBrains-Umgebung umfassende Steuerungsmechanismen eingeführt, die eine unternehmensweite Plugin-Governance sowie die Beschränkung der Verbindung auf firmeneigene MCP-Server erlauben. Administratoren kontrollieren darüber hinaus über zentrale OpenTelemetry-Einstellungen wesentliche Parameter und können den Einsatz von bestimmten Agentenmodi wie dem Bypass Approvals verhindern.</div>
+    <ul class="changelog-links">
+        <li><a href="https://github.blog/changelog/2026-08-21-shared-agentic-work-with-github-copilot-in-microsoft-teams" class="article-link" target="_blank">Shared agentic work with GitHub Copilot in Microsoft Teams</a> <span class="changelog-date">21.08.2026</span></li>
+        <li><a href="https://github.blog/changelog/2026-08-21-the-new-github-copilot-experience-in-slack" class="article-link" target="_blank">The new GitHub Copilot experience in Slack</a> <span class="changelog-date">21.08.2026</span></li>
+        <li><a href="https://github.blog/changelog/2026-08-18-enterprise-managed-settings-in-github-copilot-for-jetbrains" class="article-link" target="_blank">Enterprise managed settings in GitHub Copilot for JetBrains</a> <span class="changelog-date">18.08.2026</span></li>
+    </ul>
+
+    <h2>Google AI Blog (4 Artikel)</h2>
+    <div class="section-summary">Gemma, das offene Modellportfolio von Google DeepMind, etabliert sich mit über einer Milliarde Downloads als flexibles Framework, das in vielfältigen Bereichen von der medizinischen Datenverarbeitung bis zur Umwelt- und Verhaltensforschung eingesetzt wird. Gleichzeitig ermöglichen erweiterte Google AI-Pläne über den Student Hub und präzise KI-gestützte Vorhersagen—etwa bei globalen Flutereignissen und der Optimierung von Flugrouten zur Reduktion von Kondensstreifen—konkrete Anwendungen in Bildung, Krisenvorsorge und Klimaschutz.</div>
+    <div class="article">
+        <div class="article-title">Inside the Gemmaverse: Celebrating one billion Gemma downloads</div>
+        <div class="article-date">20.08.2026</div>
+        <div class="article-summary">Gemma, das offene Modellportfolio von Google DeepMind, hat inzwischen über eine Milliarde Downloads erreicht und etabliert sich als flexibles Framework, das von lokalen Geräten bis hin zu Satelliten im Orbit eingesetzt wird. Entwickler haben in den letzten zwei Jahren mehr als 100.000 Varianten dieser Modelle veröffentlicht, was ein reichhaltiges Ökosystem – den Gemmaverse – geschaffen hat. So integrierte beispielsweise Indiens National Health Authority Gemma 4 und den Google Medical Data Toolkit in der App Aarogya Setu 2.0, die über 100 Millionen Downloads verzeichnet, um komplexe medizinische Berichte in standardisierte digitale Formate zu übertragen. Zudem haben interdisziplinäre Projekte wie C2S-Scale zur Entdeckung neuer Krebstherapien und DolphinGemma zur Analyse von Delfinvokalisierungen gezeigt, wie vielfältig und wirkungsvoll die Einsatzbereiche der Gemma-Modelle sind; parallel dazu unterstützt das neu gestartete &quot;Awesome Gemma&quot;-Repository auf GitHub die Community beim Austausch und der Weiterentwicklung dieser Technologie.</div>
+        <a href="https://blog.google/innovation-and-ai/technology/developers-tools/gemma-one-billion-downloads/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">Start the semester with one year of Gemini, on us</div>
+        <div class="article-date">19.08.2026</div>
+        <div class="article-summary">Berechtigten College-Studenten stehen über den neuen Student Hub (gemini.google.com/students) ein Jahr kostenfreier Google AI-Pläne zur Verfügung. In den USA erhalten sie Google AI Pro – wert $19.99/Monat – mit 4× höheren Nutzungsgrenzen, 5 TB Speicher und Zugang zu Gemini Spark sowie Google Health Premium, während internationale Nutzer Google AI Plus mit 2× höheren Nutzungsgrenzen und 400 GB Speicher nutzen. Die Angebote eröffnen zudem den Zugang zu neuen Lernwerkzeugen wie interaktiven Study Notebooks, die personalisierte Lehrpläne anhand eigener Materialien erstellen und Termine automatisch in Google Calendar einpflegen. Gemini Live ermöglicht dabei asynchrone, mehrstufige Recherchen mit nahtloser Umstellung zwischen Text- und Sprachinteraktion, und für ad-freies Streaming wird ein Kombi-Angebot mit bis zu 70 % Rabatt auf YouTube Premium offeriert.</div>
+        <a href="https://blog.google/innovation-and-ai/products/gemini-app/student-offer-google-ai/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">Ask a Scientist: How can researchers use AI to predict a flood?</div>
+        <div class="article-date">18.08.2026</div>
+        <div class="article-summary">Google verwendet KI-Modelle wie den Hydrologic- und den Inundation Model, um globale Flutereignisse – Flussüberschwemmungen bis zu sieben Tage und urbane Sturzfluten bis zu 24 Stunden im Voraus – vorherzusagen und damit über 2 Milliarden Menschen in 150 Ländern zu warnen. Die Vorhersagen werden über den Flood Hub und die Flood Forecasting API bereitgestellt. Mit der im März 2026 vorgestellten Groundsource-Methodik werden über 5 Millionen Nachrichtenberichte analysiert, um ein historisches Archiv von 2,6 Millionen Flutereignissen zu erzeugen, wodurch auch Regionen ohne lokale Sensordaten abgedeckt werden können. Dies ermöglicht es Forschern und Hilfsorganisationen, datenbasierte Frühwarnsysteme zu implementieren und so die Krisenvorsorge zu verbessern.</div>
+        <a href="https://blog.google/innovation-and-ai/technology/research/flood-prediction-ai/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">Operation Blue Skies: Reducing aviation climate impact with AI</div>
+        <div class="article-date">18.08.2026</div>
+        <div class="article-summary">KI-gesteuerte Vorhersagen werden eingesetzt, um in Echtzeit Flugrouten anzupassen und so die Bildung von Kondensstreifen zu vermeiden, die rund ein Drittel der klimaschädlichen Effekte der Luftfahrt verursachen. Die Operation Blue Skies – ein 30-monatiger Versuch mit zwei etwa viermonatigen Testphasen – konzentriert sich auf den Shanwick-Luftraum, der ca. 5 % der globalen Kontrails-Erwärmung ausmacht, und überwacht dabei rund 10.000 Flüge pro Jahr. Ein Konsortium aus Google UK, NATS, Contrails.org, Imperial College London, University of Cambridge und dem Met Office kombiniert maschinelles Lernen, Satellitenbildanalysen und präzise Wettervorhersagen, um wissenschaftlich validierte und praktisch umsetzbare Maßnahmen zu etablieren. Google UK stellt dabei pro bono Forschungsexpertise, Engineering-Ressourcen und Hochleistungsrechenkapazitäten im Wert von £1,4 Mio. bereit, während die Finanzierung über den DfT-ATI-Programmrahmen und Industriepartner erfolgt.</div>
+        <a href="https://blog.google/innovation-and-ai/models-and-research/google-research/blue-skies/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+
+    <h2>Google AI Blog - Gemini (4 Artikel)</h2>
+    <div class="section-summary">Google optimiert ihre Gemini Models mittels eines Full-Stack-Ansatzes, bei dem Infrastruktur, Sicherheit, Forschung, Modelle sowie Tools und Produkte synergetisch zusammenwirken. Waymo integriert Gemini in Ojai-Fahrzeugen für sprachbasierte Assistenzfunktionen, während die Gemini App um on‑demand SAT-Praxistests und interaktive BTS-Erlebnisse erweitert wird, um praxisnahe Vorbereitung und kulturelle Interaktion zu ermöglichen.</div>
+    <div class="article">
+        <div class="article-title">What does “full-stack” AI actually mean?</div>
+        <div class="article-date">21.08.2026</div>
+        <div class="article-summary">Paige Bailey, Engineering Lead bei Google DeepMind, erklärt den Full-Stack-Ansatz für KI als das Zusammenspiel von fünf Schichten: Infrastruktur, Sicherheit, Forschung, Modelle sowie Tools und Produkte. Jede dieser Ebenen trägt dazu bei, dass die KI-Systeme schneller, sicherer und nützlicher für Endanwender, Entwickler und Kunden werden. Ihre Erläuterungen verdeutlichen, wie Googles AI-Produkte, einschließlich der Gemini Models, durch die synergetische Integration dieser Komponenten optimiert werden. In einem Video fasst sie zusammen, wie diese ganzheitliche Betrachtung die tägliche Nutzung der Technik verbessert.</div>
+        <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/what-full-stack-development-means/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">Waymo is bringing Gemini into its custom Ojai vehicles.</div>
+        <div class="article-date">19.08.2026</div>
+        <div class="article-summary">Waymo hat Google Gemini in seine speziell entwickelten Ojai-Fahrzeuge integriert, sodass Nutzer über Sprachbefehle freihändig auf Fahrzeugfunktionen und Informationen zur Umgebung zugreifen können. Während der Waymo Driver weiterhin autonom und sicher navigiert, aktiviert der Fahrer Gemini über ein dediziertes Icon und kann etwa die Klimaanlage auf 65 Grad stellen, nahegelegene Kaffeehäuser suchen oder historische Informationen zu vorbeifahrenden Monumenten abrufen. Gemini arbeitet komplett unabhängig vom Waymo Driver und wird erst bei Nutzeraktivierung aktiv, um eine sichere und personalisierte Interaktion zu gewährleisten. Die Integration wurde am 19. August 2026 vorgestellt und erweitert das Serviceangebot innerhalb des Fahrzeuginnenraums um eine zusätzliche KI-basierte Assistenzfunktion.</div>
+        <a href="https://blog.google/innovation-and-ai/products/gemini-app/gemini-waymo/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">Keep your SAT prep on track with practice tests in Gemini.</div>
+        <div class="article-date">18.08.2026</div>
+        <div class="article-summary">Gemini App führt vollwertige, on‑demand SAT-Praxistests ein, die auf Inhalten von The Princeton Review basieren und damit eine testnahe Vorbereitung ermöglichen. Nutzer können die Tests kostenfrei absolvieren und erhalten direktes Feedback zu ihren Stärken und Schwächen, wobei bei Unklarheiten eine detaillierte Erklärung der korrekten Antworten angeboten wird. Erste Implementierungen erfolgten bereits Anfang dieses Jahres, was durch den Veröffentlichungstermin am 18. August 2026 belegt wird. Google Trends zeigt zudem ein gestiegenes Interesse an SAT‑Vorbereitung, was den Bedarf an digitalen Lösungen wie Gemini untermauert.</div>
+        <a href="https://blog.google/innovation-and-ai/products/gemini-app/how-to-take-practice-sat/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">Try 4 new interactive BTS experiences inside the Gemini app</div>
+        <div class="article-date">18.08.2026</div>
+        <div class="article-summary">Google Gemini erweitert die Gemini App um vier interaktive BTS-Erlebnisse, die ab dem 18. August 2026 in ausgewählten Sprachen verfügbar sind. Nutzer aktivieren die Funktionen durch Eingabe von &quot;Unlock BTS&quot; oder &quot;7777&quot; und können unter anderem echte Gemini-Prompts der BTS-Mitglieder abrufen, ein Emoji-basiertes Song-Ratespiel spielen, tagesaktuelle Tour-Highlights (basierend auf den letzten 48–72 Stunden) abrufen sowie alltägliche koreanische Phrasen erlernen. Ein begleitender YouTube-Film zeigt, wie BTS-Mitglieder wie RM, JIN, SUGA, j-hope, JIMIN, V und Jung Kook Gemini in ihrem Alltag nutzen, um Kreativität und interkulturelle Kommunikation zu fördern. Die Erweiterung unterstreicht Googles Bestreben, praktische und interaktive Funktionen in die Gemini App zu integrieren.</div>
+        <a href="https://blog.google/innovation-and-ai/products/gemini-app/four-new-interactive-bts-experiences/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+
+    <h2>Martin Fowler (3 Artikel)</h2>
+    <div class="section-summary">Künstliche Intelligenz verändert die Softwareentwicklung, indem sie technisch weniger versierten Anwendern den Zugang zu funktionsfähigen Anwendungen ermöglicht, während gleichzeitig erfahrene Architekten und Ingenieure gefordert sind, die Produktionsreife, Sicherheit, Skalierbarkeit und Compliance sichern. Die Diskussionen fokussieren sich auf praxisnahe Kommunikation und authentische Selbstverantwortung, wobei Themen wie agentenbasierte Systeme, KI-Sicherheit und der Einsatz von Systemen wie Fable versus GLM 5.2 auch regulatorische und ökonomische Herausforderungen, wie in China und bei Thoughtworks, thematisiert werden.</div>
+    <div class="article">
+        <div class="article-title">Citizens Build, Agents Execute, Experts Govern</div>
+        <div class="article-date">19.08.2026</div>
+        <div class="article-summary">Die zunehmende Demokratisierung von Softwareentwicklung durch KI und agentenbasierte Codeerzeugung führt dazu, dass auch technisch weniger versierte Anwender heute funktionsfähige Anwendungen erstellen können. Gleichzeitig wächst der Bedarf an erfahrenen Architekten und Ingenieuren, die Produktionsreife, Sicherheit, Skalierbarkeit und Compliance gewährleisten, wenn Software in unternehmenskritischen Umgebungen eingesetzt wird. Diskussionen bei Veranstaltungen wie FOSE und Gespräche bei Thoughtworks belegen, dass der Fokus von der reinen Codeproduktion hin zu gut durchdachtem Systemdesign und Governance verlagert wird. Der Wandel erfordert, dass Experten verlässlich prüfen, ob die von Bürgern und agentenbasierten Systemen erstellten Lösungen langfristigen betrieblichen Anforderungen standhalten.</div>
+        <a href="https://martinfowler.com/rachels-ramblings/citizens-agents-experts.html" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">Practitioner Voice: The Writing Category Nobody has Named Yet</div>
+        <div class="article-date">19.08.2026</div>
+        <div class="article-summary">Practitioner Voice zeigt, wie Entwickler ihre eigene, erarbeitete Urteilskraft in die technische Kommunikation einbringen, indem sie eigene Erfahrungen und lebendige Spannungen offenlegen, ohne sie künstlich aufzulösen. Der Ansatz lehnt die akademische Zurückhaltung und das oberflächliche Thought Leadership ab, indem er stattdessen die persönliche Perspektive und Konsequenz der eigenen Entscheidungen in den Vordergrund stellt. Martin Fowler und andere Vordenker wie PMI und Thoughtworks untermauern diesen Stil als authentische Alternative, die sich von Routinen wie der akademischen Literatur oder automatisierten LLM Voice (z. B. Claude Sonnet 4.6) abhebt. Diese Schreibweise erfordert, dass der Autor Verantwortung für seine Aussagen übernimmt und den Leser durch konkrete, situationsgebundene Einsichten anspricht.</div>
+        <a href="https://martinfowler.com/articles/practitioner-voice.html" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">Fragments: August 18</div>
+        <div class="article-date">18.08.2026</div>
+        <div class="article-summary">Thoughtworks steht mit Rachel Laycock als globale CTO im Fokus, wenn es darum geht, technische Exzellenz als Vorbild in der Softwarebranche zu etablieren. XConf Europe am 11. September in London verspricht Sessions zu agentenbasierten Systemen, souveränen Modellen, Performance bei Datenmigrationen und dem Umgang mit Legacy-Code sowie einen Vortrag von Lu Wilson zu „Jam-oriented programming“. Noah Smith hinterfragt die Grenzen von KI-Intelligenz und zitiert François Chollet, der betont, dass Intelligenz als optimal begrenzte Konversionsrate anstatt als unendlich steigende Größe betrachtet werden sollte, was neue Richtungen, wie das Auffangen von „Cloud Laws“, eröffnet. Die Diskussion um KI-Sicherheit spitzt sich zu, als Anthropic am Freitag um 17 Uhr PT das System Fable abschaltete, wodurch Hugging Face notgedrungen auf GLM 5.2 mit 753 Milliarden Parametern umstieg, während Kimi K3 kosten- und ressourceneffizient Fable-ähnliche Leistung demonstriert. China treibt unter ökonomischem Druck einen KI-Vorstoss voran, wobei das Land gleichzeitig den Einsatz von KI zum Stellenabbau kritisiert, um den sozialen Zusammenhalt bei schrumpfender Bevölkerung zu sichern.</div>
+        <a href="https://martinfowler.com/fragments/2026-08-18.html" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+
+    <h2>Pragmatic Engineer Newsletter (2 Artikel)</h2>
+    <div class="article">
+        <div class="article-title">From Chrome DevTools to AI Engineering, with Addy Osmani</div>
+        <div class="article-date">19.08.2026</div>
+        <div class="article-summary">Addy Osmani, der über 14 Jahre bei Google an Projekten wie Chrome DevTools und Core Web Vitals arbeitete, erklärt, wie traditionelle Debugging-Tools zu modernen AI-gestützten Entwicklungsprozessen transformiert werden. Er zeigt auf, dass Chrome DevTools von einer einfachen Browser-Erweiterung zu einem umfassenden, quasi integrierten Entwicklungsumfeld evolvierte – eine Entwicklung, die u.a. komplexe Features wie Source-Map-Debugging und mobile Emulation beinhaltet. Osmani warnt davor, dass der Einsatz von AI-Tools zur „cognitive surrender“ führen kann, weshalb Entwickler aktiv die wesentlichen Entscheidungsfindungen von LLMs nachvollziehen sollten, statt blind auf deren Ausgabe zu vertrauen. Er betont, dass neben technischem Know-how auch interdisziplinäres Wissen in Produktmanagement, UX und Go-to-Market-Strategien zukünftig entscheidend sein wird, um in einer zunehmend AI-geprägten Softwareentwicklung verantwortungsvoll und erfolgreich zu agieren.</div>
+        <a href="https://newsletter.pragmaticengineer.com/p/from-chrome-devtools-to-ai-engineering" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">Headed for the Exit: the Great Engineering Leader Career Break</div>
+        <div class="article-date">18.08.2026</div>
+        <div class="article-summary">CTOs, VPEs und andere Führungskräfte verlassen zunehmend ihre Positionen, da unrealistische Erwartungen in puncto AI-Transformation und Kosteneinsparungen (bis zu 20–50 % Kürzungen) den Job untragbar machen. Die Notwendigkeit, Unternehmen rasant in AI-native Organisationen zu verwandeln, führt dazu, dass Führungskräfte in Startups oft mit schrumpfenden Teams, minimalen Ressourcen und der Aussicht auf wertlose Equity – etwa bei einer 2%-Beteiligung, die erst nach einem Exit von über 210 Mio. Dollar Gewinn abwirft – konfrontiert werden. Zusätzlich machen überhitzte Projekte wie 60.000-zeilige Pull Requests und das eigene Mitwirken der Gründer in der Codebasis den Arbeitsalltag schwer, weshalb selbst erfolgreiche Unternehmen wie Ramp, Stripe und Notion als Beispiele für gelungene AI-Integration herangezogen werden. Der Trend zur Verkleinerung von Teams dank Fullstack-Ansätzen und Cross-Plattform-Frameworks wie Next.js oder Ruby on Rails verringert zudem den klassischen Bedarf an umfangreicher Engineering-Führung.</div>
+        <a href="https://newsletter.pragmaticengineer.com/p/the-great-engineering-leader-career-break" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+
+    <h2>Simon Willison (13 Artikel)</h2>
+    <div class="section-summary">Bun 1.4 integriert eine effiziente, native Headless-Browser-API, während ChatGPT seinen Query-Fanout und Zitationsauswahl deutlich anpasst, begleitet von systematischen Änderungen in den OpenAI-Produktanweisungen und KI-gestützten Coding-Agents, die eine massive Steigerung der Codeproduktion ermöglichen. smolvm demonstriert robuste hardwarebasierte VM-Isolation, Mojo 1.0 wird nun unter Apache 2.0 Open Source, und Alibaba präsentiert mit Qwen3.8‑27B ein leistungsstarkes Vision‑Language‑Modell, ergänzend durch Entwicklungen in Markdown-Rendering und datengetriebene Tierbeobachtungsplattformen.</div>
+    <div class="article">
+        <div class="article-title">A shot-scraper-style JSON API on Bun 1.4&#x27;s new Bun.WebView</div>
+        <div class="article-date">20.08.2026</div>
+        <div class="article-summary">Bun 1.4 bietet mit Bun.WebView eine experimentelle, in den Runtime integrierte Headless-Browser-API, die native systemeigene WKWebView auf macOS oder einen angepassten Chrome/Chromium-Prozess auf Linux und Windows verwendet. Der Ansatz, bei jedem Request einen neuen Tab zu öffnen, ermöglicht eine nebenläufige Nutzung, ohne zusätzliche Abhängigkeiten – der gesamte JSON API Service mit Navigieren, JavaScript-Ausführung und Screenshot-Funktionalitäten umfasst lediglich etwa 150 Zeilen TypeScript-Code. Benchmarks zeigen, dass mit der vollwertigen Desktop-Chromium-Version mindestens 168 MB RAM benötigt werden, wobei reduzierte Konfigurationen mit headless_shell und aggressiven Chrome-Flags den Verbrauch bis auf ca. 56 MB senken können. Die API deckt Funktionen wie navigate, evaluate, screenshot sowie Eingabereignisse ab und orientiert sich an den Semantiken von shot-scraper, was sie zu einer kompakten und ressourcenschonenden Alternative zu Puppeteer oder Playwright macht. Der Ansatz eignet sich vor allem für anspruchsvolle Umgebungen, in denen Effizienz und geringe Abhängigkeiten zentral sind.</div>
+        <a href="https://github.com/simonw/research/tree/main/bun-webview-json-api#readme" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">ChatGPT search now uses the site:operator at scale</div>
+        <div class="article-date">20.08.2026</div>
+        <div class="article-summary">Am 8. August 2026 erhöht ChatGPT den Anteil von Fanout-Abfragen mit dem site:operator von 0,37 % auf 16,8 %, was einer 46-fachen Steigerung entspricht. Gleichzeitig steigt die durchschnittliche Anzahl der Abfragen pro Antwort von ca. 1,08 auf ca. 1,83, was darauf hindeutet, dass domänenspezifische Suchen zusätzlich zu generischen Webabfragen ausgeführt werden. Die Änderung erfolgt augenblicklich und deutet auf einen systemweiten Rollout eines neuen System-Prompts bei OpenAI hin. Betreiber müssen sicherstellen, dass wichtige Seiten gut crawlbar und indexiert sind, da site:-basierte Suchen nur auf bereits erfasste Inhalte zugreifen.</div>
+        <a href="https://promptwatch.com/data/chatgpt-site-operator-fanouts" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">a follow-up</div>
+        <div class="article-date">20.08.2026</div>
+        <div class="article-summary">ChatGPT reduzierte den Anteil an Reddit-Zitationen abrupt von 3,8 % (18. Juli bis 7. August 2026) auf 0,5 % zwischen dem 14. und 17. August 2026 – ein Rückgang von 86 %. Bereits am 8. August, als ChatGPT sein Query-Fanout-Verhalten änderte, sank der Anteil von Reddit von den hohen 3 %-Werten in den mittleren 2 %-Bereich. Gleichzeitig verzeichneten Google AI Overviews und AI Mode einen allmählichen Rückgang der Reddit-Zitationen, etwa von 2,5 % auf 2,1 % bzw. von 2,22 % auf 1,54 %. Eine technische Anpassung in der Source-Auswahl von ChatGPT wird als primärer Grund vermutet, wobei ein Datenfehler nicht ausgeschlossen werden kann. Entwickler sollten die Zitationsdaten vor und nach dem 14. August vergleichen, um festzustellen, ob der Rückgang subkategoriebezogen erfolgt.</div>
+        <a href="https://promptwatch.com/data/reddit-citations-are-dropping-in-chatgpt" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">most thorough leaked system prompt</div>
+        <div class="article-date">20.08.2026</div>
+        <div class="article-summary">Das Repository dokumentiert umfangreiche Anpassungen und Umstrukturierungen systemischer Anweisungen für verschiedene OpenAI-Produkte. Viele Commits beziehen sich auf spezifische Versionen, etwa Codex GPT‑5.6, GPT‑5.5‑Instant sowie Varianten, die unter Namen wie Sol, Terra und Luna geführt werden. Es erfolgen sowohl formatbezogene Korrekturen als auch die Ausgliederung von veralteten Inhalten und redundanten Dateien zur Konsolidierung der systemischen Instruktionen. Darüber hinaus werden Erweiterungen und Integrationen, beispielsweise für ChatGPT 4.5 und Claude Code, nachvollziehbar protokolliert.</div>
+        <a href="https://github.com/asgeirtj/system_prompts_leaks/commits/main/OpenAI" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">Conceptual integrity and counting lines of code</div>
+        <div class="article-date">19.08.2026</div>
+        <div class="article-summary">Mit KI-gestützten Agents können Entwickler die Produktion von produktionsreifem Code massiv steigern, indem sie potenziell 1000 Zeilen funktionierenden Code anstatt der üblichen 50 bis 60 Zeilen pro Tag erreichen. Gleichzeitig betont Simon Willison, dass diese Steigerung stets nur dann wertvoll ist, wenn die Qualität – etwa inhaltliche Kohärenz, Testabdeckung und Wartbarkeit – erhalten bleibt. Das Konzept der &quot;conceptual integrity&quot; wird anhand des Winchester Mystery House mit 140 Räumen veranschaulicht, indem gezeigt wird, dass zu häufige und schnelle Erweiterungen die strukturelle Einheit eines Softwareprodukts unterminieren können. Die Nutzung von Coding Agents erfordert daher vor allem von erfahrenen Entwicklern und Architekten ein hohes Maß an Disziplin und strategischem Wissen, um die kognitive Belastung bei der Verwaltung großer Codebasen angemessen zu verteilen.</div>
+        <a href="https://simonwillison.net/2026/Aug/19/conceptual-integrity-and-counting-lines-of-code/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">smolmachines / smolvm as a sandbox for untrusted Python &amp; JavaScript</div>
+        <div class="article-date">19.08.2026</div>
+        <div class="article-summary">smolvm Version 1.8.3 setzt auf eine Hardware-basierte VM-Isolation (libkrun auf KVM, Hypervisor.framework oder WHP) und eignet sich für den &quot;run user-provided data transformations&quot; Use Case, indem es alle Ressourcenbegrenzungen wie --cpus, --mem, --timeout und --storage über erste Klasse CLI-Flags verwaltet. Die Sandbox startet ohne Netzwerkgerät, was durch den Ausschluss des --net Flags sichergestellt wird, und nutzt lokale Images (z. B. ein docker-save tar des Python 3.12-Alpine Images) um vollständig offline zu arbeiten. Die Untersuchung dokumentiert präzise Testergebnisse, etwa 577–643 ms pro vollständigen Start-/Bootzyklus, eine kontrollierte Beendigung endloser Prozesse (z. B. while True stoppt nach 11 s) und typische Begrenzungsfälle wie MemoryError bei Überschreitung des --mem Limits. Detaillierte Testreihen zeigen zudem, dass Schutzebenen wie CPU-Capping, beschränkte Schreibzugriffe und ein persistenter Maschinenmodus (warm exec in ca. 48 ms) zuverlässig funktionieren, wobei auch Bugs, wie bei der unzureichenden Begrenzung von Overlay-Diskwrites, entdeckt und in nachfolgenden Test-Runden korrigiert wurden.</div>
+        <a href="https://github.com/simonw/research/tree/main/smolmachines-untrusted-sandbox#readme" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">Mojo🔥 is now open source</div>
+        <div class="article-date">18.08.2026</div>
+        <div class="article-summary">Der Mojo-Compiler und die dazugehörigen Tools sind nun unter der Apache 2.0 Lizenz (mit LLVM-Ausnahmen) als Open Source verfügbar. Nach vier Jahren gemeinschaftlicher Entwicklung und dem Erreichen von Mojo 1.0 mit Quellcode-Stabilität wurde der zuvor geschlossene Compiler zusammen mit der Standardbibliothek und hunderten Tausenden Zeilen Kerncode offen gelegt. Der Build-Prozess wird über Bazel gesteuert, wobei Entwickler mittels „./bazelw run --config=build-mojo KGEN:mojo -- run hello.mojo“ entweder den Compiler aus dem lokalen Klon oder mit dem Flag „--config=prebuilt-mojo“ eine vorgefertigte Version nutzen können. Beiträge zur Standardbibliothek werden bereits seit 2024 akzeptiert, wohingegen Erweiterungen am Compiler und an den Toolings voraussichtlich erst gegen Jahresende möglich sein sollen.</div>
+        <a href="https://www.modular.com/blog/mojo-open-source" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">Qwen 3.8 27B scores 52 on the Artificial Analysis Intelligence Index</div>
+        <div class="article-date">17.08.2026</div>
+        <div class="article-summary">Qwen3.8 27B von Alibaba, veröffentlicht im August 2026, verfügt über 27 Milliarden Parameter und ist als Open-Weights-Modell unter Apache‑2.0 lizenziert. Das Modell unterstützt Text- und Bildinput, liefert reinen Textoutput und bietet ein Kontextfenster von 256k Tokens (etwa 384 A4-Seiten in Schriftgröße 12). Es erreichte 52 Punkte im Artificial Analysis Intelligence Index und generierte 160 Mio. Output-Tokens – deutlich über dem Median vergleichbarer Modelle (9 bzw. 43 Mio.), während die Token-Preise bei $0.00 pro 1 Mio. Tokens liegen. Qwen3.8 27B nutzt Kettendenken, um komplexe Aufgaben zu bearbeiten und gehört damit im Open-Weights-Segment zu den leistungsstarken reasoning Modellen.</div>
+        <a href="https://artificialanalysis.ai/models/qwen3-8-27b" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">We Tracked a Shipment of Rare Books. It Ended at an Amazon AI Training Facility</div>
+        <div class="article-date">17.08.2026</div>
+        <div class="article-summary">Amazon erwirbt große Mengen seltener Bücher, die in einem speziellen Lager in Las Vegas, Nevada, systematisch für KI-Trainingsdaten erfasst und danach zerstört werden. Ein Trackinggerät, das in eine verdächtige Sendung eingesetzt wurde, belegte, dass der Versand an die Einrichtung VGT3 verlief, wo Mitarbeiter die Bände öffnen, scannen und anschließend die gedruckten Bücher vernichten. Die Aktion demonstriert, wie physische Literatur in digitale Trainingsdaten umgewandelt wird, ohne dass der ursprüngliche Inhalt bewahrt bleibt.</div>
+        <a href="https://www.404media.co/we-tracked-a-shipment-of-rare-books-it-ended-at-an-amazon-ai-training-facility/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">Qwen 3.8 27B is excellent, but it defaults to wildly overthinking things</div>
+        <div class="article-date">16.08.2026</div>
+        <div class="article-summary">Qwen3.8‑27B ist ein kompakter dichte Vision‑Language‑Modell mit 27 Mrd. Parametern, das signifikante Fortschritte im Bereich Coding, professionelle Anwendungen und langwierige Agententasks erzielt. Das Modell unterstützt native Bild-, Video‑ und Textverarbeitung, nativ bis zu 262.144 Token Kontextlänge und erweiterbar auf bis zu 1 M Token durch RoPE‑Skalierung. Standardmäßig aktiviert Qwen3.8‑27B den „Thinking Mode“, der vor der finalen Ausgabe interne Denkprozesse (in Form von &lt;think&gt;‑Blöcken) generiert – eine Einstellung, die für direkte Antworten explizit deaktiviert werden muss. Benchmarks in Bereichen wie agentischem Coding und wissenschaftlicher sowie multidisziplinärer Problemlösung zeigen, dass das Modell im Vergleich zu seinen Vorgängerversionen und Wettbewerbern in mehreren Szenarien deutlich bessere Ergebnisse erzielt.</div>
+        <a href="https://huggingface.co/Qwen/Qwen3.8-27B" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">Qwen 3.8 27B is excellent, but it defaults to wildly overthinking things</div>
+        <div class="article-date">16.08.2026</div>
+        <div class="article-summary">Qwen 3.8 27B ist ein 27-Milliarden-Parameter-Modell von Alibaba, das unter Apache 2 lizenziert ist und sowohl Vision als auch Textaufgaben unterstützt. Das Modell läuft als 17GB GGUF-Quantisierungsdatei in LM Studio und zeigt beeindruckende Ergebnisse bei Benchmarks, illustrieren dies Experimente wie die Generierung eines animierten Pelikan-SVGs, die jedoch aufgrund des voreingestellten reasoning_effort-Werts &quot;xhigh&quot; zu übermäßig langen Antwortzeiten – bis zu 21 Minuten – führen. Beim Vergleich konnte die Abschaltung der tiefgehenden Überlegungen die Laufzeit deutlich verkürzen (137 Sekunden statt 21 Minuten) und die Token-Rate lag bei 15–30 Tokens pro Sekunde, was im direkten Vergleich langsamer als kommerzielle API-Angebote ist. Optimierungen wie Multi-Token Prediction brachten bereits eine etwa 72 % schnellere Inferenzleistung, während Anwendungen wie Bounding-Box-Annotation und Coding Agents (via Pi) den vielseitigen Einsatz des Modells unterstreichen.</div>
+        <a href="https://simonwillison.net/2026/Aug/16/qwen-38-27b/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">markdown-svg-renderer</div>
+        <div class="article-date">16.08.2026</div>
+        <div class="article-summary">Das Tool ermöglicht die Bearbeitung von Markdown in einer Weboberfläche, die aus Eingabefeldern, Lade- und Vorschau-Buttons besteht. Durch die direkte Einbindung von SVG-Elementen wie Rechtecken und Pfaden in die Vorschau wird eine schnelle Visualisierung des eingegebenen Codes erreicht. Die Implementierung trennt deutlich die Bereiche für Input und gerenderte Ausgabe, was auf eine gezielte Strukturierung des Render-Prozesses hinweist. Entwickler profitieren von der einfachen Bedienung und der unmittelbaren Rückmeldung der SVG-Darstellung.</div>
+        <a href="https://tools.simonwillison.net/markdown-svg-renderer" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">Sighting</div>
+        <div class="article-date">15.08.2026</div>
+        <div class="article-summary">272 Tierbeobachtungen werden nach Datum sortiert angezeigt und über zehn Seiten paginiert. Die Seite verknüpft konkrete Daten, Zeiträume und Standorte, etwa mit Aufzeichnungen wie der Beobachtung einer Anna’s Hummingbird in San Mateo County oder eines seltenen Northern Gannet in Pillar Point Harbor. Jede Eintragung enthält präzise Zeitangaben, Verweise auf detaillierte Beobachtungsseiten und visuelle Belege (z. B. Fotos von inaturalist.org). Zusätzlich bietet die Navigation Filteroptionen, Jahresübersichten mit Eintragszahlen sowie weiterführende Links zu Atom-Feeds und Webmention-Diensten.</div>
+        <a href="https://simonwillison.net/elsewhere/sighting/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+
+    <h2>Warp AI Terminal Blog (1 Artikel)</h2>
+    <div class="article">
+        <div class="article-title">Introducing Warp Factories - open, flexible infrastructure for building your software factory</div>
+        <div class="article-date">18.08.2026</div>
+        <div class="article-summary">Warp Factories von Warp liefern eine offene, versionierte Infrastruktur zur Automatisierung des gesamten SDLC, indem sie Cloud-basierte Softwarefabriken bereitstellen, in denen Coding Agents Aufgaben von Triage über Spezifikation bis hin zu Implementierung und Review abwickeln. Die Factory-Definition erfolgt als Code, wodurch eine nahtlose Integration in bestehende Tools wie Slack, Jira und GitHub sowie Rückverfolgbarkeit, Canary-Releases und Versionskontrolle ermöglicht wird. Die Lösung adressiert kritisch die Messung und Optimierung von Agenten-ROI, indem sie detaillierte Metriken, Evaluierungen, Benchmarks und selbstverbessernde Observer-Agenten bereitstellt und gleichzeitig den Einsatz verschiedener Modelle (z. B. Claude Code, Codex oder andere Open-Weight-Modelle) unterstützt. Die Infrastruktur ermöglicht zudem AI-Souveränität, da Kunden Inferenz, Hosting und Datenspeicherung selbst steuern oder anpassen können. Die Beta-Version ist seit dem 18. August 2026 verfügbar, wobei qualifizierte Organisationen mit einem Startguthaben von 10.000 US-Dollar in die Nutzung einsteigen können.</div>
+        <a href="https://www.warp.dev/blog/open-infrastructure-for-building-a-software-factory" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+
+    <a href="index.html" class="back-link">&larr; Zur&uuml;ck zur &Uuml;bersicht</a>
+
+</body>
+</html>
