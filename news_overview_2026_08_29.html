@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Übersicht - Letzte 7 Tage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        h2 {
+            color: #555;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+        .article {
+            margin-bottom: 25px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+        }
+        .article-title {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        .article-date {
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+        .article-summary {
+            margin-bottom: 10px;
+        }
+        .article-link {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        .article-link:hover {
+            text-decoration: underline;
+        }
+        /* R00011: Section-Summary-Block, leicht abgesetzt von Einzel-Artikeln */
+        .section-summary {
+            margin: 10px 0 20px 0;
+            padding: 12px 16px;
+            background-color: #eef4fb;
+            border-left: 4px solid #0066cc;
+            font-style: italic;
+            color: #234;
+        }
+        /* R00012: Changelog-Digest-Block — visuell distinkt vom Section-Summary */
+        .changelog-digest {
+            margin: 10px 0 15px 0;
+            padding: 12px 16px;
+            background-color: #fff7e6;
+            border-left: 4px solid #d97706;
+            color: #3a2a00;
+        }
+        .changelog-links {
+            list-style: disc inside;
+            padding-left: 0;
+            margin: 0 0 25px 0;
+        }
+        .changelog-links li {
+            margin: 4px 0;
+        }
+        .changelog-date {
+            color: #666;
+            font-size: 0.9em;
+            margin-left: 6px;
+        }
+        /* R00013: Wochen-Tenor — visuell die staerkste der drei
+           Verdichtungsklassen (overall > section-summary > changelog-digest).
+           Linker Rand kraeftiger, Schrift groesser, klar abgesetzte
+           Hintergrundfarbe — vom Leser auf den ersten Blick als
+           Zusammenfassung der Wochenausgabe erkennbar. */
+        .overall-summary {
+            margin: 10px 0 25px 0;
+            padding: 18px 22px;
+            background-color: #f0fbf3;
+            border-left: 6px solid #15803d;
+            font-size: 1.1em;
+            color: #14271d;
+        }
+        /* R00014: Video-Kacheln — Nebenspur, deutlich schmaler als die
+           Artikel-Spalte, mehrere Kacheln pro Zeile. */
+        .video-tiles-heading {
+            font-size: 1.1em;
+            color: #555;
+            margin-top: 30px;
+        }
+        .video-tiles {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 16px;
+            margin-bottom: 30px;
+        }
+        .video-tile {
+            display: block;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            overflow: hidden;
+            padding-bottom: 10px;
+            text-decoration: none;
+            color: inherit;
+            background: #fff;
+        }
+        .video-tile:hover {
+            border-color: #0066cc;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+        }
+        .video-thumb {
+            width: 100%;
+            display: block;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            background: #eee;
+        }
+        .video-title {
+            font-weight: bold;
+            font-size: 0.95em;
+            margin: 10px 10px 4px 10px;
+        }
+        .video-meta {
+            font-size: 0.8em;
+            color: #888;
+            margin: 0 10px 6px 10px;
+        }
+        .video-summary {
+            font-size: 0.85em;
+            color: #444;
+            margin: 0 10px;
+            line-height: 1.4;
+        }
+
+        /* R00011: Rueckspruglink zur index.html (oben und unten) */
+        .back-link {
+            display: inline-block;
+            margin: 10px 0 20px 0;
+            color: #0066cc;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>News Übersicht der letzten 7 Tage</h1>
+    <a href="index.html" class="back-link">&larr; Zur&uuml;ck zur &Uuml;bersicht</a>
+    <div class="overall-summary">Die Entwicklungen zeigen eine starke Fokussierung auf agentenbasierte Systeme, die sowohl in KI-gestützten Forschungsprogrammen als auch in der automatisierten Steuerung von physikalischen Geräten und Softwarefabriken zum Einsatz kommen. Mehrere Beiträge thematisieren strukturierte Ansätze zur Datenaufbereitung und standardisierte Schnittstellen, wie der Model Hardware Standard (MHS) und Datenarchitektur-Prinzipien, die den nahtlosen Betrieb von autonomen Agenten ermöglichen. Im Bereich der Softwareentwicklung ergeben sich wichtige Fortschritte durch Releases wie .NET 11 und C# 15 sowie umfangreiche Migrationsstrategien bei bestehenden Codebasen, was die Effizienz und Wartbarkeit verbessert. Ergänzt wird das Bild durch Fortschritte bei multimodalen Tools, die von präzisen Transkriptionsdiensten bis hin zu sprachgesteuerten Assistenzsystemen reichen und neue Maßstäbe bei der Interaktion zwischen Mensch und Maschine setzen. Gleichzeitig zeichnen sich Sicherheitsrisiken und Herausforderungen in der Agentensteuerung ab, die einen bewussten Umgang mit Netzwerk- und Systemarchitekturen erfordern.</div>
+    <p>Generiert am: 29.08.2026 07:00 Uhr</p>
+    <p>Anzahl Artikel: 20 (zus&auml;tzlich 8 Changelog-Eintr&auml;ge aus 1 Quelle) (zus&auml;tzlich 1 Video)</p>
+
+    <h2 class="video-tiles-heading">Videos der Woche</h2>
+    <div class="video-tiles">
+        <a class="video-tile" href="https://www.youtube.com/watch?v=5YF7najQ7Eg" target="_blank" rel="noopener noreferrer">
+            <img class="video-thumb" src="https://i.ytimg.com/vi/5YF7najQ7Eg/hqdefault.jpg" alt="" loading="lazy">
+            <div class="video-title">How to Build A Team Of Devs That Improves Itself</div>
+            <div class="video-meta">Modern Software Engineering (Dave Farley) &middot; 26.08.2026</div>
+            <div class="video-summary">What makes high performance teams excel? In this video, Dave Farley breaks down the essential leadership skills needed to build a self-improving dev team. Discover why 88% of transformations fail and how an engineering lead or CTO can foster better team dynamics by treating change as small, safe…</div>
+        </a>
+    </div>
+
+    <h2>Anthropic News (3 Artikel)</h2>
+    <div class="section-summary">Anthropic intensiviert den Einsatz seines Modells Claude in der Wissenschaft, indem es mit Claude Science, einem neuen Team-Plan sowie einem erweiterten AI for Science Programm rechenintensive und interdisziplinäre Forschungsprojekte unterstützt. Mit dem Model Hardware Standard verkürzt der Konzern signifikant die Integrationszeiten physischer Laborgeräte und investiert zudem 5 Mio. US-Dollar in Projekte zur Messung des KI-Einflusses auf das Wohlbefinden in realitätsnahen Multi-Turn Konversationen.</div>
+    <div class="article">
+        <div class="article-title">Expanding our support for scientists</div>
+        <div class="article-date">27.08.2026</div>
+        <div class="article-summary">Anthropic erweitert seine Unterstützung für die Forschungs-Community durch neue Produkte und Programme, um den Einsatz des Modells Claude in wissenschaftlichen Projekten zu intensivieren. Die Integration von Claude Science verbindet gängige Forschungstools mit prüfbaren Artefakten und flexiblen Rechenressourcen. Über den neuen Claude Team Plan für Wissenschaftler werden 10.000 Zugänge angeboten – Standardplätze kostenfrei, während Premium-Plätze mit 5‑fachem Nutzungsvolumen für 15 US-Dollar pro Monat erhältlich sind. Gleichzeitig ermöglicht das erweiterte AI for Science Programm, das bisher vorwiegend Wissenschaftler aus den biologischen Disziplinen unterstützte, die Vergabe von bis zu 50.000 US-Dollar an Krediten pro Projekt und adressiert nun auch rechenintensive Forschungsprojekte in anderen wissenschaftlichen Bereichen.</div>
+        <a href="https://www.anthropic.com/news/expanding-support-for-scientists" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">Previewing the Model Hardware Standard</div>
+        <div class="article-date">27.08.2026</div>
+        <div class="article-summary">Model Hardware Standard (MHS) standardisiert die Schnittstellen zwischen KI-Agenten und physikalischen Geräten, sodass diverse Labor- und Fertigungsinstrumente – etwa Mikroskope, Flüssigkeitshandler oder Roboterarme – über einen gemeinsamen Treiber gesteuert werden können. Durch die Verwendung einfacher Befehle wie „read“ und „write“ und den Einsatz des Model Context Protocol reduziert MHS Integrationszeiten von Wochen oder Monaten auf Stunden oder Minuten. Erste Anwendungen demonstrieren, wie MHS beispielsweise bei Genentech zur Optimierung der BCA-Protein-Assay-Parameter mit Claude als zentralem Controller (unter Einsatz von Claude Opus 4.8) oder an Universitäten zur Fernüberwachung und Fehlerbehebung in komplexen qPCR-Abläufen eingesetzt wird. Zudem arbeiten mehrere Hardware- und Softwarepartner – etwa AWS, Automata, Danaher sowie Raspberry Pi – an der Integration von MHS, um die Sicherheit und Effizienz im autonomen Betrieb physischer Geräte weiter zu verbessern.</div>
+        <a href="https://www.anthropic.com/news/model-hardware-standard-research-preview" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">Funding better evaluations of AI’s impact on wellbeing</div>
+        <div class="article-date">25.08.2026</div>
+        <div class="article-summary">Anthropic stellt ein Förderprogramm in Höhe von 5 Mio. US-Dollar bereit, um unabhängige Forschung zur Messung des Einflusses von KI auf das Wohlbefinden zu finanzieren. Gefördert werden Projekte, die realitätsnahe Multi-Turn Konversationen abbilden und Kriterien wie Übercompliance sowie Überrefusal systematisch bewerten. Die Bewerber – darunter Experten aus Klinik, Psychologie und verwandten Disziplinen – erhalten neben Fördermitteln Zugang zu Anthropics Modellen und technischer Unterstützung. Bewerbungen müssen bis zum 21. September eingereicht werden, eine Benachrichtigung über ausgewählte Projekte erfolgt bis zum 5. Oktober.</div>
+        <a href="https://www.anthropic.com/news/wellbeing-research-grants" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+
+    <h2>GitHub Copilot Blog (1 Artikel)</h2>
+    <div class="article">
+        <div class="article-title">GitHub Copilot app for Beginners: Automate Dependabot pull request triage</div>
+        <div class="article-date">26.08.2026</div>
+        <div class="article-summary">GitHub Copilot App automatisiert wiederkehrende Aufgaben im Umgang mit Dependabot-Pull-Requests, indem sie diese nach Risiko gruppiert, den CI-Status prüft und eine zusammenfassende Empfehlung liefert. Die Konfiguration erfolgt über GitHub Copilot app automations, wobei beispielsweise ein Workflow namens „Daily Dependabot Triage“ erstellt wird, der täglich vor Arbeitsbeginn ausgeführt wird. Im ersten Schritt wird der Automatisierungstrigger festgelegt und im zweiten Schritt wird mithilfe einer natürlichen Sprachbeschreibung definiert, welche Pull-Requests wie behandelt werden sollen. Die Automatisierung fasst sichere Patch-Updates, minor und major Versionserhöhungen zusammen und hebt Pull-Requests hervor, die zusätzliche Aufmerksamkeit erfordern. Die historischen Ergebnisse jeder Ausführung ermöglichen eine transparente Nachverfolgung und einen nahtlosen Übergang in weiterführende Copilot-Sessions zur Detailanalyse komplexerer Updates.</div>
+        <a href="https://github.blog/ai-and-ml/github-copilot/github-copilot-app-for-beginners-automate-dependabot-pull-request-triage/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+
+    <h2>GitHub Copilot Changelog (8 Eintr&auml;ge)</h2>
+    <div class="changelog-digest">Visual Studio 2026, JetBrains, Slack, Microsoft Teams, VS Code und die Copilot App profitieren von bedeutenden Funktionen und Integrationen, etwa durch organisationsbasierte Agenten, geteilte Sessions, erweiterte Customize-Tabs sowie optimierte Plugin- und MCP-Management-Workflows. Gleichzeitig wird der Copilot CLI und der Copilot harness für JetBrains eine bessere Steuerung der IDE-Funktionen und Debug-Workflows verliehen. Neue Registrierungs- und Abrechnungsregeln für Business- und Enterprise-Kunden vereinheitlichen das Zahlungsmodell und standardisieren den Chat über verschiedene Plattformen, während eine globale Modellrichtlinie dafür sorgt, dass bestimmte Modelle wie DeepSeek und Fable 5 automatisch deaktiviert werden. Im Code Review werden nun auch botgenerierte Pull Requests automatisch überprüft, Frei von bisherigen Einschränkungen bei Dateianzahl und Codezeilen, wobei eine Dropdown-Auswahl exakte Auflösungsgründe ermöglicht. Zusätzlich aktualisieren nun Plugin-Marktplätze in Enterprise-Settings automatisch zugehörige Plugins in unterstützten Clients, was die Wartung und Integration in bestehende Workflows erleichtert.</div>
+    <ul class="changelog-links">
+        <li><a href="https://github.blog/changelog/2026-08-28-github-copilot-in-visual-studio-august-update-2" class="article-link" target="_blank">GitHub Copilot in Visual Studio — August update</a> <span class="changelog-date">28.08.2026</span></li>
+        <li><a href="https://github.blog/changelog/2026-08-28-github-copilot-weekly-releases-august-24" class="article-link" target="_blank">GitHub Copilot weekly releases — August 24</a> <span class="changelog-date">28.08.2026</span></li>
+        <li><a href="https://github.blog/changelog/2026-08-28-upcoming-changes-to-github-copilot-policies-and-billing" class="article-link" target="_blank">Upcoming changes to GitHub Copilot policies and billing</a> <span class="changelog-date">28.08.2026</span></li>
+        <li><a href="https://github.blog/changelog/2026-08-27-copilot-code-review-resolution-reasons-and-expanded-capabilities" class="article-link" target="_blank">Copilot code review: Resolution reasons and expanded capabilities</a> <span class="changelog-date">27.08.2026</span></li>
+        <li><a href="https://github.blog/changelog/2026-08-26-enterprise-managed-settings-now-support-autoupdate-for-plugin-marketplaces" class="article-link" target="_blank">Enterprise-managed settings now support autoUpdate for plugin marketplaces</a> <span class="changelog-date">27.08.2026</span></li>
+        <li><a href="https://github.blog/changelog/2026-08-26-global-model-policy-generally-available" class="article-link" target="_blank">Global model policy generally available</a> <span class="changelog-date">26.08.2026</span></li>
+        <li><a href="https://github.blog/changelog/2026-08-24-copilot-harness-generally-available-in-copilot-for-jetbrains" class="article-link" target="_blank">Copilot harness generally available in Copilot for JetBrains</a> <span class="changelog-date">25.08.2026</span></li>
+        <li><a href="https://github.blog/changelog/2026-08-25-github-copilot-app-customize-tab-is-generally-available" class="article-link" target="_blank">GitHub Copilot app Customize tab is generally available</a> <span class="changelog-date">25.08.2026</span></li>
+    </ul>
+
+    <h2>Google AI Blog (2 Artikel)</h2>
+    <div class="article">
+        <div class="article-title">Gemini Omni 1.1 Flash lets you build with more control</div>
+        <div class="article-date">27.08.2026</div>
+        <div class="article-summary">Gemini Omni 1.1 Flash verbessert die Kontrolle über generative Videoprozesse, indem es Entwicklern ermöglicht, Szenen in 10-Sekunden-Schritten bis zu einer Gesamtlänge von 40 Sekunden nahtlos zu erweitern – ein signifikanter Sprung von der bisherigen Kontextanalyse von lediglich einer Sekunde. Das Update unterstützt die präzise Auswahl von ersten und letzten Einzelbildern, was die Erzeugung fließender Übergänge und komplexer Kamerabewegungen erleichtert. Mithilfe von Vorschauen in 360p lassen sich Entwürfe bis zu 60 % schneller und kostengünstiger erstellen, während finale Produktionen in 1080p oder sogar 4K realisiert werden können. Die neuen Funktionen sind über Google AI Studio sowie die Gemini Enterprise Agent Platform direkt integrierbar.</div>
+        <a href="https://blog.google/innovation-and-ai/technology/developers-tools/build-with-gemini-omni-1-1-flash/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">How developers build AI for good with Gemma 4</div>
+        <div class="article-date">24.08.2026</div>
+        <div class="article-summary">Die Gemma 4 Good Challenge auf Kaggle forderte Entwickler dazu auf, AI-Lösungen unter Einsatz der Gemma 4 Modelle – etwa der 31B-, 26B-, E2B- und E4B-Varianten – für reale Anwendungsfälle zu entwickeln, etwa für Barrierefreiheit, Gesundheit und Bildung. Gewinnerprojekte wie GEM-4, das mithilfe eines Gemma 4 31B Modells eine robotische Assistenz zur Unterstützung älterer Menschen realisiert, und Trido, das mit einer lokal betriebenen Gemma 4 E2B-basierenden, sprachgesteuerten digitalen Whiteboard-Lösung Lehrkräfte entlastet, demonstrieren, wie AI bei ressourcenbeschränkten Geräten implementiert werden kann. Weitere Sieger – beispielsweise PenguinAgent, DEMENTOR und Acuífero·Vigía, letzteres zur FLOOD-Früherkennung mit Raspberry Pi 5 und Maßnahmen gegen WebGPU-Buffer Overflows – belegen technische Robustheit und aufwendige Optimierungen wie die Integration von LiteRT, Cactus, Ollama und llama.cpp. Projekte wie PreVillage, das mit llama.cpp auf einem Raspberry Pi 5 als sprachgesteuertes Bot-System at 7,5 Tokens pro Sekunde operiert, und PathOS, das on-device mit reinforcement learning ausgerichtete Histopathologie-Screenings ermöglicht, zeigen die Breite des Spektrums an innovativen Edge-Computing-Lösungen. Mehr als 1.600 Einreichungen innerhalb von 6 Wochen und das Erreichen von 1 Milliarde Downloads für Gemma unterstreichen den umfassenden Impact und das globale Engagement der Entwicklergemeinschaft.</div>
+        <a href="https://blog.google/innovation-and-ai/technology/developers-tools/winning-entries-gemma-4-good-challenge/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+
+    <h2>Google AI Blog - Gemini (3 Artikel)</h2>
+    <div class="section-summary">Gemini 3.5 Transcribe liefert präzise Echtzeit- und vorab aufgezeichnete Transkriptionen mit verbessertem Word Error Rate und verkürzter Verarbeitungszeit über separate APIs für Streaming und Batch-Processing. Gemini Live ergänzt das Angebot, indem es sprachgesteuerte, mehrstufige Aufgaben über Funktionen wie Spark-Integration, Personal Intelligence und Daily Brief ermöglicht, während die macOS-basierte Gemini App mit intelligenter Diktierfunktion natürliche Sprache in formatierten Text umwandelt.</div>
+    <div class="article">
+        <div class="article-title">Intelligent transcription with Gemini 3.5 Transcribe</div>
+        <div class="article-date">26.08.2026</div>
+        <div class="article-summary">Gemini 3.5 Transcribe liefert präzise Echtzeit- und vorab aufgezeichnete Transkriptionen mit einem durchschnittlichen Word Error Rate von 4,0% für Streaming und 2,6% bei nicht-streamenden Anwendungen, gemessen durch Artificial Analysis. Die neue Version verbessert zusätzlich die Zeit bis zur endgültigen Transkription um 70% im Vergleich zum Vorgängermodell Chirp 3. Entwickler nutzen zwei APIs – gemini-3.5-transcribe-live für bidirektionales Streaming und gemini-3.5-transcribe für die Verarbeitung vorab aufgezeichneter Audiospuren – um nahtlos Anwendungen wie Voice Agents, Echtzeit-Untertitelung und Post-Call-Analysen zu realisieren. Das System unterstützt intelligente Funktionen wie das Entfernen von Füllwörtern, automatische Textformatierung, Multi-Speaker-Attribution und die Integration spezieller Vokabulare, was die präzise Erfassung von Begriffen wie Postleitzahlen oder Bestellnummern in verschiedensten realen Umgebungen ermöglicht. Die Technologie kommt bereits in Anwendungen wie der Gemini App, Rambler auf Android und Google AI Studio zum Einsatz und bietet Entwicklern vielseitige Einsatzmöglichkeiten in sprachbasierten Interaktionsszenarien.</div>
+        <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5-transcribe/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">Turn your voice into action with new productivity features in Gemini Live</div>
+        <div class="article-date">26.08.2026</div>
+        <div class="article-summary">Gemini Live von Google erweitert die Sprachsteuerung um agentische Funktionen, die es ermöglichen, komplexe und mehrstufige Aufgaben ausschließlich per Sprachbefehl zu initiieren. Die Integration von Spark – verfügbar ab einem Google AI Pro Abonnement – erlaubt es, unstrukturierte Ideen in strukturierte Dokument-Templates in Google Docs zu überführen oder individuelle Wochenpläne samt Einkaufslisten zu erstellen. Mit dem Daily Brief (Google AI Plus) erhalten Nutzer einen gesprochenen Überblick über ihre wichtigsten Gmail- und Kalender-Updates direkt zum Tagesbeginn. Über die Funktion Personal Intelligence erinnert sich Gemini Live an vergangene Konversationen und verknüpfte Daten aus Google-Apps wie Gmail, Photos, Search und YouTube, um kontextbezogene und personalisierte Antworten zu liefern. Entwickler und Architekten müssen dabei in den Gemini-Einstellungen die entsprechenden App-Verbindungen aktivieren, um diese sprachgesteuerten Produktivitätsfeatures nutzen zu können.</div>
+        <a href="https://blog.google/innovation-and-ai/products/gemini-app/productivity-features-gemini-live/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">Here’s how to use intelligent dictation in Gemini for macOS.</div>
+        <div class="article-date">25.08.2026</div>
+        <div class="article-summary">Die Gemini App für macOS integriert jetzt eine intelligente Diktat-Funktion, die natürliche Sprache in klar formatierten Text umwandelt. Nutzer diktieren in beliebigen Fenstern, wobei die Software Füllwörter entfernt, Unterbrechungen erkennt und Korrekturen direkt umsetzt. Die Funktion positioniert den fertigen Text automatisch an der Stelle des Cursors, was den Arbeitsablauf nahtlos unterstützt. Das Feature wurde am 25. August 2026 eingeführt und demonstriert, wie sprachgesteuerte Bearbeitung in desktop-nahen Umgebungen effizient umgesetzt werden kann.</div>
+        <a href="https://blog.google/innovation-and-ai/products/gemini-app/enable-intelligent-dictation-macos/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+
+    <h2>Martin Fowler (2 Artikel)</h2>
+    <div class="article">
+        <div class="article-title">Making Your Data Ready for Agentic AI</div>
+        <div class="article-date">27.08.2026</div>
+        <div class="article-summary">Das Aufbereiten von Daten für agentische KI erfordert eine grundlegende Umgestaltung bestehender Datenarchitekturen, indem Fehlerquellen durch explizit definierte Datenverträge (z. B. mit Open Data Contract Standard apiVersion: v3.1.0) und strenge Freshness-SLAs eliminiert werden. Eine Medaillon-Architektur sorgt dabei für die saubere Trennung zwischen rohen (Bronze), validierten (Silver) und zertifizierten (Gold) Daten, während ein erweiterter Kontext-Layer aus Domain‑, Semantik‑ und Capability-Modellen (beispielsweise realisiert mit dbt MetricFlow) das implizite Erfahrungswissen explizit kodifiziert. Agentische Systeme nutzen diese Basis, um von reinen Retrieval-Lösungen über Echtzeit-Abfragen bis hin zu kontrollierten Write-Back-Primitiven (MCP) zu agieren, wobei Sicherheitsmechanismen wie delegierter Zugriff, just-in-time Credentials und Least Privilege den Zugriff steuern. Über alle Schichten hinweg greifen kontinuierliche Observability und die Erfassung detaillierter agentischer Lineage (unter Nutzung etablierter Tools wie OpenTelemetry, Langfuse oder Arize Phoenix), um Entscheidungsprozesse transparent, rückverfolgbar und regulatorisch konform zu machen. Insgesamt bildet dieser abgestufte, gruppenübergreifende Ansatz die Grundlage dafür, dass autonome Agenten ausschließlich vertrauenswürdige, kontextualisierte und ergebniswirksame Daten verarbeiten können.</div>
+        <a href="https://martinfowler.com/articles/making-data-ready-for-agentic-ai.html" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">Fragments: August 24</div>
+        <div class="article-date">24.08.2026</div>
+        <div class="article-summary">Tausende autonome Agenten operieren in OpenAI-Systemen, ohne menschliche Rückmeldung zu suchen, was Fragen nach der innerbetrieblichen Selbstregulierung und möglichen Risiken aufwirft. Ezra Kleins Interview mit Helen Toner und die damit verbundenen Beobachtungen deuten darauf hin, dass diese Agenten trotz unsanierter Aktivitäten keine Hinweise auf Missstände melden. Bruce Schneier und Nathan Sanders schlagen vor, fallen Unternehmen wie OpenAI und Anthropic wirtschaftlich aus, könnten sie in nationale Forschungslabore überführt werden – ein Vorgehen, das an die ehemalige Rolle von AT&amp;T anknüpft. Zalando implementiert unter anderem eine Plattform, die mittels Large Language Model das Risiko von Pull Requests bewertet und damit die Durchlaufzeit um 20–40 Prozent reduziert.</div>
+        <a href="https://martinfowler.com/fragments/2026-08-24.html" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+
+    <h2>Microsoft .NET Blog (4 Artikel)</h2>
+    <div class="section-summary">Uno Platform Studio 3.0 integriert .NET-Technologien wie MCP, Roslyn und SkiaSharp, um plattformübergreifende Applikationen über spezialisierte, dokumentations- und zustandsbasierte Serverarchitekturen sowie AOT in .NET 10 zu realisieren. .NET 11 ergänzt mit C# 15 den Sprachumfang um Union Types und Closed Hierarchies und passt unsichere Operationen an, während die .NET Conf 2026 und Microsoft Foundry Hosted Agents fortschrittliche Ansätze für KI-Integration, Containerisierung von Agenten und produktionsreife Bereitstellung in Azure demonstrieren.</div>
+    <div class="article">
+        <div class="article-title">How Uno Platform uses .NET, MCP, and AI to build high quality apps</div>
+        <div class="article-date">27.08.2026</div>
+        <div class="article-summary">Uno Platform integriert .NET, MCP und AI, um plattformübergreifende Apps zu bauen, wobei zwei spezialisierte Server – ein dokumentationsbasierter, stateless „docs server“ (https://mcp.platform.uno/v1) und ein zustandsbehafteter „app server“ – zum Einsatz kommen. Die Architektur ermöglicht es dem Agent, durch Befehle wie uno_app_start, uno_app_get_screenshot oder uno_app_pointer_click den aktuellen Zustand der App präzise zu erfassen und zu steuern, während Tool-Aufrufe wie uno_platform_docs_search und uno_platform_docs_fetch über 6,4k bzw. 1,5k Tokens kosten. Die Umsetzung basiert auf dem MCP C# SDK (verfügbar unter https://github.com/modelcontextprotocol/csharp-sdk) und wird in Zusammenarbeit mit Microsoft sowie der Community gepflegt. Zusätzlich generiert Uno Platform Studio 3.0 einen vollständigen .NET App-Workflow im Browser, der auf Technologien wie Roslyn, Microsoft Agent Framework und sogar SkiaSharp (mit Blick auf SkiaSharp 4.0) setzt und Aspekte wie AOT in .NET 10 adressiert.</div>
+        <a href="https://devblogs.microsoft.com/dotnet/how-uno-platform-uses-dotnet-mcp-ai-to-build-high-quality-apps/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">.NET Conf 2026</div>
+        <div class="article-date">25.08.2026</div>
+        <div class="article-summary">.NET Conf 2026 findet vom 10. bis 12. November 2026 als kostenloses Online-Event statt und präsentiert gleichzeitig das Release von .NET 11. Das Update umfasst Neuerungen im Runtime, in den Bibliotheken, im SDK und in Bereichen wie ASP.NET Core, Blazor, .NET MAUI und Entity Framework Core. Entwickler können bereits die neuesten Previews ausprobieren, zu denen C# 15 union types sowie die Integration von CoreCLR bei .NET MAUI-Apps zählen. Zudem verbessert ASP.NET Core die statische SSR, Formvalidierung, Minimal APIs und unterstützt ab Werk OpenAPI 3.2, während die Version 2.0 des offiziellen MCP C# SDK den Aufbau skalierbarer KI-Tools mit ASP.NET Core erleichtert. Sprecheraufrufe und weitere Details werden in den kommenden Wochen bekanntgegeben.</div>
+        <a href="https://devblogs.microsoft.com/dotnet/dotnet-conf-2026/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">Explore new features available in C# 15 preview</div>
+        <div class="article-date">24.08.2026</div>
+        <div class="article-summary">C# 15 wird zusammen mit .NET 11 im November veröffentlicht und ist bereits in .NET 11 Preview 7 verfügbar. Die neue Version erweitert den Sprachumfang um Union Types, mit denen Werte explizit auf einen Satz definierter Typen beschränkt werden können, und Closed Hierarchies, die erlauben, Ableitungen innerhalb einer Assembly strikt zu regeln. Der überarbeitete Unsafe-Mechanismus verändert Pointer-Operationen so, dass sie in sicheren Kontexten deklariert werden, wobei nur das Dereferenzieren, der Memberzugriff und der Elementzugriff weiterhin explizit als unsicher markiert werden müssen. Ergänzt werden diese Änderungen durch Collection Expression Arguments, Extension Indexers sowie beschriftete break- und continue-Anweisungen, die den Code lesbarer machen und die Fehleranfälligkeit reduzieren, während Microsoft in der Preview-Phase aktiv Feedback der Community einholt.</div>
+        <a href="https://devblogs.microsoft.com/dotnet/explore-csharp-15/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">From dotnet run to Foundry Hosted Agent in 3 lines of C#</div>
+        <div class="article-date">24.08.2026</div>
+        <div class="article-summary">Microsoft Foundry Hosted Agents ermöglichen es, einen einfachen Console-Agent, der mit dem Microsoft Agent Framework erstellt wurde, mit nur einem NuGet-Paket („Microsoft.Agents.AI.Foundry.Hosting“), drei zusätzlichen C#-Codezeilen und zwei azd-Befehlen containerisiert und produktionsreif in Azure bereitzustellen. Dabei übernimmt die Plattform Aufgaben wie Infrastrukturprovisionierung, Skalierung, Session-State-Management sowie die Einrichtung einer dedizierten Microsoft Entra-ID, ohne dass zusätzliche Server- oder Kestrel-Konfiguration notwendig ist. Die Beispielimplementierung nutzt die .NET 10 SDK, setzt standardmäßig auf das Modell „gpt-5-mini“ und stellt den Agent über einen OpenAI-kompatiblen /responses-Endpunkt bereit. Entwickler können ihre Anwendung lokal mit dem Azure Developer CLI und dem Foundry Toolkit in VS Code testen, bevor sie mittels „azd provision“ und „azd deploy“ komplett in Azure deployed wird.</div>
+        <a href="https://devblogs.microsoft.com/dotnet/from-dotnet-run-to-foundry-hosted-agent-in-3-lines-of-csharp/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+
+    <h2>Pragmatic Engineer Newsletter (1 Artikel)</h2>
+    <div class="article">
+        <div class="article-title">Why Ramp built its own in-house coding agent, Inspect</div>
+        <div class="article-date">25.08.2026</div>
+        <div class="article-summary">Ramp entwickelte den eigenen Coding Agent Inspect, um die Limitierungen externer Systeme wie Codex oder Claude Code zu umgehen und gleichzeitig den Zugang zu internen Datenquellen und Tools zu ermöglichen. Inspect läuft in Remote-Sandboxes, was unbegrenzte parallele Sessions, zentral konfigurierte Umgebungen und eine umfassende Verifikation von Backend- und Frontend-Änderungen (unter anderem durch Screenshots und Live-Previews) erlaubt. Mit dem Wechsel von Inspect v1 zu v2 im November 2025 stieg der Anteil an durch Inspect initiierten Pull Requests innerhalb weniger Monate von 60 % auf 75 %, wobei eine vollständig provisionierte, remote Entwicklungsumgebung in unter 5 Sekunden startet. Der Tech-Stack umfasst unter anderem React/Vite, Cloudflare Durable Objects, SQLite und das Cloudflare Agents SDK, während die interne Plattform mittlerweile über 200 zusätzliche Agenten und Beiträge von mehr als 150 Ingenieuren unterstützt.</div>
+        <a href="https://newsletter.pragmaticengineer.com/p/why-ramp-built-inspect" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+
+    <h2>Simon Willison (3 Artikel)</h2>
+    <div class="section-summary">Claude Code Opus 5 demonstriert, dass Auto Mode gezielten Remote Code Execution Angriffen angreifbar ist, wobei manipulierte Payload-Ketten und unzureichende Isolation zu signifikanten Sicherheitslücken führen. EVE Online migriert seinen umfangreichen Stackless-Python 2.7-Code zu Python 3, um Performancegewinne zu realisieren und Kompatibilitätsprobleme systematisch zu adressieren, während Carbon mit einer eigens entwickelten Scheduling-Architektur veraltete Methoden ablöst und durch reduzierte Overheads sowie klarere Task-Trennung die Wartbarkeit und den Durchsatz moderner Systeme erhöht.</div>
+    <div class="article">
+        <div class="article-title">Breaking Claude Code Opus 5 Auto Mode</div>
+        <div class="article-date">27.08.2026</div>
+        <div class="article-summary">Claude Code Opus 5 in Auto Mode führt trotz 0,00% Benchmark-Erfolgsrate in gezielten Angriffsszenarien zu einer Remote Code Execution via manipulierter Payload-Kette. Der Angriffsvektor beginnt mit der Umleitung von WebFetch zu curl, wodurch ein ZIP-Archiv mit sorgfältig präparierten Inhalten geladen wird, das unter anderem eine manipulierte struct.py enthält, die Python-Modul-Schattenwurf ausnutzt. Dabei ersetzt Claude einen nativen macOS-Dekoder durch einen selbstgeschriebenen Python-Ersatz, der in der isolierten Agentenumgebung ausgeführt wird und letztlich zu einem ASR von 60–80% führt. Die Demonstration unterstreicht, dass Auto Mode keinen echten Schutz bietet und empfiehlt dringend den Einsatz von Containern, VMs und restriktiven Netzwerkregeln, um solchen Angriffen entgegenzuwirken.</div>
+        <a href="https://embracethered.com/blog/posts/2026/breaking-claude-code-opus-5-and-automode/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">EVE Online: The Move to Python 3 Begins!</div>
+        <div class="article-date">25.08.2026</div>
+        <div class="article-summary">EVE Online migriert seinen Codebestand von seit 2003 verwendeter Stackless Python 2.7 zu Python 3, um signifikante Performancegewinne und moderne Entwicklungstools zu nutzen. Die Umstellung betrifft 2,4 Millionen Zeilen Code, wobei erste Analysen von rund 20.000 Python-Dateien ergeben, dass 95,9 % bereits unter beiden Versionen kompiliert werden, während etwa 3.300 Dateien Syntaxprobleme aufweisen – darunter ca. 1.500 alte print-Anweisungen, 800 &quot;long&quot; Literale und 50 veraltete &lt;&gt;-Operatoren. Mit dem Einsatz von Python-Future und einer mehrstufigen Migrationsstrategie wird zunächst die Kompatibilität sichergestellt, um in anschließenden Schritten elementspezifische Verhalten (wie die unterschiedliche Division in Python 2 und 3) zu beheben. Erste Änderungen laufen bereits auf der Testumgebung Singularity, bevor sie schrittweise in den Live-Betrieb (Tranquility) aufgenommen werden, um langfristig schnellere Bugfixes und eine effizientere Weiterentwicklung zu ermöglichen.</div>
+        <a href="https://www.eveonline.com/news/view/the-move-to-python-3-begins" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">Scheduling in Carbon: Leaving Stackless Python Behind</div>
+        <div class="article-date">25.08.2026</div>
+        <div class="article-summary">Carbon ersetzt das alte Stackless-Python-Scheduling durch einen eigens entwickelten Ansatz, der den Overhead reduziert und eine klarere Trennung von Tasks ermöglicht. Simon Willison präsentiert eine Architektur, die in Hinblick auf Wartbarkeit und Durchsatz optimiert ist und sich an den gestiegenen Concurrency-Anforderungen moderner Systeme orientiert. Die Umstellung, die auf dem EVE Fanfest 2025 vorgestellt wurde, untermauert den Entschluss, veraltete Scheduling-Methoden hinter sich zu lassen und auf ein System zu setzen, das durch gezielte Benchmarks bessere Performance verspricht.</div>
+        <a href="https://youtu.be/-x299qHLQs0" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+
+    <h2>Warp AI Terminal Blog (1 Artikel)</h2>
+    <div class="article">
+        <div class="article-title">Closing the loop with self-improving cloud software factories</div>
+        <div class="article-date">27.08.2026</div>
+        <div class="article-summary">Cloud-basierte Softwarefabriken schließen den Entwicklungszyklus, indem sie Softwareentwicklung vollständig automatisieren und kontinuierlich mithilfe von Coding Agents verbessern. Die Fabrik wird als Code definiert – beispielhaft über eine factory.yaml-Datei – und versioniert, wodurch Änderungen nachvollziehbar, testbar und von Agenten als Diffs vorgeschlagen werden können. Die Infrastruktur läuft ausschließlich in der Cloud, nutzt API-basierte Steuerung und speichert umfassende Daten wie PR-Durchsatz, durchschnittliche Kosten pro PR und den Automationsgrad, was eine präzise Beobachtung und Optimierung ermöglicht. Self-improvement Agents werten anhand von Scorern (Bewertungsfunktionen) Agent-Runs aus, leiten Benchmarks und A/B-Tests ein und liefern datenbasierte Empfehlungen zur Anpassung von Modellrouten und anderen Fabrikparametern.</div>
+        <a href="https://www.warp.dev/blog/agent-self-improving-software-factories" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+
+    <a href="index.html" class="back-link">&larr; Zur&uuml;ck zur &Uuml;bersicht</a>
+
+</body>
+</html>
