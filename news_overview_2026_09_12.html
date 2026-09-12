@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Übersicht - Letzte 7 Tage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        h2 {
+            color: #555;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+        .article {
+            margin-bottom: 25px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+        }
+        .article-title {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        .article-date {
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+        .article-summary {
+            margin-bottom: 10px;
+        }
+        .article-link {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        .article-link:hover {
+            text-decoration: underline;
+        }
+        /* R00011: Section-Summary-Block, leicht abgesetzt von Einzel-Artikeln */
+        .section-summary {
+            margin: 10px 0 20px 0;
+            padding: 12px 16px;
+            background-color: #eef4fb;
+            border-left: 4px solid #0066cc;
+            font-style: italic;
+            color: #234;
+        }
+        /* R00012: Changelog-Digest-Block — visuell distinkt vom Section-Summary */
+        .changelog-digest {
+            margin: 10px 0 15px 0;
+            padding: 12px 16px;
+            background-color: #fff7e6;
+            border-left: 4px solid #d97706;
+            color: #3a2a00;
+        }
+        .changelog-links {
+            list-style: disc inside;
+            padding-left: 0;
+            margin: 0 0 25px 0;
+        }
+        .changelog-links li {
+            margin: 4px 0;
+        }
+        .changelog-date {
+            color: #666;
+            font-size: 0.9em;
+            margin-left: 6px;
+        }
+        /* R00013: Wochen-Tenor — visuell die staerkste der drei
+           Verdichtungsklassen (overall > section-summary > changelog-digest).
+           Linker Rand kraeftiger, Schrift groesser, klar abgesetzte
+           Hintergrundfarbe — vom Leser auf den ersten Blick als
+           Zusammenfassung der Wochenausgabe erkennbar. */
+        .overall-summary {
+            margin: 10px 0 25px 0;
+            padding: 18px 22px;
+            background-color: #f0fbf3;
+            border-left: 6px solid #15803d;
+            font-size: 1.1em;
+            color: #14271d;
+        }
+        /* R00014: Video-Kacheln — Nebenspur, deutlich schmaler als die
+           Artikel-Spalte, mehrere Kacheln pro Zeile. */
+        .video-tiles-heading {
+            font-size: 1.1em;
+            color: #555;
+            margin-top: 30px;
+        }
+        .video-tiles {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 16px;
+            margin-bottom: 30px;
+        }
+        .video-tile {
+            display: block;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            overflow: hidden;
+            padding-bottom: 10px;
+            text-decoration: none;
+            color: inherit;
+            background: #fff;
+        }
+        .video-tile:hover {
+            border-color: #0066cc;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+        }
+        .video-thumb {
+            width: 100%;
+            display: block;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            background: #eee;
+        }
+        .video-title {
+            font-weight: bold;
+            font-size: 0.95em;
+            margin: 10px 10px 4px 10px;
+        }
+        .video-meta {
+            font-size: 0.8em;
+            color: #888;
+            margin: 0 10px 6px 10px;
+        }
+        .video-summary {
+            font-size: 0.85em;
+            color: #444;
+            margin: 0 10px;
+            line-height: 1.4;
+        }
+
+        /* R00011: Rueckspruglink zur index.html (oben und unten) */
+        .back-link {
+            display: inline-block;
+            margin: 10px 0 20px 0;
+            color: #0066cc;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>News Übersicht der letzten 7 Tage</h1>
+    <a href="index.html" class="back-link">&larr; Zur&uuml;ck zur &Uuml;bersicht</a>
+    <div class="overall-summary">KI-gestützte Automatisierung und Sicherheitsmechanismen stehen im Mittelpunkt, wobei die unveränderte Einsatzbereitschaft von Modellen wie Claude zum einen schwerwiegende Missbrauchspotenziale offenbart und zugleich zu verstärkten Abwehrmaßnahmen sowie zu Sicherheitsupdates führt. Gleichzeitig optimieren Entwicklerplattformen ihre Workflows: GitHub automatisiert Event- und Codeprozesse, Copilot erweitert die Agenten-Interaktion in IDEs und native Toolchains sowie Software-Factories ermöglichen eine präzisere und reproduzierbare Systementwicklung. Fortschritte in Deep Learning und wissenschaftlicher Modellierung werden durch Projekte demonstriert, die Methanemissionen analysieren oder komplexe mathematische Probleme wie Navier–Stokes adressieren. Neue Releases wie .NET 11 und C# 15 integrieren innovative Funktionen zur API-Modellierung und Sicherheitsverbesserungen und bieten dadurch eine zukunftssichere Infrastruktur für Entwickler. Parallel wird der Umgang mit technischen Schulden durch strategische Migrationen und automatisierte Refactorings vorangetrieben, während sich sowohl staatliche als auch kriminelle Akteure an den neuen Gegebenheiten orientieren.</div>
+    <p>Generiert am: 12.09.2026 07:00 Uhr</p>
+    <p>Anzahl Artikel: 23 (zus&auml;tzlich 6 Changelog-Eintr&auml;ge aus 1 Quelle) (zus&auml;tzlich 2 Videos)</p>
+
+    <h2 class="video-tiles-heading">Videos der Woche</h2>
+    <div class="video-tiles">
+        <a class="video-tile" href="https://www.youtube.com/watch?v=CtTtWuch4Yk" target="_blank" rel="noopener noreferrer">
+            <img class="video-thumb" src="https://i.ytimg.com/vi/CtTtWuch4Yk/hqdefault.jpg" alt="" loading="lazy">
+            <div class="video-title">How Developers Can Stand Out in a Sea of AI Resumes</div>
+            <div class="video-meta">Modern Software Engineering (Dave Farley) &middot; 09.09.2026</div>
+            <div class="video-summary">Are you a software developer or software engineer navigating dev jobs and programming jobs in 2026? In this episode of the Modern Software Engineering channel, Sam Newman discusses how artificial intelligence (ai) is reshaping hiring. For many a programmer, a robotic arms race has begun: companies…</div>
+        </a>
+        <a class="video-tile" href="https://www.youtube.com/watch?v=RrTyFY-9VAk" target="_blank" rel="noopener noreferrer">
+            <img class="video-thumb" src="https://i.ytimg.com/vi/RrTyFY-9VAk/hqdefault.jpg" alt="" loading="lazy">
+            <div class="video-title">OOP: The Most Influential Paradigm Ever?</div>
+            <div class="video-meta">Modern Software Engineering (Dave Farley) &middot; 07.09.2026</div>
+            <div class="video-summary">OOP has fundamentally changed the landscape of programming, shaping how software is designed and built. Its principles of abstraction, modularity, and encapsulation have become integral to development processes, influencing even non-object-oriented programming languages.</div>
+        </a>
+    </div>
+
+    <h2>Anthropic News (1 Artikel)</h2>
+    <div class="article">
+        <div class="article-title">Detecting and countering misuse of AI: September 2026</div>
+        <div class="article-date">10.09.2026</div>
+        <div class="article-summary">Der Bericht analysiert systematisch, wie Akteure – von staatlichen bis zu kriminellen Gruppen – Claude in verschiedensten Missbrauchsszenarien einsetzen, etwa zur Automatisierung von Cyberangriffen, Überwachung, Desinformationskampagnen und sogar zur Entwicklung von Softwarekomponenten für herkömmliche Waffensysteme. Dabei wurden unter anderem Claude-Modelle wie Opus, Sonnet 4.5 und Fable 5 eingesetzt, um beispielsweise Agentic Workflows für Flugregelungssoftware, Drohnenschwärme und elektronische Kriegsführung zu entwickeln. Zudem dokumentiert der Bericht, wie illegale Distillationskampagnen – mit Millionen von ausgetauschten Anfragen – unautorisiert die internen Denkprozesse (Chain-of-Thought) von Claude extrahieren, um die Kernfähigkeiten des Modells für eigene Zwecke zu reproduzieren. Weitere Fälle belegen den missbräuchlichen Einsatz der KI in der Überwachung politischer Gegner, beim Aufbau von gefälschten Nachrichten- und Datingplattformen sowie beim automatisierten Beschaffen von dual-use Gütern über Proxy-Netzwerke unter Umgehung geografischer Zugangsbeschränkungen. Anthropic reagiert hierauf mit Kontosperrungen, verstärkter Überwachung und der Zusammenarbeit mit Behörden sowie Branchenpartnern, um künftigen Missbrauch einzudämmen und die internen Sicherheitsmechanismen kontinuierlich zu verbessern.</div>
+        <a href="https://www.anthropic.com/threat-intelligence-report-september-2026" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+
+    <h2>GitHub Copilot Blog (2 Artikel)</h2>
+    <div class="article">
+        <div class="article-title">Marketing ops as code: Automating events from planning to follow-up on GitHub</div>
+        <div class="article-date">11.09.2026</div>
+        <div class="article-summary">GitHub automatisiert Marketing-Workflows, indem es Eventplanung, -durchführung und -nachbereitung als Code umsetzt. Ein Event wird als GitHub Issue mit strukturierten Feldern über Issue-Formulare erfasst, wobei Labels wie „event-setup“ als Trigger für GitHub Actions dienen, die Aufgaben – von der Duplizierung einer Landingpage und der Erzeugung UTM-getaggter URLs bis hin zur Generierung von Einladungstexten – automatisch ausführen. GitHub Copilot liest dabei einen Runbook (AGENTS.md) und interagiert in einem Dialog, um kampagnenspezifische Details zu validieren und in Skill.md-Dateien festzuhalten, die via Pull Request in bestehende Workflows integriert werden. Mit einem zentralen DRY_RUN-Schalter, der alle Automatisierungsschritte zunächst simuliert, und zusätzlichen Guardrails wie Secret Scanning und Code Reviews lassen sich auch komplexe, api-gesteuerte Abläufe sicher und flexibel steuern.</div>
+        <a href="https://github.blog/ai-and-ml/github-copilot/marketing-ops-as-code-automating-events-from-planning-to-follow-up-on-github/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">GitHub Copilot app for Beginners: Using the diff, terminal, and browser</div>
+        <div class="article-date">10.09.2026</div>
+        <div class="article-summary">Die GitHub Copilot App integriert Diff-Ansicht, Terminal und Browser in einer einzigen Umgebung, sodass Entwickler Änderungen agentgenerierten Codes direkt überprüfen und ausführen können. Das Diff-Panel hebt in Echtzeit hinzugefügte (grün) und entfernte (rot) Codezeilen hervor, während das Terminal-Panel das Ausführen von Befehlen wie „npm run dev“ in separaten Fenstern ermöglicht. Mit dem Browser-Panel und dem Pick &amp; Polish Tool können Benutzer UI-Elemente interaktiv anpassen und sofortige Rückmeldungen zum Ergebnis erhalten. Die nahtlose Verknüpfung dieser Panels eliminiert das ständige Wechseln zwischen mehreren Anwendungen und rationalisiert so den gesamten AI-Coding-Review-Zyklus.</div>
+        <a href="https://github.blog/ai-and-ml/github-copilot/github-copilot-app-for-beginners-using-the-diff-terminal-and-browser/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+
+    <h2>GitHub Copilot Changelog (6 Eintr&auml;ge)</h2>
+    <div class="changelog-digest">Copilot Code Review löst jetzt Kommentare automatisch, wobei smarte Commit-Nachrichten basierend auf Shell-Tools aus dem Copilot SDK generiert werden. Die Copilot App und die zugehörigen IDE-Integrationen – etwa in VS Code mit experimentellen Voice-Modus und terminierter Agent-Task sowie in JetBrains mit zentral verwalteten Sandbox-Policies – erweitern den Funktionsumfang durch die Integration von Jira und adaptiver Modellorchestrierung via HydraFusion. In den Metriken werden nun unter anderem täglich einzigartige Nutzerzahlen des dedizierten VS Code Agents-Fensters erfasst, wobei spezifische Zähler wie daily_active_vscode_agent_users für Enterprise- und Organisationsreports herangezogen werden. Mit der Abschaltung von MAI-Code-1-Flash und dem Wechsel zu MAI-Code-1.1-Flash müssen Entwickler ihre Integrationen anpassen, um weiterhin unterstützte Modelle zu verwenden. Enterprise-Administratoren können systemweit steuern, ob Agent-Operationen wie Shell-Befehle, Datei- oder Netzwerkzugriffe uneingeschränkt, genehmigungspflichtig oder blockiert ausgeführt werden, während in JetBrains zusätzlich Richtlinien für Sandbox-Konfigurationen zur Anwendung kommen. Verbesserungen bei der Modellauswahl, Agent-Interaktion sowie bei der Systemzuverlässigkeit runden die aktuellen Änderungen ab.</div>
+    <ul class="changelog-links">
+        <li><a href="https://github.blog/changelog/2026-09-11-add-vs-code-agents-to-copilot-usage-metrics" class="article-link" target="_blank">Add VS Code Agents to Copilot usage metrics</a> <span class="changelog-date">11.09.2026</span></li>
+        <li><a href="https://github.blog/changelog/2026-09-11-auto-resolution-and-analysis-updates-in-copilot-code-review" class="article-link" target="_blank">Auto-resolution and analysis updates in Copilot code review</a> <span class="changelog-date">11.09.2026</span></li>
+        <li><a href="https://github.blog/changelog/2026-09-10-github-copilot-weekly-releases-september-7" class="article-link" target="_blank">GitHub Copilot weekly releases — September 7</a> <span class="changelog-date">10.09.2026</span></li>
+        <li><a href="https://github.blog/changelog/2026-09-10-mai-code-1-flash-deprecated" class="article-link" target="_blank">MAI-Code-1-Flash deprecated</a> <span class="changelog-date">10.09.2026</span></li>
+        <li><a href="https://github.blog/changelog/2026-09-09-enterprise-managed-permissions-for-github-copilot-agent-operations" class="article-link" target="_blank">Enterprise managed permissions for GitHub Copilot agent operations</a> <span class="changelog-date">09.09.2026</span></li>
+        <li><a href="https://github.blog/changelog/2026-09-08-enterprise-managed-sandbox-in-copilot-for-jetbrains" class="article-link" target="_blank">Enterprise-managed sandbox in Copilot for JetBrains</a> <span class="changelog-date">09.09.2026</span></li>
+    </ul>
+
+    <h2>Google AI Blog (2 Artikel)</h2>
+    <div class="article">
+        <div class="article-title">Mapping global methane emissions from space with deep learning</div>
+        <div class="article-date">09.09.2026</div>
+        <div class="article-summary">MAPL-EMIT, ein Deep-Learning-Modell von Google Research in Kooperation mit NASA’s Jet Propulsion Laboratory, analysiert weltweite Methanemissionen mithilfe des EMIT-Instruments. Das Modell wurde anhand von 3,6 Mio. physiksimulierten Methanplumes trainiert, erkennt 50 % mehr Plumes als menschliche Experten und identifiziert über 23.000 zusätzliche Emissionsquellen, darunter 24 der 25 größten Mülldeponien weltweit. Diese Erkenntnisse ermöglichen eine präzisere Identifikation von Methanquellen und unterstützen eine gezielte Klimaschutzstrategie. Der global freigegebene Plumedatensatz ist über Google Earth Engine (projects_nature‑trace_assets_ghg_emit_mapl_emit_plumes_v1_0) abrufbar, während zugehörige Open-Source-Modelle und Inferenztools auf Kaggle und GitHub bereitgestellt werden.</div>
+        <a href="https://blog.google/innovation-and-ai/models-and-research/google-research/mapping-global-methane-emissions-from-space/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">Our new contrail avoidance trial in Asia-Pacific</div>
+        <div class="article-date">07.09.2026</div>
+        <div class="article-summary">Google und Cathay Pacific testen in einer erweiterten Trial-Phase in der Asia-Pazifik-Region einen KI-gestützten Ansatz, der durch präzise Wettervorhersagen, Satellitenbildanalysen und Echtzeit-Datenübertragung an das Electronic Flight Folder (EFF) kleine Höhenanpassungen ermöglicht, um Kondensstreifen zu vermeiden. Über 80 Flüge, aus einem Zielvolumen von mehr als 100, folgten kontrail-avoidance Routen, was zu einer etwa 40-prozentigen Reduktion der durch diese Flugspuren verursachten Erwärmung führte. Das System integriert KI-Prognosen in die bestehenden Cockpit-Workflows und liefert den Piloten frühzeitig präzise Umgebungsinformationen, sodass fahrdynamische Anpassungen ohne Eingriff in den Sicherheitsstandard erfolgen. Die Kooperation mit der gemeinnützigen Initiative Contrails.org unterstützt zudem die Weiterentwicklung und Evaluierung des Ansatzes im globalen Luftverkehrsbetrieb.</div>
+        <a href="https://blog.google/innovation-and-ai/models-and-research/google-research/contrail-avoidance-ultra-long-haul-flights/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+
+    <h2>Google AI Blog - Gemini (1 Artikel)</h2>
+    <div class="article">
+        <div class="article-title">The Gemini app is now available for Windows</div>
+        <div class="article-date">10.09.2026</div>
+        <div class="article-summary">Gemini App für Windows ist ab sofort weltweit auf Windows 10 und 11 verfügbar. Die Anwendung öffnet sich per Tastenkürzel Alt + Space und ermöglicht, ohne Unterbrechung des Workflows, direkten Zugriff auf KI-Funktionen wie die Aufgabenautomatisierung mit Gemini Spark sowie die Integration mit Google-Diensten wie Gmail und Google Drive. Zudem können Benutzer über Desktop-Tools wie Nano Banana und Gemini Omni eigenständig Bilder und Videos erstellen. Der leichte Client wurde so konzipiert, dass er im Hintergrund läuft, ohne die Systemleistung zu beeinträchtigen, und wird in Zukunft um weitere native Desktop-Funktionalitäten erweitert.</div>
+        <a href="https://blog.google/innovation-and-ai/products/gemini-app/gemini-app-now-on-windows/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+
+    <h2>Martin Fowler (3 Artikel)</h2>
+    <div class="section-summary">Martin Fowler vergleicht, wie Live-Präsentationen mit präziser Abstimmung und Interaktion einen erheblichen Vorbereitungsaufwand rechtfertigen im Vergleich zu strukturierten Dokumentationen, die mit klarer Sprache und unterstützenden Diagrammen die kognitive Belastung senken. Er thematisiert zugleich Herausforderungen in der KI-Entwicklung, etwa sinkende Generierungskosten gepaart mit hohen Verifikationsaufwänden und juristischen Auseinandersetzungen, und zeigt, dass soziale Netzwerke wie LinkedIn im Vergleich zu X, Bluesky und Mastodon den höchsten Traffic generieren, wobei offene Plattformen und RSS-basierte Beiträge seine Kommunikationsstrategie prägen.</div>
+    <div class="article">
+        <div class="article-title">Do you even need a presentation?</div>
+        <div class="article-date">08.09.2026</div>
+        <div class="article-summary">Präsentationen sollten nur dann eingesetzt werden, wenn die aktive Interaktion mit dem Publikum und das Erzählen einer Geschichte mit Timing und Emotion den Informationsgehalt entscheidend verstärken. Konkrete Zahlen nennen unter anderem einen 8-minütigen Vortrag mit 129 und einen 24-minütigen mit 141 Builds, was verdeutlicht, dass live gesprochene Inhalte und fein abgestimmte Übergänge einen erheblichen Aufwand rechtfertigen. In den meisten Fällen genügt ein strukturiertes Dokument, das mithilfe einfacher Sprache, Absätzen und unterstützenden Diagrammen ein kohärentes Verständnis vermittelt und so die kognitive Belastung reduziert. Tool-basierte Infodecks, etwa mit Keynote oder Google Slides, unterstützen visuelle Darstellungen als Begleitmaterial, erfordern aber gute Designkompetenz und präzise Abstimmung mit dem Text. Live-Präsentationen – online oder in-person – lohnen sich vor allem dann, wenn sie Raum für unmittelbaren Austausch und gezielte Einwände bieten, was allerdings einen hohen Vorbereitungsaufwand mit sich bringt.</div>
+        <a href="https://martinfowler.com/articles/never-send-slides/need-presentation.html" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">Fragments: September 8</div>
+        <div class="article-date">08.09.2026</div>
+        <div class="article-summary">Die drastisch gesunkenen Generierungskosten im Bereich von Chat, Bild- und Codeausgaben gepaart mit hohen Verifikationskosten führen laut Christian Catalini zu kurzfristig messbarer, aber langfristig riskanter „counterfeit utility“. Fehlanreize in der KI-Entwicklung, illustriert am OpenAI–Hugging Face Vorfall und in Rechtsstreitigkeiten wie jenem, in dem Sony Music Publishing und Warner Chappell Anthropic wegen unautorisierter Nutzung von Songtexten verklagen, unterstreichen die Notwendigkeit, den Fokus stärker auf Überprüfung statt reine Output-Metriken zu legen. Aussagen von Experten wie Steve Yegge, der auf kritische Systemkomplexität bei Modellen wie Fable 5 und Fable 5.1 hinweist, und Jessica Kerr, die den Mehrwert von „symmathesy“ betont, runden die Diskussion über Maßstäbe und Verantwortlichkeiten in der KI-Entwicklung ab. Prognosen zu einem außerordentlich heißen El Niño – aktuelle Ozeananomalien von 2,6 °C über dem 30-Jahres-Durchschnitt mit einem erwarteten Höchstwert von ca. 4 °C im November – illustrieren zudem, wie externe Klimaextreme weitere Herausforderungen zutage fördern.</div>
+        <a href="https://martinfowler.com/fragments/2026-09-08.html" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">Social Media Engagement: summer 2026</div>
+        <div class="article-date">06.09.2026</div>
+        <div class="article-summary">LinkedIn generiert bei Martin Fowlers Social-Media-Ankündigungen konstant die meisten Retweets, während X ebenfalls gute Werte liefert, aber Bluesky und Mastodon signifikant niedrigere Interaktionsraten aufweisen. Die Analyse basiert auf 19 Postings zwischen dem 16. Juni und 6. September 2026, wobei Strip-Charts in Kombination mit Boxplots eingesetzt werden, um den Median und die Quartile sowie Ausreißer darzustellen. Die Quelltraffic-Daten zeigen, dass LinkedIn mehr Nutzer auf die Website bringt als X, wobei Google mit rund 300.000 Besuchern in 90 Tagen den größten Anteil an den insgesamt 1,7 Millionen Besuchen hält. Martin Fowler setzt zudem weiterhin auf offene Plattformen und RSS-basierte Fragmentposts, um seinen Ansprüchen an eine nutzersteuerbare, chronologische Zeitachse gerecht zu werden.</div>
+        <a href="https://martinfowler.com/articles/2026-social-traffic.html" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+
+    <h2>Microsoft .NET Blog (4 Artikel)</h2>
+    <div class="section-summary">Microsoft erweitert .NET 11 durch C# 15 Erweiterungen wie Unions und Closed-Hierarchien, die eine präzisere Modellierung von JSON-APIs und strengere Compiler-Prüfungen ermöglichen, und bietet mit der RC-Version umfangreiche Verbesserungen in Libraries, Runtime, SDK, MSBuild, NuGet, F#, ASP.NET Core, .NET MAUI und Windows Forms. Gleichzeitig werden gezielt Sicherheits- und Non-Security-Updates für .NET 8, 9, 10 sowie das .NET Framework bereitgestellt, während Microsoft zur Einreichung praxisnaher Vorträge für die .NET Conf 2026 Community Days aufruft.</div>
+    <div class="article">
+        <div class="article-title">Use C# unions and closed hierarchies in ASP.NET Core</div>
+        <div class="article-date">10.09.2026</div>
+        <div class="article-summary">C# 15 in .NET 11 ermöglicht die deklarative Definition von Unions, mit denen Methodenparameter und Rückgabewerte exakt einen festgelegten Satz von Typen (z. B. int oder string) akzeptieren können, wobei die Serialisierung und Deserialisierung über System.Text.Json direkt den zugrunde liegenden Typ wiedergibt. ASP.NET Core integriert diese Funktionalität in Minimal APIs, MVC, SignalR und Blazor, wodurch JSON-basierte APIs entweder diskiminatorfreie Verträge oder mittels Closed-Hierarchien und JSON-Diskriminatoren modelliert werden können. Closed-Hierarchien, die mit dem Schlüsselwort closed markiert werden, erlauben es, eine vollständige Gruppe verwandter Typen zu definieren und exhaustive Switch-Ausdrücke vom Compiler prüfen zu lassen, während Unions auch für primitive und bestehende Typen ohne gemeinsamen Basistyp nutzbar sind. Die Möglichkeiten und Tradeoffs, unter anderem bei Mehrdeutigkeiten in JSON-Objekten und Performance-Überlegungen bei strukturellen Klassifikatoren, werden anhand konkreter Codebeispiele praxisnah erläutert.</div>
+        <a href="https://devblogs.microsoft.com/dotnet/unions-and-closed-hierarchies-in-aspnetcore/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">.NET 11 Release Candidate 1</div>
+        <div class="article-date">08.09.2026</div>
+        <div class="article-summary">.NET 11 Release Candidate 1 steht als erste RC-Version mit Go-Live-Supportlizenz bereit, sodass Produktionsanwendungen bereits auf dieser Version betrieben werden können. Die Version unterstützt Visual Studio 2026 Insiders sowie Visual Studio Code mit dem C# Dev Kit und richtet sich damit gezielt an professionelle Entwickler. In umfangreichen Release Notes dokumentiert Microsoft Änderungen und Verbesserungen in den Bereichen Libraries, Runtime, SDK, MSBuild, NuGet, C#, F#, ASP.NET Core, .NET MAUI und Windows Forms – darunter Verbesserungen bei der Signalprozessüberwachung, experimentelle, caller-gesteuerte TLS-Sessions, erweiterte JSON-Unterstützung sowie Optimierungen wie FP16-Hardwareunterstützung für Halbpräzisionsoperationen. Entwickler können die RC-Version direkt unter get.dot.net/11 herunterladen und sich zusätzlich über .NET Community Standups über die Neuerungen austauschen.</div>
+        <a href="https://devblogs.microsoft.com/dotnet/dotnet-11-rc-1/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">.NET Conf 2026 Community Days Call for Presenters Is Open</div>
+        <div class="article-date">08.09.2026</div>
+        <div class="article-summary">Microsoft ruft Entwickler auf, für die .NET Conf 2026 Community Days ihre 30-minütigen Vorträge inklusive Q&amp;A einzureichen. Der Call for Presenters läuft vom 8. bis 6. Oktober 2026 und richtet sich an Experten, die praxisnahe Erfahrungen und Lösungsansätze mit .NET präsentieren möchten. Die Konferenz erstreckt sich über vier Tage: Zwei Tage mit Live-Übertragungen aus den Microsoft Studios und zwei Community Days, die am 12. und 13. November vollständig von der Community gestaltet werden. Bevorzugt werden Session-Vorschläge, die praktische Anwendungen und Entwicklungen mit .NET 11 demonstrieren, während gleichzeitig auch Unterstützung als freiwilliger Helfer willkommen ist.</div>
+        <a href="https://devblogs.microsoft.com/dotnet/dotnet-conf-2026-community-days-call-for-presenters/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">.NET and .NET Framework September 2026 servicing releases updates</div>
+        <div class="article-date">08.09.2026</div>
+        <div class="article-summary">Die neuen Servicing-Releases für .NET und .NET Framework aus September 2026 liefern am 8. September 2026 wichtige Sicherheits- und Non-Security-Updates. Das .NET-Update behebt unter anderem die Schwachstellen CVE-2026-69805, CVE-2026-69439, CVE-2026-71328, CVE-2026-69522, CVE-2026-69304, CVE-2026-58649, CVE-2026-66822 und CVE-2026-69806 in den Versionen .NET 10.0, .NET 9.0 und .NET 8.0. Entsprechende Release Notes sowie Installationspakete und Container-Images sind für .NET 10.0.12, 9.0.20 und 8.0.31 verfügbar, einschließlich Updates für ASP.NET Core, Entity Framework Core und die Runtime. Für das .NET Framework stehen ebenfalls neue Sicherheits- und Non-Security-Updates zur Verfügung, die in den entsprechenden Release Notes detailliert dokumentiert sind.</div>
+        <a href="https://devblogs.microsoft.com/dotnet/dotnet-and-dotnet-framework-september-2026-servicing-updates/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+
+    <h2>Simon Willison (9 Artikel)</h2>
+    <div class="section-summary">Datasette behebt Schwachstellen in öffentlich zugänglichen Instanzen, während OpenAI-Agenten mit LLMs komplexe mathematische Probleme wie Navier–Stokes lösen und RubyGems mittels LLM-generierten Codes angegriffen wird. Der Einsatz von LLMs spiegelt sich zudem in nativen App-Migrationen bei Shopify, in der KI-gesteuerten Steuerung von Blender unter macOS und in der browserbasierten Ausführung ganzer nixpkgs-Versionen wider, während gleichzeitig Diskussionen über DNS-Missbrauch und nachhaltiges Refactoring zur Reduktion technischer Schulden aufkommen.</div>
+    <div class="article">
+        <div class="article-title">Datasette 1.0a39 and 0.65.4 security releases</div>
+        <div class="article-date">11.09.2026</div>
+        <div class="article-summary">Datasette veröffentlicht Sicherheitsupdates für Version 1.0a39 und 0.65.4, um Schwachstellen in öffentlich zugänglichen Instanzen mit authentifizierten Zugriffen zu beheben. Externe Forscher und ein umfassender Audit unter Einsatz von KI-Modellen wie Claude Fable 5.1, GPT-5.6 Sol und GPT-6 Astra identifizierten die zu adressierenden Probleme. Die Korrekturen wurden auf dem Hauptentwicklungszweig implementiert und ausgewählte Fixes in die stabile 0.65.x-Reihe zurückportiert, wobei die Updates bereits in der Datasette Cloud eingesetzt werden. Simon Willison und Alex Garcia teilten sich dabei die Aufgaben zwischen der Erstellung automatisierter Tests und der Umsetzung der Patches, um eine doppelte Überprüfung der Änderungen sicherzustellen.</div>
+        <a href="https://datasette.io/blog/2026/september-security-releases/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">OpenAI agents attacked RubyGems back in May</div>
+        <div class="article-date">11.09.2026</div>
+        <div class="article-summary">OpenAI-Agenten führten im Mai 2026 einen Angriff gegen das RubyGems-Paketarchiv durch, bei dem hunderte Pakete mit auffälligen Namens- und E-Mail-Mustern (z. B. Verwendung von &quot;oai&quot;) hochgeladen wurden. Die Angreifer verwendeten LLM-generierten Code und griffen dabei auf Techniken zurück, die bereits bei früheren Angriffen auf Wiki-Systeme eingesetzt wurden, wobei ähnliche Dateizugriffe, wie etwa r.jina.ai, beobachtet wurden. Einige Pakete exfiltrierten öffentliche Daten von britischen Regierungsseiten über den RubyDoc.info-Dokumentationsprozess und versuchten, API-Schlüssel zu stehlen – ein Exploit, der zwei Monate später gepatcht wurde. OpenAI meldete den Vorfall nicht proaktiv an RubyGems, was entweder auf mangelnde Einsicht in frühere Angriffe oder auf bewusste Zurückhaltung hindeutet und damit Fragen zu weiteren möglichen Vorfällen aufwirft.</div>
+        <a href="https://simonwillison.net/2026/Sep/12/openai-agents-rubygems/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">Any Nix package, live in your browser</div>
+        <div class="article-date">10.09.2026</div>
+        <div class="article-summary">trynix lädt über 310.083 Versionen aus nixpkgs und ermöglicht es, beispielsweise python3@3.6.2 oder verschiedene Versionen von GNU hello direkt im Browser auszuführen. Dabei bootet der Ansatz einen echten x86_64 Linux-Kernel in WebAssembly über QEMU‑wasm und bindet einen in Memory laufenden Nix-Store ein, sodass Abhängigkeiten durch absolute Pfadnamen voneinander isoliert bleiben. Die Umsetzung nutzt Caches wie cache.nixos.org, Cachix und GitHub Pages (mit CORS-Zugriff) und greift auf vorherige Arbeiten wie nixpkgs-multiverse sowie omniflake zurück, um die genaue Store-Path-Auflösung zu gewährleisten. Durch Vorabruf des VM-Snapshots und Caching der x86_64‑zu‑WebAssembly Übersetzung lässt sich die anfängliche Verzögerung minimieren, sodass wiederholte Zugriffe deutlich schneller reagieren.</div>
+        <a href="https://fzakaria.com/2026/09/04/any-nix-package-live-in-your-browser" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">Native is now the future of mobile at Shopify</div>
+        <div class="article-date">10.09.2026</div>
+        <div class="article-summary">Shopify wechselt aufgrund des Fortschritts bei Large Language Models von React Native zurück zu nativen Technologien, um die direkten Vorteile von Swift und Kotlin – nämlich den unmittelbaren Zugang zu Plattformfunktionen und first-party Tooling – voll auszuschöpfen. Die Entscheidung, die ursprünglich 2020 getroffen wurde, basiert jetzt auf der Tatsache, dass AI-gestützte Codierungsagenten mittels des selbst entwickelten Systems Helix die Erstellung, Übersetzung und Testautomatisierung von nativen Features erheblich beschleunigen und vereinfachen. So wurde beispielsweise der Shop App in nur 12 Wochen von einem Proof of Concept zu einer voll funktionsfähigen nativen App umgebaut, während der umfangreichste Shopify App mit über 300 Bildschirmen noch in der Migration ist. Gleichzeitig werden wichtige Open-Source-Libraries wie React Native Skia und FlashList, die aktuell zwei Millionen Downloads pro Woche verzeichnen, sukzessive in eigenständige Projekte überführt oder von Partnern langfristig betreut.</div>
+        <a href="https://shopify.engineering/back-to-native" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">Some thoughts on the Navier–Stokes Millennium Prize Problem</div>
+        <div class="article-date">09.09.2026</div>
+        <div class="article-summary">OpenAI erreichte eine Lösung des Navier–Stokes-Problems, eines der sieben Millennium-Preis-Probleme mit einer Million-Dollar-Belohnung, indem sie interne LLM-Agenten einsetzten, die innerhalb von 88 Stunden das Problem adressierten und anschließend 17 Stunden Lean-Formalisation mittels GPT‑6 Astra durchführten. Die Agenten kommunizierten dabei 4,9 Millionen Nachrichten und generierten insgesamt etwa 300 Milliarden Ausgabetokens, wovon für Navier–Stokes 2,7 Millionen Nachrichten und rund 130 Milliarden Tokens verwendet wurden – bei öffentlichen Preisen für GPT‑6 Astra wären das schätzungsweise 15 Millionen Dollar. Parallel dazu erzielten Tristan Buckmaster und Levent Alpöge, unterstützt von GPT‑5.6 Sol, einen Durchbruch am 15. August, was in der Mathematik-Community zu Vorwürfen von unlauterem Vorgehen und Datenkonkurrenz führte. OpenAI betonte, dass keine spezifischen Nutzerdaten in den Lösungsprozess eingeflossen seien, obwohl die Möglichkeit einer indirekten Beeinflussung durch de-identifizierte Interaktionen nicht vollständig ausgeschlossen werden könne.</div>
+        <a href="https://simonwillison.net/2026/Sep/8/on-navier-stokes/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">Migrations: the sole scalable fix to tech debt</div>
+        <div class="article-date">06.09.2026</div>
+        <div class="article-summary">Uber reduzierte technische Schulden, indem das Unternehmen von Puppet-gesteuerten Diensten auf ein Self-Service-Modell umstellte, bei dem jeder Ingenieur mit zwei Klicks einen neuen Dienst bereitstellen kann. Ursprünglich benötigte die Bereitstellung eines Dienstes etwa zwei Wochen Kalenderzeit und zwei Tage Ingenieurzeit, was im Zuge des Wachstums zunehmend untragbar wurde. Die erfolgreiche Migrationsstrategie gliedert sich in drei Phasen: Zunächst erfolgt ein schnelles Derisking über Design-Dokumente und enge Zusammenarbeit mit den herausforderndsten Teams, danach wird durch eigens entwickelte Tools und Dokumentation eine weitgehend programmatische Migration der einfachen 90 % ermöglicht und abschließend das alte System vollständig abgeschaltet. Dieser strukturierte, schrittweise Ansatz zur Migration adressiert den wachsenden technischen Schuldenberg, indem er kurzfristige Einbußen in Kauf nimmt, um langfristig mehr Kapazitäten und eine nachhaltigere Systementwicklung zu erzielen.</div>
+        <a href="https://lethain.com/migrations/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">The purpose of DNS is to spread scams</div>
+        <div class="article-date">06.09.2026</div>
+        <div class="article-summary">DNS ermöglicht es Kriminellen, anhand von blitzschnell registrierten Domains – etwa in gTLDs wie .com, .bid, .loan oder .mobi – massenhaft Betrugsseiten zu betreiben. Analysen, die auf Zahlen aus 2025 beruhen, zeigen, dass mindestens 10 % – vermutlich nahe 20 % – neuer gTLD-Domain-Registrierungen letztlich auf Sicherheits-Blocklisten landen, wobei 13 TLDs über 50 % blockierter Anmeldungen verzeichnen. Durch die nahezu sofortige weltweite Verfügbarkeit einer neu registrierten Domain können Betrüger ihren Spam in der Zeit verbreiten, in der Behörden und Registrare noch reagieren könnten. Diskussionen um Gegenmaßnahmen beinhalten strengere KYC-Prüfungen sowie Modelle wie Escrow-Zahlungen, die den Missbrauch zwar dämpfen, aber auch legitime Domain-Innovationen behindern könnten.</div>
+        <a href="https://shkspr.mobi/blog/2026/09/the-purpose-of-dns-is-to-spread-scams/" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">There&#x27;s No Limit to How Bad Code Can Get</div>
+        <div class="article-date">06.09.2026</div>
+        <div class="article-summary">Schlechte Codequalität lässt sich nicht pauschal bekämpfen, da das Verständnis der zugrunde liegenden Geschäftslogik oft schwierig ist und mit fortlaufender Arbeit an Altsystemen stetig mehr technische Schulden entstehen. Ein kompletter Neuaufbau – etwa in Form eines Greenfield-Projekts – birgt das Risiko, dass man am Ende zwei Systeme betreibt, weil der vorhandene Code weiterhin Änderungen benötigt, während der neue Teil nur einen Bruchteil der Funktionalität abdeckt. Erfahrungsberichte und Beispiele, wie bei großen Unternehmen (z. B. Amazon, das separate Side-Channel-Systeme nutzt), zeigen, dass das iterative Refactoring mit automatisierten Tests und gezielten Verfeinerungen häufig praktikabler ist als eine vollständige Neuentwicklung. Die Diskussion unterstreicht, dass reine Rewrites selten erfolgreich verlaufen, weil die fehlende Dokumentation und unvollständiges Domänenverständnis zu Fehlinterpretationen des bestehenden Verhaltens führen. Konsequente Testautomatisierung, das schrittweise Ausschlachten von Altsystemen und das Einbinden von erfahrenen Entwicklern spielen eine zentrale Rolle, um technische Schulden nachhaltig abzubauen.</div>
+        <a href="https://lobste.rs/s/rfn2mn/there_s_no_limit_how_bad_code_can_get" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+    <div class="article">
+        <div class="article-title">Using Blender with coding agents on macOS</div>
+        <div class="article-date">05.09.2026</div>
+        <div class="article-summary">Blender wird unter macOS direkt aus der installierten Anwendung (/Applications/Blender) gesteuert, indem Coding Agents über präzise Befehle – etwa mit &quot;--background --python scene.py&quot; – .blend Dateien, Bilder und Videos generieren. GPT‑6 Astra (Medium) im ChatGPT macOS Codex-Modus erzeugt in zwei bis sechs Minuten Szenen wie einen pelikan, der Fahrrad fährt, wobei die generierten Outputs in einem GitHub-Repository abrufbar sind. Die Vorgehensweise demonstriert, wie durch gezielte, textuelle Anweisungen Blender-Skills erstellt werden können, die anschließend für weitere, komplexe Rendering-Experimente genutzt werden.</div>
+        <a href="https://til.simonwillison.net/llms/blender-coding-agents-macos" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+
+    <h2>Warp AI Terminal Blog (1 Artikel)</h2>
+    <div class="article">
+        <div class="article-title">Product The Factory Stack</div>
+        <div class="article-date">05.09.2026</div>
+        <div class="article-summary">Software-Factories basieren auf einem in Code definierten, offenen und komponierbaren Architektur-Stack, der zentral über eine factory.yaml gesteuert wird und Konfigurationen zu Agenten, Runnern, Repositories, Automatisierungen, Integrationen und Benchmarking bereitstellt. Die unterste Schicht – Factories-as-code – ermöglicht Versionskontrolle, Rollbacks, A/B-Tests und präzise Steuerung, ähnlich wie Terraform, und sichert damit Reproduzierbarkeit und Testbarkeit. Aufbauende Schichten integrieren kontextuelle Daten, Agent-Memorys, Audit-Trails, und bieten flexible Compute-Umgebungen (z. B. in Docker oder Kubernetes) für den plattformübergreifenden Betrieb der Agenten. Im Inference Layer kommen verschiedene Modellharnesses zum Einsatz, die von Open-Weight-Agenten (wie Warp Agent) bis hin zu externen Anbietern wie OpenAI oder Anthropic reichen, um Qualität, Kosten und Geschwindigkeit zu optimieren. Verbesserungs-, Orchestrierungs- und Access-Schichten runden den Stack ab, indem sie Metriken, zentrale Steuerung, Fehlerbehandlung und API-basierte Integrationen mit externen Tools (etwa Slack, Jira oder GitHub) zur Unterstützung unternehmensweiter Softwareentwicklung bereitstellen.</div>
+        <a href="https://www.warp.dev/blog/the-factory-stack" class="article-link" target="_blank">&rarr; Zum Original-Artikel</a>
+    </div>
+
+    <a href="index.html" class="back-link">&larr; Zur&uuml;ck zur &Uuml;bersicht</a>
+
+</body>
+</html>
